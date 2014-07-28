@@ -3,7 +3,7 @@
 <header id="masthead" class="site-header">
 <div class="site-branding">
     <h1 class="site-title"><a href="/" rel="home">goer.org</a></h1>
-    <h2 class="site-description">Evan Goer's Journal</h2>
+    <h2 class="site-description">Writing, code, etc.</h2>
 </div>
 <nav class="main-navigation" role="navigation">
 <ul class="menu">
