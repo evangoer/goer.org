@@ -1,0 +1,153 @@
+body { 
+  background: #363;
+  font-family: Georgia, Palatino, serif;
+}
+
+p, li {
+  padding-right: 3px;
+}
+
+h1, h2, h3, h4, h5, h6, #side *, #top, #next, #main dt {
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+code, pre {
+  color: #630;
+  font: medium courier, monospace;
+}
+
+#top {
+  border: #000 2px solid;
+  background: #cfc;
+  color: #000;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 99%;
+}
+
+#top a, #side a {
+  text-decoration: none;
+}
+
+#main { 
+  border: #000 2px solid;
+  padding: 0px 0px 3px 18px;
+  background: #fff;
+}
+
+#main a {
+  color: #008000;
+}
+
+#main a:visited {
+  color: #060;
+}
+
+#side {
+  width: 25%;
+  float: right; 
+  border-left: #000 2px solid;
+  border-bottom: #000 2px solid;
+  background: #cfc;
+  padding: 3px;
+}
+
+#side a {
+  color: #00f;
+}
+
+#side a:visited, #top a:visited, #footer a:visited  {
+  color: #606;
+}
+
+a:hover, a:visited:hover {
+  color: #f00;
+}
+#topnav {
+  float: left;
+}
+
+#search {
+  text-align: right;
+}
+
+#search form, #search form p {
+  display: inline;
+  text-align: right;
+}
+
+input.searchButton {
+  background: #363;
+  color: #fff;
+  font-weight: bold;
+}
+
+#footer {
+  border: #000 2px solid;
+  background: #cfc;
+  color: #000;
+  padding: 5px;
+  margin-top: 5px;
+  text-align: center;
+  font-size: smaller;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  width: 99%;
+}
+
+#footer a.nav {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+img.valid {
+  border: 0px;
+  width: 88px;
+  height: 31px;
+  float: right;
+}
+
+table.cal {
+  margin-left: auto;
+  margin-right: auto;
+  background: #363;
+}
+
+caption, caption a {
+  margin: auto;
+  font: 10pt Georgia, serif;
+  text-decoration: none;
+}
+
+th.cal {
+  background: #6c6;
+  font: bold 10pt Verdana, Tahoma, sans-serif;
+  text-align: center;
+}
+
+td.cal, td.cal a {
+  background: #fff;
+  font: 10pt Georgia, serif;
+  text-align: center;
+}
+
+td.cal a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#mtbox {
+  font-size: smaller;
+  text-align: center;
+  width: auto;
+  border-top: 2px #000 dashed;
+}
+
+#journallinks, #journallinks p {
+  font-size: smaller;
+  text-align: center;
+  width: auto;
+}
+
+h3.entrytitle {
+  color: #000;
+}

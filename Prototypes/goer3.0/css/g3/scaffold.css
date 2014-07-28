@@ -1,0 +1,37 @@
+/* Header scaffolding -- adjust with caution */
+#hd h1 { height: 61px; padding-left: 35px; padding-top: 23px; margin: 0px;}
+#hd ul { padding: 6px; margin-left: 0em; }
+#hd li { display: inline; padding-right: 1.5em; }
+#hd form { position: absolute; top: 88px; right: 15px; }
+
+/* Structural divs, pre, p, blockquotes... */
+div#yui-main div.yui-b { padding-left: 0.5em; padding-top: 0.5em; }
+div#ft, pre { padding: 0.5em; }
+div.side-sect { padding: 0em 0.33em 0.33em 0.33em;}
+.side-sect p {margin: 0.5em 0em;}
+#yui-main p { margin: 0.75em 0em;}
+.side-sect h1, .side-sect h2, .side-sect h3, .side-sect h4 {margin: 0.33em 0em;}
+h1, h2 {margin: 0.33em 0em;}
+h3, h4 {margin: 0.5em 0em;}
+blockquote { margin: 0.5em 2.5em; padding: 0.1em 0.5em; }
+
+/* Lists */
+#yui-main ul, #yui-main ol, #yui-main dl { margin: 0.33em 0em 0.33em 2.5em; }
+#yui-main ul ul, #yui-main ol ol, #yui-main dd { margin-left: 2.0em; }
+
+/* Special archive scaffolding */
+#legacy li, #legacy h4 { display: inline; }
+#legacy ul { padding: 0.33em 0em; margin: 0px;}
+/* div#legacy { float: right; width: 215px;} */
+ul#archive { margin-left: 0px;}
+#yui-main ul#archive li {list-style-type: none;}
+
+/* Comments */
+#bd p.signature { padding: 0.33em; margin-bottom: 1.5em;}
+#commentlist p.signature, #preview p.signature { margin: 0em 0em 1.5em 0em; }
+#commentlist blockquote.comment, #preview blockquote.comment { padding: 0.1em 0.5em; margin: 0em;}
+
+/* Icons */
+li.feed { height: 16px; margin: 3px 0px; }
+li.feed a { padding-left: 18px; background: url("feed.png") no-repeat left; }
+img.cc { float: left; margin-right: 0.33em;}

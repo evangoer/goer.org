@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd">
+<service>
+<engineName>Movable Type 3.33</engineName> 
+<engineLink>http://www.sixapart.com/movabletype/</engineLink>
+<homePageLink>http://www.goer.org/Prototypes/goer3.0/</homePageLink>
+<apis>
+<api name="MetaWeblog" preferred="true" apiLink="http://www.goer.org/cgi-bin/cms/mt-xmlrpc.cgi" blogID="1" />
+<api name="MovableType" preferred="false" apiLink="http://www.goer.org/cgi-bin/cms/mt-xmlrpc.cgi" blogID="1" />
+<api name="Blogger" preferred="false" apiLink="http://www.goer.org/cgi-bin/cms/mt-xmlrpc.cgi" blogID="1" />
+<api name="Atom" preferred="false" apiLink="http://www.goer.org/cgi-bin/cms/mt-atom.cgi/weblog" blogID="1" />
+</apis>
+</service>
+</rsd>

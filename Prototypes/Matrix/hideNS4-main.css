@@ -1,0 +1,58 @@
+input.searchText {
+  border: 2px solid; 
+}
+
+#side {
+  margin-left: 3px;
+}
+
+div#main h2, div#main h3, div#main h4 {
+  text-indent: -15px;
+  color: #0f0;
+  text-transform: uppercase;
+}
+
+.inline {
+  display: inline;
+  text-indent: 0px ! important;
+}
+
+#footer, #top {
+  width: auto ! important;
+}
+
+#buttons {
+  width: 140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#buttons ul {          /* Use ul so that NS4 collapses to bulletted list */
+  position: relative;  /* IE5/Mac; speeds up rollover perf in floating divs */
+  margin: 0px;
+  padding: 0px;
+}
+
+#buttons ul li {
+  margin: 5px 0px 0px 0px;  /* Weird vert. sep in IE/Win for some font sizes,*/ 
+  list-style-type: none;    /* so can't have buttons adjacent vertically */
+  padding: 0px;
+  font: bold 14px Verdana, Tahoma, Arial, sans-serif;
+}
+
+#buttons a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #bfb ! important;
+  padding: 4px;
+  width: 100%;   /* in lieu of "auto"; IE/Win can only link off of text otherwise */
+  background: #333;
+  border: 2px #000 solid;
+}
+
+#buttons a:hover {
+  background: #060;
+  color: #0f0 !important;
+  border: 2px #3f3 solid;
+}

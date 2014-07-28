@@ -1,0 +1,167 @@
+body { 
+  background: #333; 
+  font-family: courier, monospace;
+  color: #0c0; 
+}
+
+p, li {
+  padding-right: 3px;
+}
+
+h1, h2, h3, h4, h5, h6, #side *, #top, #next, #main dt {
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+code, pre {
+  color: #0c0;
+  font: medium courier, monospace;
+}
+
+#top {
+  border: #0f0 2px solid;
+  background: #030;
+  color: #0f0; 
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 99%;
+}
+
+#top a, #side a, #footer a {
+  text-decoration: none;
+  color: #bfb;
+}
+
+#main { 
+  border: #0f0 2px solid;
+  padding: 0px 0px 3px 18px;
+  background: #010;
+}
+
+#main a {
+  color: #bfb;
+  text-decoration: none;
+}
+
+#main a:visited {
+  color: #8f8;
+}
+
+#top a, #side a, #footer a {
+  text-decoration: none;
+  color: #bfb;
+}
+
+#side {
+  width: 25%;
+  float: right; 
+  border-left: #0f0 2px solid;
+  border-bottom: #0f0 2px solid;
+  background: #030;
+  padding: 3px;
+}
+
+#side a {
+  color: #0f0;
+}
+
+#side a:visited, #top a:visited, #footer a:visited  {
+  color: #8f8;
+}
+
+a:hover, a:visited:hover {
+  color: #ff0;
+}
+#topnav {
+  float: left;
+}
+
+#search {
+  text-align: right;
+}
+
+#search form, #search form p {
+  display: inline;
+  text-align: right;
+}
+
+input.searchButton {
+  background: #010;
+  color: #0f0;
+  font-weight: bold;
+}
+
+#footer {
+  border: #0f0 2px solid;
+  background: #030;
+  color: #0f0;
+  padding: 5px;
+  margin-top: 5px;
+  text-align: center;
+  font-size: smaller;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  width: 99%;
+}
+
+#footer a.nav {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+img.valid {
+  border: 0px;
+  width: 88px;
+  height: 31px;
+  float: right;
+}
+
+table.cal {
+  margin-left: auto;
+  margin-right: auto;
+  background: #0f0;
+}
+
+caption, caption a {
+  margin: auto;
+  font: 10pt Georgia, serif;
+  text-decoration: none;
+}
+
+th.cal {
+  background: #020;
+  font: bold 10pt Verdana, Tahoma, sans-serif;
+  text-align: center;
+}
+
+td.cal, td.cal a {
+  background: #030;
+  font: 10pt Georgia, serif;
+  text-align: center;
+}
+
+td.cal a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#mtbox {
+  font-size: smaller;
+  text-align: center;
+  width: auto;
+  border-top: 2px #0f0 dashed;
+}
+
+#journallinks, #journallinks p {
+  font-size: smaller;
+  text-align: center;
+  width: auto;
+}
+
+h3.entrytitle {
+  color: #0f0;
+}
+
+input.searchText {
+  border: 1px #0f0 solid;
+  background: #020;
+  color: #0f0; 
+}

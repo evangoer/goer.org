@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>Safari v73 LI-float bleeding</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <style type="text/css">
+  <!--
+#side {
+  width: 300px;
+  float: right;
+  border: #000 1px solid; 
+  background: #cfc;
+}
+  -->
+  </style>
+</head>
+
+<body>
+<div id="side">
+<br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br>
+</div>
+
+<h1>Safari v73 LI-float bleeding</h1>
+
+<p>This is a paragraph.  The paragraph does <em>not</em> make its way into the floated div to the right, no matter how you adjust the window size. Unfortunately, this is <em>not</em> the case with list items:</p>  
+
+<ol>
+  <li>Depending on the length of this list item and the size of the window, the last word or two of this list item will bleed over across the border into the &lt;div&gt; to the right.  If the list item is not bleeding over, try adjusting the window size.</li>
+  <li><p>Note that it doesn't matter whether or not the list item encloses a non-list-item tag, such as a paragraph.  This particular list item encloses a paragraph, but it still crosses the border into the float.</p></li> 
+  <li>The problem <strong>disappears entirely</strong> if you delete the page's DOCTYPE.</li>
+</ol>
+<p>
+  The CSS on this page consists solely of the following:
+</p>
+<pre>
+  #side {
+    width: 300px;
+    float: right;
+    border: #000 1px solid; 
+    background: #cfc;
+  }
+</pre>
+<p>The border and background are irrelevant, and the width can be absolute or relative.</p>
+
+<p>Please feel free to <a href="/Contact/">contact me</a> about this, if necessary.  Thanks,</p>
+
+<p>- <a href="http://www.goer.org/">Evan</a></p>
+
+
+  </body>
+</html>

@@ -1,0 +1,136 @@
+/* Header CSS */
+div#hd {
+	background-color: #3a3421; 
+	background-image: url("../images/banner.gif");
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+/* original: #dbc39b */
+#hd h1 { 
+	font: 197% bold "trebuchet ms"; 
+	color: #e6d6b0;
+	height: 61px;
+	padding-left: 35px;
+	padding-top: 23px;
+}
+
+#hd ul {
+	padding: 6px;
+	margin-left: 0em;
+}
+#hd li {
+	color: #e6d6b0;
+	display: inline;
+	padding-right: 1.5em;
+	font-family: "trebuchet ms";
+	font-weight: bold;
+}
+#hd form {
+	position: absolute;
+	top: 88px;
+	right: 15px;
+	text-align: right;
+}
+#hd input {
+	background: #fcf2cc;
+}
+
+#hd a, #ft a { text-decoration: none; }
+#hd a:link, #hd a:visited, #ft a:link, #ft a:visited { color: #e6d6b0; }
+#hd a:hover, div#hd a:active, #ft a:hover, #ft a:active { color: #f4b759; }
+
+/* General fonts */
+h1, h2, h3, h4, caption { 
+	font-family: "trebuchet ms";
+	font-weight: bold;
+	color: #3a3421;
+}
+h2 { font-size: 167%; }
+h3 { font-size: 122%; }
+h4 { font-size: 100%; }
+body {
+	font-family: verdana; 
+	color: #333;
+	background: #b3a15a; 
+}
+#bd p { margin: 0.5em 0em;}
+
+/* Main coloration and padding */
+
+div#bd {
+	background: #fcf2cc; 
+	border-left: 1px #3a3421 solid;
+	border-right: 1px #3a3421 solid;
+}
+
+div.yui-b {
+	border-left: 1px #3a3421 solid;
+	border-bottom: 1px #3a3421 solid;
+	background: #e6d6b0;
+}
+
+div#yui-main div.yui-b {
+	border: 0px solid;
+	background: #fcf2cc;
+	padding-left: 0.5em;
+	padding-top: 0.5em;
+}
+
+div#ft {
+	background-color: #3a3421;
+	padding: 5px;
+	color: #e6d6b0;
+	text-align: center;
+}
+
+blockquote {
+	background: #e6d6b0; 
+	border-left: 2px #3a3421 solid;
+	margin: 0.5em 2.5em;
+	padding: 0.1em 0.5em;
+}
+
+li.feed {
+	height: 16px;
+	margin: 3px 0px;
+}
+li.feed a {
+	background-image: url("../images/feed.png"); 
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 18px;
+}
+a:link { color: #dd5522;}
+a:visited { color: #996633; }
+a:hover, a:active { color: #f4b759; }
+
+cite, em, var {font-style: italic;}
+strong {font-weight: bold;}
+
+pre {
+	background: #fff;
+	border: 1px #3a3421 solid;
+	padding: 0.5em;
+}
+#yui-main ul, #yui-main ol, #yui-main dl { margin-left: 2.5em; }
+#yui-main ul ul, #yui-main ol ol, #yui-main dd { margin-left: 2.0em; }
+#yui-main ul li { list-style-type: disc; }
+#yui-main ul ul li { list-style-type: square; }
+#yui-main ol li { list-style-type: decimal; }
+#yui-main ol ol li { list-style-type: lower-alpha; }
+
+div.side-sect {
+	border-bottom: 1px #3a3421 solid;
+	padding: 0.5em;
+}
+
+div.side-sect a {
+	text-decoration: none;
+}
+
+div.last {
+	border-bottom: 0px solid;
+}
+
+ul.archive li, ul.archive h4 { display: inline; }
+ul.archive { padding: 0.33em 0em;}

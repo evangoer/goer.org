@@ -1,0 +1,79 @@
+/* 
+ * verdana - base body font
+ * trebuchet ms - headings, top nav
+ * courier - code & pre, inherited from YUI
+ * writing.gif - top banner, 693x84
+ *
+ * #222 (nearly black) - base body text
+ * #fec (warm white) - base body background
+ * #432 (dark brown) - header, footer, headings, all borders
+ * #e6d6b0 (v. light brown) - side, header & footer (text + links), block styles 
+ * #d52 (reddish orange) - base links
+ * #963 (brown) - visited links, strong, code
+ * #f30 (red) - hover links
+ * #eb5 (orange) - hover links (head and foot)
+ * #b3a15a (gold) - left and right page margins, non-link head/foot text
+ */
+
+/* Header colors and banner (693x84) */
+div#hd { color: #b3a15a; background: #432 url("writing.gif") no-repeat right top; }
+#hd h1 { font: 197% bold "trebuchet ms"; }
+#hd li { font-weight: bold; font-family: "trebuchet ms"; }
+#hd input { background: #fec; color: #432;}
+
+/* Links */
+a:link { color: #d52;}
+a:visited { color: #963; }
+a:hover, a:active { color: #f30; } 
+#hd a, #ft a, div.side-sect a { text-decoration: none; }
+#hd a:link, #hd a:visited, #ft a:link, #ft a:visited { color: #e6d6b0; }
+#hd a:hover, div#hd a:active, #ft a:hover, #ft a:active { color: #eb5; }
+
+/* Headings */
+h1, h2, h3, h4, caption, label { color: #432; font-weight: bold; font-family: "trebuchet ms"; }
+h2 { font-size: 167%; }
+h3 { font-size: 122%; }
+
+/* Structural divs */
+body { background: #b3a15a; color: #222; font-family: verdana; }
+div#bd { background: #fec; border-left: 1px #432 solid; border-right: 1px #432 solid; }
+div#yui-main div.yui-b { background: #fec; border: 0px solid; }
+div.yui-b { background: #e6d6b0; border-left: 1px #432 solid; border-bottom: 1px #432 solid; }
+div.side-sect { border-bottom: 1px #432 solid; }
+div.last { border-bottom: 0px solid; }
+div#ft { background: #432; color: #b3a15a; text-align: center; }
+
+/* General Block styles */
+blockquote { background: #e6d6b0; border-left: 2px #432 solid; }
+pre { background: #e6d6b0; border: 1px #432 solid; font-size: 93%; }
+p.signature { 
+	background: #e6d6b0; 
+	border-left: 6px #432 solid;
+	border-top: 1px #432 solid;
+	border-right: 1px #432 solid; 
+	border-bottom: 1px #432 solid; 
+}
+
+/* Comments */
+#commentlist p.signature, #preview p.signature { border-top: none; }
+#commentlist blockquote.comment, #preview blockquote.comment { border: 1px #432 dotted; background: #fec;}
+
+/* Linkroll */
+div.delicious-posts h2 {color: #432; font-weight: bold; font-family: "trebuchet ms"; font-size: 122%;}
+#delicious-posts-evangoer p {padding: 0px; margin: 0px; display: inline;}
+#delicious-posts-evangoer ul {list-style-type: square; margin-left: 15px;} 
+
+/* General inline styles */
+cite, em, var {font-style: italic;}
+strong {font-style: italic; color: #963;}
+code { color: #963; font-size: 93%;}
+pre code { color: #222; font-size: 100%;}
+textarea, input { background: #e6d6b0; }
+textarea, input[type='text'] { font-family: courier; }
+input[type='submit'], input[type='button'] { background: #432; color: #b3a15a;}
+
+/* List bullets and numbering */
+#yui-main ul li { list-style-type: disc; }
+#yui-main ul ul li { list-style-type: square; }
+#yui-main ol li { list-style-type: decimal; }
+#yui-main ol ol li { list-style-type: lower-alpha; }

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>Safari v73 LI-float bleeding</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css">
+			
+  .right {
+	float:right;
+	width:300px;
+	background:#cfc;
+	border: 1px #000 solid;
+  }
+
+  .main {
+  	padding-left: 35px;
+  	border: 1px #f00 solid;
+  }	
+		
+</style>
+
+</head>
+
+<body>
+
+
+<div class="right">
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+</div>
+
+<div class="main">
+This is a paragraph.  The paragraph does not make its way into the floated div to the right, no matter how you adjust the window size. Unfortunately, this is not the case with list items:
+<p>
+This is a paragraph.  The paragraph does not make its way into the floated div to the right, no matter how you adjust the window size. Unfortunately, this is not the case with list items:
+</p>
+</div>
+</body>
+</html>

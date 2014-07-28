@@ -1,0 +1,19 @@
+h2, h3, h4 { font-family: Georgia, Verdana, Helvetica, sans-serif; color: #336699; }
+h2.bluetitle, b.entrytitle { font-family: Geneva, Georgia, Verdana, Helvetica, sans-serif; font-weight: bold; color: #336699;}
+h3.bluetitle, span.bluetitle { font-family: Georgia, Verdana, Helvetica, sans-serif; font-weight: bold; color: #FFFFCC; text-align: center; }
+p, li, dt, dd, ol, ul, td { font-family: Georgia, Verdana, Helvetica, sans-serif;}
+th.head { background-color: #FF9966; color: #FFFFFF; }
+th.cal { background-color: #339966; color: #FFFFFF; }
+td.cal { background-color: #FFFFCC; }
+a.title { font: bold large Georgia, Verdana, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none; }
+a.greennav, td.green, a.bluenav, td.blue, a.bluenavsel, td.yellow, td.black 
+  { font-family: Georgia, Verdana, Helvetica, sans-serif}
+a.greennav, td.green { font-weight: bold; color: #FFFFFF; background-color: #339966}
+a.bluenav, td.blue, td.blue a, span.entrylink a { color: #FFFFCC; background-color: #336699}
+a.bluenavsel { font-weight: bold; color: #FFFF00; background-color: #336699; text-decoration: none; }
+td.yellow { font-weight: bold; color: #000000; background-color: #FFFF00 }
+td.black { color: #FFFFFF; background-color: #000000 }
+p.bluesig { font: bold medium Arioso, sans-serif; color: #FFFFCC; }
+a:hover {text-decoration: underline; color: #FF0000}
+code { font-size: medium; font-family: "Courier New", monospace; color: #663300}
+pre { font-family: monospace; }
