@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cellpadding and Cellspacing - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Cellpadding and Cellspacing</h1> 
+			<p>
+				The <code>&lt;table&gt;</code> element has three attributes that provide some basic control over the spacing around table cells: <code class="attribute">border</code>, <code class="attribute">cellpadding</code>, and <code class="attribute">cellspacing</code>. These three table attributes are similar to the CSS properties <code>border</code>, <code>padding</code>, and <code>margin</code>. Let&#8217;s see how they work.
+			</p>
+			<p>
+				First we&#8217;ll create a table with no borders, cellpadding, or cellspacing. In order to make things easier to see, we&#8217;ll use CSS to color the background of the table (green) and the individual table cells (yellow).
+			</p>
+			<div class="example">
+				<h4>
+					Example 4.6. Table: No Spacing
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    table { background: #009900; }
+    td { background: #ffff00; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table
+    border="0" cellpadding="0" cellspacing="0"
+    summary="No padding, spacing, or borders"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Left Cell&lt;/td&gt;
+      &lt;td&gt;Middle Cell&lt;/td&gt;
+      &lt;td&gt;Right Cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				With no border, cellspacing, or cellpadding, our three cells are so cramped that we can&#8217;t see the green background of the table &mdash; just the yellow background of the individual cells. Let&#8217;s try setting each of these attributes to <code>"5"</code> five pixels) separately. We&#8217;ll maintain the same green and yellow coloring scheme.
+			</p>
+			<div class="example">
+				<h4>
+					Example 4.7. Table: 5px Spacing
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    table { background: #009900; }
+    td { background: #ffff00; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h4&gt;5px Border&lt;/h4&gt;
+  &lt;table
+    border="5" cellpadding="0" cellspacing="0"
+    summary="Table with a 5px border"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Left Cell&lt;/td&gt;
+      &lt;td&gt;Middle Cell&lt;/td&gt;
+      &lt;td&gt;Right Cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+  &lt;h4&gt;5px Cellpadding&lt;/h4&gt;
+  &lt;table
+    border="0" cellpadding="5" cellspacing="0"
+    summary="Table with 5px cellpadding"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Left Cell&lt;/td&gt;
+      &lt;td&gt;Middle Cell&lt;/td&gt;
+      &lt;td&gt;Right Cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+  &lt;h4&gt;5px Cellspacing&lt;/h4&gt;
+  &lt;table
+    border="0" cellpadding="0" cellspacing="5"
+    summary="Table with 5px cellspacing"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Left Cell&lt;/td&gt;
+      &lt;td&gt;Middle Cell&lt;/td&gt;
+      &lt;td&gt;Right Cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				What are the results?
+			</p>
+			<ul>
+				<li>
+					<p>
+						In the first table, <code>border="5"</code>. We see a five-pixel border around the edge of the table.
+					</p>
+				</li>
+				<li>
+					<p>
+						In the second table, <code>cellpadding="5"</code>. The size of each cell has expanded by five pixels in every direction.
+					</p>
+				</li>
+				<li>
+					<p>
+						In the third table, <code>cellspacing="5"</code>. Each cell is separated from its neighbors by five pixels. This spacing enables us to see the green background of the table itself.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Finally, let&#8217;s set all three attributes. We&#8217;ll set the border to 5px, the cellspacing to 10px, and the cellpadding to 20px.
+			</p>
+			<div class="example">
+				<h4>
+					Example 4.8. Table: Variable Spacing
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    table { background: #009900;}
+    td { background: #ffff00; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table
+    border="5" cellpadding="20" cellspacing="10"
+    summary="Table with a 5px border,
+      20px cellpadding, and 10px cellspacing"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Left Cell&lt;/td&gt;
+      &lt;td&gt;Middle Cell&lt;/td&gt;
+      &lt;td&gt;Right Cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				The ridged border around the table is five pixels wide, the cells are ten pixels apart, and the cells themselves have twenty pixels of padding. Some browsers will display the border colored with the background color, green; others will leave the ridged border colorless.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/attributes/'] = "Attributes";
+				$seealsoLink['/HTML/intermediate/margins_and_padding/'] = "Margins and Padding";
+				$seealsoLink['/HTML/tables/table_structure/'] = "Table Structure";
+				$seealsoLink['/HTML/tables/tables_and_css/'] = "Tables and CSS";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

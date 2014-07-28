@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Control - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Font Control</h1>
+			<p>
+				In our earlier section about <a href="../../basic/font_styles/" title="Font Styles">font styles</a>, we looked at the effects of the <code>em</code> and <code>strong</code> elements on text. While these elements enable you to apply some simple font changes (italic, bold), it would be nice to have more options.
+			</p>
+			<p>
+				Now that we&#8217;ve covered the basics of style sheets, it&#8217;s time to examine more sophisticated methods of font control. CSS font control is divided into three main components:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code><a href="#font_family" title="The font-family Property">font-family</a></code>: What is the name of the font?
+					</p>
+				</li>
+				<li>
+					<p>
+						<code><a href="#font_size" title="The font-size Property">font-size</a></code>: How big is the font?
+					</p>
+				</li>
+				<li>
+					<p>
+						<code><a href="#font_weight" title="font-weight (boldness)">font-weight</a></code>: Is the font bold?
+					</p>
+				</li>
+				<li>
+					<p>
+						<code><a href="#font_style" title="font-style (italic)">font-style</a></code>: Is the font italic?
+					</p>
+				</li>
+				<li>
+					<p>
+						<code><a href="#text_decoration" title="text-decoration (underlines and more)">text-decoration</a></code>: Is the font underlined, struck through, &#8230;?
+					</p>
+				</li>
+			</ul>
+			<p>
+				We&#8217;ll tackle each of these properties one-at-a-time.
+			</p>
+			<h2 id="font_family">
+				The font-family Property
+			</h2>
+			<p>
+				The <code>font-family</code> property selects the name of the font you wish to use. This component is pretty straightforward:
+			</p>
+<pre>body { font-family: times new roman }</pre>
+			<p>
+				This CSS rule specifies that all text in the <code>body</code> should be in Times New Roman. Times New Roman isn&#8217;t necessarily a great font to use on the web, but it should be familiar to anyone who uses a word processor.
+			</p>
+			<h3>
+				Specifying Multiple Fonts
+			</h3>
+			<p>
+				One of the unavoidable issues of web design is that you can&#8217;t count on any particular browser rendering your page exactly the way you want it to be. Fonts are no exception. You might want your text to use some fancy font, but what if your reader&#8217;s browser doesn&#8217;t have that font available?
+			</p>
+			<p>
+				To resolve this issue, <code>font-family</code> enables you to specify multiple fonts. Here&#8217;s an example:
+			</p>
+<pre>body { font-family: georgia, palatino, times new roman, serif }</pre>
+			<p>
+				The list of fonts proceeds in descending order of importance. The browser first tries to display the font Georgia. If Georgia is not available, it will try Palatino; failing that, Times New Roman; and if all hope is lost, a <a href="#generic_fonts" title="Generic Fonts">generic serif font</a>.
+			</p>
+			<p>
+				There are some fonts that are <em>usually</em> available on on most people&#8217;s browsers. These include Times New Roman, Georgia, Palatino, Lucida, Impact, Trebuchet MS, Verdana, Comic Sans MS, Arial, Courier New, and Courier. However, even this impoverished selection is not always available. Worse, some of these &#8220;canonical&#8221; fonts are ill-suited for reading on a computer screen. Many websites declare their fonts to be &#8220;Arial, Helvetica, sans-serif&#8221;. But as accessibility expert Joe Clark says in his book <a href="http://joeclark.org/book/">Building Accessible Websites</a>:
+			</p>
+			<blockquote>
+				<p>
+					&#8220;Don&#8217;t use Helvetica. Typographic neophytes think Helvetica is &#8220;legible.&#8221; Try running a few tests with confusable characters like Il1i!Â¡|, 0OQ, aeso, S568, or quotation marks. Related grotesk typefaces like Univers suffer similarly. (One more time: Don&#8217;t use Arial. It&#8217;s a bastardized variant of Helvetica, it&#8217;s ugly, it bespeaks unsophistication, and it sticks you with all the same confusable characters as other grotesks.)&#8221;
+				</p>
+			</blockquote>
+			<h3 id="generic_fonts">
+				Generic Fonts
+			</h3>
+			<p>
+				If you specify the keyword &#8220;sans-serif&#8221; at the end of a list of fonts, this directs the browser to use some form of sans-serif. Specifying a generic font keyword is always a last resort, to be used if none of the fonts you name in your list are available.
+			</p>
+			<p>
+				There are five varieties of generic fonts, but only the first three are all that important.
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>sans-serif</code>: lacks decoration or flaring at the end of each stroke.
+					</p>
+					<p>
+						Examples include Verdana, Arial, and Geneva.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>serif</code>: has decoration or flaring at the end of some of its strokes.
+					</p>
+					<p>
+						Examples include Times New Roman, Garamond, and Georgia. Printed materials often use serif fonts, because the serifs make the characters easier to distinguish and thus, easier to read. However, on the web, the reverse can be true. On paper, the little complicated serifs are sharp and easy to distinguish, but on a fuzzy computer screen, it&#8217;s often easier on the eyes to use sans-serif.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>monospace</code>: uses the same width for each character, often used to represent computer code or terminal text.
+					</p>
+					<p>
+						Examples include Courier, Courier New, Monaco, and Andale Mono. The most well-supported monospace fonts are Courier and Courier New.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>cursive</code>: designed to mimic handwriting.
+					</p>
+					<p>
+						Examples include Brush Script MT, Aristocrat LET, and Comic Sans MS. The most well-supported cursive font is Comic Sans MS, a cartoony font designed to resemble a child&#8217;s writing. Most other cursive fonts are not well-supported.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>fantasy</code>: highly decorative.
+					</p>
+					<p>
+						Examples include Impact and Copperplate. Most fantasy fonts are not well-supported.
+					</p>
+				</li>
+			</ul>
+			<h2 id="font_size">
+				The font-size Property
+			</h2>
+			<p>
+				The <code>font-size</code> property enables you to specify your font size in a number of absolute and relative ways:
+			</p>
+			<ul>
+				<li>
+					<p>
+						points (&#8221;<code>font-size: 12pt</code>&#8220;): Measured in &#8220;points&#8221; (units of 1/72 of an inch).
+					</p>
+				</li>
+				<li>
+					<p>
+						pixels (&#8221;<code>font-size: 14px</code>&#8220;): Measured in screen pixels.
+					</p>
+				</li>
+				<li>
+					<p>
+						percentages (&#8221;<code>font-size: 150%</code>&#8220;): Measured relative to the default font or the parent element&#8217;s font. A font size of &#8220;<code>75%</code>&#8221; would shrink the font by a factor of 3/4.
+					</p>
+				</li>
+				<li>
+					<p>
+						em-widths (&#8221;<code>1.2em</code>&#8220;): (Not to be confused with the <code>em</code> element.) Measured relative to the default font or the parent element&#8217;s font. The value &#8220;<code>1.0em</code>&#8221; is the same as multiplying by one.
+					</p>
+				</li>
+				<li>
+					<p>
+						absolute keywords (&#8221;<code>x-large</code>&#8220;): Specifies one of seven sizes: <code>xx-small</code>, <code>x-small</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>x-large</code>, and <code>xx-large</code>. The exact interpretation of what constitutes &#8220;<code>medium</code>&#8221; or &#8220;<code>x-large</code>&#8221; varies from browser to browser.
+					</p>
+				</li>
+				<li>
+					<p>
+						relative keywords (&#8221;<code>larger</code>&#8220;): Bumps the font up one size or down one size from its default or inherited size. The options are <code>larger</code> and <code>smaller</code>.
+					</p>
+				</li>
+			</ul>
+			<div class="note">
+				<h4>
+					Note
+				</h4>
+				<p>
+					Always keep in mind that people can and will override your font size settings. All browsers provide a text-zoom function, and people with weak eyesight (think, &#8220;people over thirty&#8221;) are quick to make use of it.
+				</p>
+			</div>
+			<p>
+				Modern browsers handle these ways of specifying the font size reasonably well, although there are some inconsistencies. But in the older browsers, font size handling is spotty at best. For example:
+			</p>
+			<ul>
+				<li>
+					<p>
+						Old versions of <span class="application">Internet Explorer</span> used a default font size of <code>small</code> instead of <code>medium</code>.
+					</p>
+				</li>
+				<li>
+					<p>
+						For the size keywords, <span class="application">Netscape 4</span> used a <em>huge</em> scaling factor between the different size keywords. Using <code>xx-small</code> or <code>x-small</code> often made the text unreadable, <code>x-large</code> and <code>xx-large</code> were a sight to behold.
+					</p>
+				</li>
+				<li>
+					<p>
+						The only way to get consistent font sizes across all the old browsers was to use pixels (<code>px</code>). However, due to a bug in old versions of <span class="application">Internet Explorer</span>, using pixels disabled <span class="application">Internet Explorer</span>&#8217;s ability to resize the text! That&#8217;s why you&#8217;ll see some websites with &#8220;text resize buttons&#8221;, even though these buttons shouldn&#8217;t be necessary.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Although these issues are generally improving over time, it can be quite a struggle to get your font sizes looking consistent and resizing properly even in the newer browsers.
+			</p>
+			<div class="tip">
+				<h4>
+					Tip
+				</h4>
+				<p>
+					The Yahoo! User Interface team provides a <a href="http://developer.yahoo.com/yui/fonts/">free <code>fonts.css</code> file</a> that solves many of these consistency and resizing problems for you.
+				</p>
+			</div>
+			<h2 id="font_styling">
+				Additional font-styling
+			</h2>
+			<p>
+				Beyond specifying the font name and its size, you can further alter the font&#8217;s appearance. We&#8217;ve already covered how to change the text color in <a href="../../basic/colors/" title="Specifying Colors">&#8220;Colors&#8221;</a>. Further alterations include making the text bold (darker), italic (slanted), and much more.
+			</p>
+			<h3 id="font_weight">
+				font-weight (boldness)
+			</h3>
+			<p>
+				The <code>font-weight</code> component specifies how thick the font&#8217;s strokes should be. The important values to know are <code>normal</code> and <code>bold</code>.
+			</p>
+			<p>
+				You may also specify, <code>bolder</code>, <code>lighter</code>, or a number from 100 to 900. (400 corresponds to <code>normal</code> and 700 to <code>bold</code>.) However, these variations don&#8217;t do much even in the newer browsers. In general, everything 500 and above is just bold. There isn&#8217;t any such thing as <em>really</em> bold, at least not yet.
+			</p>
+			<p>
+				The <code>normal</code> option removes any boldness that has already been applied. For example, most browsers display <code>strong</code> as bold text. If you wanted to take this effect away, you could write <code>strong {font-weight: normal}</code>; in your style sheet.
+			</p>
+			<h3 id="font_style">
+				font-style (italic)
+			</h3>
+			<p>
+				The <code>font-style</code> component specifies whether or not the font is slanted (italic). The most commonly-used value is <code>italic</code>.
+			</p>
+			<p>
+				As with <code>font-weight</code>, there is also a value of <code>normal</code> that enable you to un-italicize something that would ordinarily be italicized. For a demonstration, refer to <a href="#styled_em" title="An Example: Styling the em Element">&#8220;An Example: Styling the <code>em</code> Element&#8221;</a>.
+			</p>
+			<h3 id="text_decoration">
+				text-decoration (underlines and more)
+			</h3>
+			<p>
+				Sadly, <code>text-decoration</code> doesn&#8217;t have a sensible, consistent name (such as &#8220;font-decoration&#8221;). But its purpose is similar to the components we&#8217;ve already discussed. <code>text-decoration</code> provides five options:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>none</code>: cancels all text-decoration.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>underline</code>: creates underlined text.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>overline</code>: creates overlined text.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>line-through</code>: creates line-through (&#8221;strike-through&#8221;) text.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>blink</code>: creates blinking text.
+					</p>
+				</li>
+			</ul>
+			<div class="caution">
+				<h4>
+					Caution
+				</h4>
+				<p>
+					Avoid using <code>blink</code>. Most people hate blinking text, and many browsers don&#8217;t implement this option anyway.
+				</p>
+				<p>
+					Take care using <code>underline</code>. Most people associated underlined text with hyperlinks. Avoid underlining your (non-link) text unless absolutely necessary.
+				</p>
+			</div>
+			<h2 id="styled_em">
+				An Example: Styling the <code>em</code> Element
+			</h2>
+			<p>
+				While most browsers display <code>em</code> as simply italic, there&#8217;s no intrinsic reason why this should be so &mdash; it just happens to be the convention. Let&#8217;s say that instead we want our <code>em</code> elements to be bold, red, and larger than our default font size. How would we do this?
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.14. Styled Elements
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Oh Better Far to Live and Die&lt;/title&gt;
+  &lt;style type="text/css"&gt;
+    p {
+      font-family: courier, monospace;
+      font-size: 12pt;
+    }
+    em {
+      font-style: normal;
+      font-weight: bold;
+	  font-size: 14pt;
+	  color: #ff0000;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;
+    KING:&lt;br&gt;
+    For... I &lt;em&gt;am&lt;/em&gt; a Pirate &lt;em&gt;King!&lt;/em&gt;&lt;br&gt;
+    And it is, it is a glorious thing&lt;br&gt;
+    To be a Pirate King!&lt;br&gt;
+    For I am a Pirate &lt;em&gt;King!&lt;/em&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    ALL:&lt;br&gt;
+    You are! &lt;br&gt;
+    &lt;em&gt;Hurrah&lt;/em&gt; for the Pirate King!
+  &lt;/p&gt;
+  &lt;p&gt;
+    KING:&lt;br&gt;
+    And it is, it is a glorious thing &lt;br&gt;
+    To be a Pirate King.
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				We&#8217;ve defined a default style for our paragraphs, and the <code>em</code> element style overrides it. Notice that we don&#8217;t have to specify the font-style for our paragraphs: the default value is normal (non-italic), and presumably we&#8217;re happy with that.
+			</p>
+			<p>
+				The font styling that we apply to the <code>p</code> element cascades down to the <code>em</code> element. Let&#8217;s take a look at what&#8217;s happening step-by-step.
+			</p>
+			<ol>
+				<li>
+						<code>font-family</code>:
+					<ul>
+						<li><code>p</code> element: set to <code>courier, monospace</code>. If the browser can display Courier it will; otherwise it will serve up a generic monospace font.</li>
+						<li><code>em</code> element: inherits its font-family from the parent element, <code>p</code>.</li>
+					</ul>
+				</li>
+				<li>
+					<code>font-size</code>:
+					<ul>
+						<li><code>p</code> element: set to <code>12pt</code>.</li>
+						<li><code>em</code> element: set to <code>14pt</code>, overriding its parent.</li>
+					</ul>
+				</li>
+				<li>
+					<code>font-weight</code>:
+					<ul>
+						<li><code>p</code> element: not set; takes on the default value of <code>normal</code>.</li>
+						<li><code>em</code> element: set to <code>bold</code>, overriding the default <code>em</code> value of <code>normal</code>.</li>
+					</ul>
+				</li>
+				<li>
+					<code>font-style</code>:
+					<ul>
+						<li><code>p</code> element: not set; takes on the default value of <code>normal</code>.</li>
+						<li><code>em</code> element: set to <code>normal</code>, overriding the default <code>em</code> value of <code>italic</code>.</li>
+					</ul>
+				</li>
+				<li>
+					<code>color</code>:
+					<ul>
+						<li><code>p</code> element: not set; takes on the default value of <code>#000000</code>.</li>
+						<li><code>em</code> element: set to <code>#ff0000</code>, overriding the default <code>em</code> value of <code>#000000</code>.</li>
+					</ul>
+				</li>
+			</ol>
+			<h2 id="font_shorthand">
+				Font Shorthand Notation
+			</h2>
+			<p>
+				Typing <code>font-family</code>, <code>font-size</code>, and <code>font-style</code> over and over again can get cumbersome. Fortunately, there is a shorthand for all of these properties with a simple name, <code>font</code>. You need merely place the desired values in the proper order. This shorthand only encompasses the properties that begin with &#8220;font-&#8221;, so if you want to do something else such as underlining text, you still need to use the appropriate property, <code>text-decoration</code>.
+			</p>
+			<p>
+				Here is the order of the properties:
+			</p>
+			<ol>
+				<li><code>font-style</code> or <code>font-weight</code> or both</li>
+				<li><code>font-size</code></li>
+				<li><code>font-family</code></li>
+			</ol>
+			<p>
+				You may leave out any of these properties except for the <code>font-family</code>, as long as everything is in the proper order. Let&#8217;s take a look at an example of some paragraph classes.
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.15. The font Property
+				</h4>
+				<pre class="html">
+					p {
+						font: verdana, sans-serif;
+					}
+					p.styled {
+						font: 12pt verdana, sans-serif;
+					}
+					p.reallystyled {
+						font: bold italic 9pt verdana, sans-serif;
+						text-decoration: underline;
+						color: #008000;
+					}
+				</pre>
+			</div>
+			<p>
+				The default paragraph is just Verdana, in whatever font size the page default is currently in. The standard class, <code>styled</code>, is 12pt Verdana. The second class, <code>reallystyled</code>, is 9pt bold italic underlined green Verdana.
+			</p>
+			<p>
+				The <code>font</code> property makes things a bit more elegant, but keep in mind that some browsers will display styles that are not properly ordered, while others are more strict about following the rules. To be safe, always verify that that your <code>font</code> declarations are in the proper order before proceeding.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/basic/colors/'] = "Colors";
+				$seealsoLink['/HTML/basic/font_styles/'] = "Font Styles";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/classes_and_ids/'] = "Classes and IDs";
+				$seealsoLink['/HTML/intermediate/div_and_span/'] = "Div and Span";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

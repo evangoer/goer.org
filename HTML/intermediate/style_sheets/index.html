@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Sheets - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Style Sheets</h1> 
+			<p>
+				Every time we&#8217;ve specified <code>style="(something)"</code>, we&#8217;ve actually created a <dfn>CSS rule</dfn>. Although CSS (Cascading Style Sheets) is a different language from HTML proper, it is an indispensable tool for controlling the appearance of your website. Think of each webpage as having three components:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<b>Structure</b>: The markup is like the page&#8217;s <em>skeleton</em>. It provides the basic structure for the page: headings, sections, paragraphs, lists, and more. Without structure, your web page would just be an undifferentiated blob of text.
+					</p>
+				</li>
+				<li>
+					<p>
+						<b>Content</b>: The content (text, images, and even audio or video), is like the page&#8217;s <em>flesh</em>. This is the &#8220;meat&#8221; of the page. Without content, there&#8217;s nothing to read, and no reason to visit the page in the first place.
+					</p>
+				</li>
+				<li>
+					<p>
+						<b>Presentation</b>: The CSS is the page&#8217;s <em>skin, hair, clothes, and makeup</em>. Without presentation, your page might be readable, but it won&#8217;t be very attractive.
+					</p>
+				</li>
+			</ul>
+			<p>
+				So far we&#8217;ve only been working with individual styles applied to individual elements. Although this works, it is not the most efficient way to apply our styles. A far better technique is to collect all our CSS rules in one place, a style sheet, and then apply the style sheet to every single element on the page&#8230; or for that matter, every single element throughout the entire website. Let&#8217;s see how this works.
+			</p>
+			<h2>
+				Embedded Style Sheets
+			</h2>
+			<p>
+				An embedded style sheet affects every element on the page. In order to create an embedded style sheet, we need to go to the <code>head</code> of the document. (Remember the <a href="../../introduction/structure/" title="Structure of the Simple Webpage"><code>head</code> element</a>? Finally, here&#8217;s something else that goes there besides the <code>title</code> element.)
+			</p>
+			<p>
+				Here&#8217;s an example of an embedded style sheet (please forgive the garish green-on-yellow):
+			</p>
+			<div class="example" id="ex_irish1">
+				<h4>
+					Example 3.3. All Green Paragraphs
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;When Irish Eyes Are Smiling&lt;/title&gt;
+  &lt;style type="text/css"&gt;
+    p {color: #008000; background: #ffff00}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;When &lt;em&gt;Irish Eyes&lt;/em&gt; Are Smiling&lt;/h1&gt;
+  &lt;p&gt;
+    Here's how the chorus goes:
+  &lt;/p&gt;
+  &lt;p&gt;
+    When Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, 'tis like the morn in Spring.&lt;/em&gt;&lt;br&gt;
+    In the lilt of Irish laughter&lt;br&gt;
+    &lt;em&gt;You can hear the angels sing.&lt;/em&gt;&lt;br&gt;
+    When Irish hearts are happy,&lt;br&gt;
+    &lt;em&gt;All the world seems bright and gay.&lt;/em&gt;&lt;br&gt;
+    And when Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, they steal your heart away.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				The syntax is a little different from what we are used to, but the core idea (the CSS rule) should look familiar. Let&#8217;s examine the style sheet&#8217;s components:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>&lt;style type="text/css"&gt;</code>: The <code>style</code> element indicates the beginning of the style sheet. It must go inside the <code>head</code>. The <code>type</code> attribute specifies that you are using a CSS style sheet, as opposed to using some other, yet-to-be-invented style sheet language. It&#8217;s a bit silly, but the HTML specification requires it, so go ahead and add it.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>p</code>: The <dfn>CSS selector</dfn>. This says, &#8220;do something to all <code>p</code> elements.&#8221;
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>{color: #008000; background: #ffff00}</code>: The <dfn>CSS declarations</dfn>. We&#8217;ve seen these before in the <code>style</code> element, although without the curly braces. Together with the selector <code>p</code>, the declarations constitute a CSS rule: &#8220;make all paragraphs green text with a bright yellow background.&#8221; As mentioned in <a href="../../basic/colors/#bgcolor" title="Background Color">&#8220;Background Color&#8221;</a>, you must separate multiple declarations with a semicolon.
+					</p>
+				</li>
+			</ul>
+			<div class="note">
+				<h4>
+					Note
+				</h4>
+				<p>
+					You will sometimes see people wrap their embedded CSS rules in an HTML comment, like so: <code class="sgmltag-starttag">&lt;style&gt;</code><code class="sgmltag-sgmlcomment">&lt;!-- p {color: #008000;} --&gt;</code><code class="sgmltag-endtag">&lt;/style&gt;</code>. This is a trick that hides your CSS rules from extremely ancient browsers that cannot process CSS at all, namely <span class="application"><a href="http://www.ncsa.illinois.edu/Projects/mosaic.html">Mosaic</a></span> and <span class="application"><a href="http://www.andrewturnbull.net/nscape1.html">Netscape Navigator 1.0</a></span>. Fortunately, these browsers are long-dead, and there is no need to do this anymore.
+				</p>
+			</div>
+			<p>
+				Now, we could have achieved the same effect by adding these declarations to the <code>style</code> attribute of each paragraph. The key difference is that the style sheet affects <em>all</em> paragraphs. The selector enables us to specify the declarations <em>once</em>, and the browser then applies them to all elements that match the selector.
+			</p>
+			<h2>
+				Multiple CSS Rules and Selectors
+			</h2>
+			<p>
+				You may specify as many rules as you like in a style sheet. Consider the following:
+			</p>
+			<div class="example" id="ex_irish2">
+				<h4>
+					Example 3.4. Green Paragraphs, Red Body
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;When Irish Eyes Are Smiling&lt;/title&gt;
+  &lt;style&gt;
+    body {background: #ff0000}
+    p {color: #008000; background: #ffff00}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;When &lt;em&gt;Irish Eyes&lt;/em&gt; Are Smiling&lt;/h1&gt;
+  &lt;p&gt;
+    Here's how the chorus goes:
+  &lt;/p&gt;
+  &lt;p&gt;
+    When Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, 'tis like the morn in Spring.&lt;/em&gt;&lt;br&gt;
+    In the lilt of Irish laughter&lt;br&gt;
+    &lt;em&gt;You can hear the angels sing.&lt;/em&gt;&lt;br&gt;
+    When Irish hearts are happy,&lt;br&gt;
+    &lt;em&gt;All the world seems bright and gay.&lt;/em&gt;&lt;br&gt;
+    And when Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, they steal your heart away.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				Here we&#8217;ve specified that the body of the page should have a red background, while all paragraphs should have a yellow background with green text. This color combination is so awful that I am loathe to discuss this example further. Let&#8217;s move on.
+			</p>
+			<p>
+				The key feature of CSS rules is that they are reusable. We&#8217;ve already seen that we can use them to apply a set of CSS declarations to, say, all <code>p</code> elements. But it gets better &mdash; we can also give a rule with multiple selectors. Just separate the selectors with commas:
+			</p>
+<pre><var class="replaceable"><code>element1</code></var>, <var class="replaceable"><code>element2</code></var> { <var class="replaceable"><code>declarations</code></var> }</pre>
+			<p>
+				This applies the declarations to both <code><var class="replaceable"><code>element1</code></var></code> and <code><var class="replaceable"><code>element2</code></var></code>. For example:
+			</p>
+			<div class="example"  id="ex_irish3">
+				<h4>
+					Example 3.5. Green Paragraphs and Headings
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;When Irish Eyes Are Smiling&lt;/title&gt;
+  &lt;style&gt;
+    p, h1 {color: #008000; background: #ffff00}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;When &lt;em&gt;Irish Eyes&lt;/em&gt; Are Smiling&lt;/h1&gt;
+  &lt;p&gt;
+    Here's how the chorus goes:
+  &lt;/p&gt;
+  &lt;p&gt;
+    When Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, 'tis like the morn in Spring.&lt;/em&gt;&lt;br&gt;
+    In the lilt of Irish laughter&lt;br&gt;
+    &lt;em&gt;You can hear the angels sing.&lt;/em&gt;&lt;br&gt;
+    When Irish hearts are happy,&lt;br&gt;
+    &lt;em&gt;All the world seems bright and gay.&lt;/em&gt;&lt;br&gt;
+    And when Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, they steal your heart away.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				Now the green text and yellow background applies to paragraphs <em>and</em> level 1 headings.
+			</p>
+			<p>
+				So far, we&#8217;ve only seen simple selectors that just select a single element. However, you can design selectors to be more &#8220;choosy&#8221; than this. One of the most useful variations is:
+			</p>
+<pre><var class="replaceable"><code>element1</code></var> <var class="replaceable"><code>element2</code></var> { <var class="replaceable"><code>declarations</code></var> }</pre>
+			<p>
+				This looks similar to <a href="#ex_irish3" title="Example&nbsp;3.5.&nbsp;Green Paragraphs and Headings">Example 3.5, &#8220;Green Paragraphs and Headings&#8221;</a>, but notice there is no comma between the elements. That one little comma makes a big difference. This rule applies its declarations only to <code>element2</code>s that are contained within <code>element1</code>s. Let&#8217;s see how this works:
+			</p>
+			<div class="example" id="ex_irish4">
+				<h4>
+					Example 3.6. Green paragraphs, Blue <code>em</code>s
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;When Irish Eyes Are Smiling&lt;/title&gt;
+  &lt;style&gt;
+    p {color: #008000; background: #ffff00}
+    h1 em { color: #0000ff }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;When &lt;em&gt;Irish Eyes&lt;/em&gt; Are Smiling&lt;/h1&gt;
+  &lt;p&gt;
+    Here's how the chorus goes:
+  &lt;/p&gt;
+  &lt;p&gt;
+    When Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, 'tis like the morn in Spring.&lt;/em&gt;&lt;br&gt;
+    In the lilt of Irish laughter&lt;br&gt;
+    &lt;em&gt;You can hear the angels sing.&lt;/em&gt;&lt;br&gt;
+    When Irish hearts are happy,&lt;br&gt;
+    &lt;em&gt;All the world seems bright and gay.&lt;/em&gt;&lt;br&gt;
+    And when Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, they steal your heart away.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				This specifies <code>em</code> elements to be blue, <em>if and only if</em> they are contained within an <code>h1</code>. The em in the <code>h1</code> at the top of the page turns blue, but the <code>em</code>s in the paragraphs below are unaffected.
+			</p>
+			<p>
+				We&#8217;ll see a couple more examples of useful selectors in <a href="../classes_and_ids/" title="Reusing Styles">&#8220;Classes and IDs&#8221;</a>. For a complete list of selector syntax, refer to the <a href="http://www.w3.org/TR/CSS2/selector.html">official CSS specification</a>.
+			</p>
+			<h2 id="css_cascading">
+				Style Sheet Cascading
+			</h2>
+			<p>
+				What happens when CSS rules conflict? Here&#8217;s where the &#8220;Cascading&#8221; part of Cascading Style Sheets comes in. The <a href="http://www.w3.org/TR/CSS2/cascade.html">official rules are complicated</a>, but they basically boil down to &#8220;whichever CSS rule is &#8216;nearer&#8217; or &#8216;more specific&#8217; wins.&#8221;
+			</p>
+			<p>
+				Returning to our song lyric example, let&#8217;s say we didn&#8217;t want the first paragraph to be in green text:
+			</p>
+			<div class="example" id="ex_irish5">
+				<h4>
+					Example 3.7. One Green Paragraph
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;When Irish Eyes Are Smiling&lt;/title&gt;
+  &lt;style type="text/css"&gt;
+    p {color: #008000; background: #ffff00}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;When &lt;em&gt;Irish Eyes&lt;/em&gt; Are Smiling&lt;/h1&gt;
+  &lt;p style="color: #000000"&gt;
+    Here's how the chorus goes:
+  &lt;/p&gt;
+  &lt;p&gt;
+    When Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, 'tis like the morn in Spring.&lt;/em&gt;&lt;br&gt;
+    In the lilt of Irish laughter&lt;br&gt;
+    &lt;em&gt;You can hear the angels sing.&lt;/em&gt;&lt;br&gt;
+    When Irish hearts are happy,&lt;br&gt;
+    &lt;em&gt;All the world seems bright and gay.&lt;/em&gt;&lt;br&gt;
+    And when Irish eyes are smiling,&lt;br&gt;
+    &lt;em&gt;Sure, they steal your heart away.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				The first paragraph has black text. Our style attribute is more specific than the general page-level CSS, and so the black-text rule overrides the green-text rule. However, the paragraph still has a yellow background. The yellow-background rule cascades down to this paragraph, because we didn&#8217;t specify anything about it.
+			</p>
+			<p>
+				Another important cascading rule is that parent elements apply their style to their children (enclosed elements). Rules applied to the <code>body</code> element cascade down to enclosed <code>p</code> elements, rules applied to <code>p</code> elements cascade down to enclosed <code>em</code> elements, and so on. In fact, we saw this form of cascading in <a href="#ex_irish2" title="Example&nbsp;3.4.&nbsp;Green Paragraphs, Red Body">Example 3.4, &#8220;Green Paragraphs, Red Body&#8221;</a>. The background of the page is red, and any child elements also have a red background&#8230; except for paragraphs, which specifically override this rule.
+			</p>
+			<h2>
+				Reusable Style Sheets
+			</h2>
+			<p>
+				What&#8217;s better than applying styles to an entire page? Applying it to an entire website.
+			</p>
+			<p>
+				CSS enables you to place your style sheet in a separate file. The stylesheet then becomes a central repository of CSS rules that you can apply to any page in a site. There are two ways to &#8220;call&#8221; a global style sheet into a given page:
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.8. Global Style Sheets: The &#8220;link&#8221; Method
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;When Irish Eyes Are Smiling&lt;/title&gt;
+  &lt;link rel="stylesheet" href="/css/style1.css" type="text/css"&gt;
+  &lt;link rel="stylesheet" href="/css/style2.css" type="text/css"&gt;
+  &lt;style&gt;
+    p {color: #008000; background: #ffff00}
+  &lt;/style&gt;
+&lt;/head&gt;</pre>
+			</div>
+			<div class="example">
+				<h4>
+					Example 3.9. Global Style Sheets: The &#8220;@import&#8221; Method
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;When Irish Eyes Are Smiling&lt;/title&gt;
+  &lt;style&gt;
+    @import url("/css/styles3.css");
+    @import url("/morecss/styles4.css");
+    body {background: #ff0000}
+    p {color: #008000; background: #ffff00}
+  &lt;/style&gt;
+&lt;/head&gt;</pre>
+			</div>
+			<p>
+				The two methods have bizarrely different syntax, but functionally they are similar. They both allow you to specify multiple stylesheet files, and you may use them both in conjunction with an embedded style sheet.
+			</p>
+			<p>
+				A linked style sheet also affects the rules for <a href="#css_cascading" title="Style Sheet Cascading">cascading</a>:
+			</p>
+			<ul>
+				<li>
+					<p>
+						A rule in a linked style sheet has low priority.
+					</p>
+				</li>
+				<li>
+					<p>
+						A rule in an embedded style sheet has medium priority.
+					</p>
+				</li>
+				<li>
+					<p>
+						A declaration in a <code>style</code> attribute has high priority.
+					</p>
+				</li>
+			</ul>
+			<p>
+				This means you can specify a style in a linked style sheet, override that style for a particular page, and then override it <em>again</em> for a particular element. For example, if we have the page:
+			</p>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;What is your favorite color?&lt;/title&gt;
+  &lt;link rel="stylesheet" href="/css/style.css" type="text/css"&gt;
+  &lt;style&gt;
+    em {color: yellow}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  My favorite color is &lt;em style="color: blue"&gt;blue&lt;/em&gt;.
+&lt;/body&gt;</pre>
+			<p>
+				and the linked stylesheet &#8220;<code class="filename">style.css</code>&#8221; contains:
+			</p>
+<pre>em {color: blue}</pre>
+			<p>
+				then the browser uses the following logic to color the <code>em</code>:
+			</p>
+			<ol>
+				<li>
+					<p>
+						The linked style sheet specifies the <code>em</code> to be blue.
+					</p>
+				</li>
+				<li>
+					<p>
+						The embedded style sheet specifies the <code>em</code> to be yellow, overriding the linked style sheet.
+					</p>
+				</li>
+				<li>
+					<p>
+						The <code>style</code> attribute specifies the <code>em</code> to be blue again, overriding the embedded style sheet.
+					</p>
+				</li>
+			</ol>
+			<p>
+				So the resulting color is &#8220;blue&#8221;. Whew.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/structure/'] = "Structure";
+				$seealsoLink['/HTML/basic/paragraph_breaks/'] = "Paragraph Breaks";
+				$seealsoLink['/HTML/basic/headings/'] = "Headings";
+				$seealsoLink['/HTML/intermediate/style_attribute/'] = "The style Attribute";
+				$seealsoLink['/HTML/intermediate/classes_and_ids/'] = "Classes and IDs";
+				$seealsoLink['/HTML/intermediate/font_control/'] = "Font Control";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

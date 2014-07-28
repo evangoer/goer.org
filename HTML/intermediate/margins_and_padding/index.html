@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Model: Margins and Padding - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Box Model: Margins and Padding</h1> 
+			<p>
+				Now that we&#8217;ve covered <a href="../borders/">borders</a>, let&#8217;s return to our examination of the box model.
+			</p>
+			<div class="figure" id="fig_boxbasic">
+				<h4>Figure 3.2. The Box Model (Again)</h4>
+				<p><img src="/images/html/boxbasic.png" alt="The Box Model"></p>
+			</div>
+			<h2>
+				Padding
+			</h2>
+			<p>
+				In <a href="../borders/" title="Borders">&#8220;Borders&#8221;</a>, you might have noticed that in all border examples, the text and the borders were rather close together.
+			</p>
+			<p>
+				An element&#8217;s padding is the element&#8217;s &#8220;extra space inside the border&#8221;. There are four padding properties: <code>padding-top</code>, <code>padding-bottom</code>, <code>padding-left</code>, and <code>padding-right</code>. You may set these values to <code>px</code>, <code>em</code>, percentages, or any other valid length unit.
+			</p>
+			<p>
+				Let&#8217;s take a look at an example. <a href="#ex_padding" title="Example&nbsp;3.19.&nbsp;Non-uniform Padding">Example 3.19, &#8220;Non-uniform Padding&#8221;</a> specifies two CSS rules:
+			</p>
+			<ul>
+				<li>
+					<p>
+						The first rule applies to all <code>div</code> elements, and changes the background, the text color, and the font family. The gray background is necessary so that we can easily see padding for all divs, while the other two properties are purely cosmetic.
+					</p>
+				</li>
+				<li>
+					<p>
+						The second rule applies only to <code>div</code> elements with a class of <code>padded</code>. Any <code>div</code> with this class will have special, non-uniform padding.
+					</p>
+				</li>
+			</ul>
+			<div class="example" id="ex_padding">
+				<h4>
+					Example 3.19. Non-uniform Padding
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    div {
+      background: #444;
+      color: white;
+    }
+
+    div.padded {
+      padding-top: 10px;
+      padding-right: 0px;
+      padding-bottom: 0.25in;
+      padding-left: 5em;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div&gt;
+    No padding (but some style added)
+  &lt;/div&gt;
+  &lt;br&gt;
+  &lt;div class="padded"&gt;
+    Padded&lt;br&gt;
+    Top: 10px; bottom: 0px&lt;br&gt;
+    Left: 5em; right: 0px
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				The example includes a <code>padded</code> div, followed an ordinary div for comparison. The padded div has padding that varies for each side of text, as we specified. It turns out that 5em (&#8221;five m-widths&#8221;) is considerably larger than 10px, so the text looks shoved over to the right. As for the ordinary div, we didn&#8217;t specify any padding rules for it, so it takes the browser default padding: 0px on all sides.
+			</p>
+			<h3 id="padding_shorthand">
+				Padding Shorthand Notation
+			</h3>
+			<p>
+				There is also a shorthand property, <code>padding</code>. This property allows you to specify all your padding on one line:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>padding: 20px</code> &mdash; Padding for all four sides is 20 pixels.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>padding: 20px 80px</code> &mdash; Padding for the top and bottom is 20 pixels, the left and right is 80 pixels.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>padding: 20px 80px 10px</code> &mdash; Padding for the top is 20 pixels, the left and right is 80 pixels, and the bottom is 10 pixels.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>padding: 20px 80px 10px 40px</code> &mdash; Padding for the top is 20 pixels, the right is 80 pixels, the bottom is 10 pixels, and the left is 40 pixels.
+					</p>
+				</li>
+			</ul>
+			<p>
+				As with the previous example, <a href="#ex_paddingshort" title="Example&nbsp;3.20.&nbsp;Shorthand Padding">Example 3.20, &#8220;Shorthand Padding&#8221;</a> provides basic styling for all <code>div</code>s, and then uses classes to change the padding for specific <code>div</code>s. For additional decoration, we&#8217;ve also added a dark red border to each div.
+			</p>
+			<div class="example" id="ex_paddingshort">
+				<h4>Example 3.20. Shorthand Padding</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    div {
+      background: #444;
+      color: white;
+      border: #600 6px ridge;
+    }
+
+    div.one {
+      padding: 20px;
+    }
+
+    div.two {
+      padding: 20px 80px;
+    }
+
+    div.three {
+      padding: 20px 80px 10px;
+    }
+
+    div.four {
+      padding: 20px 80px 10px 40px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="one"&gt;
+    padding: 20px (all)
+  &lt;/div&gt;
+  &lt;br&gt;
+  &lt;div class="two"&gt;
+    padding: 20px 40px (top/bottom, right/left)
+  &lt;/div&gt;
+  &lt;br&gt;
+  &lt;div class="three"&gt;
+    padding: 20px 40px 10px (top, right/left, bottom)
+  &lt;/div&gt;
+  &lt;br&gt;
+  &lt;div class="four"&gt;
+    padding: 20px 40px 10px 30px (top, right, bottom, left)
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				The padding is completely contained within the borders. For example, the inside edge of the first <code>div</code>&#8217;s border is 20px from the far left edge of the text. Try changing the size of the borders. Even if you make the border very thick, the padding stays the same thickness.
+			</p>
+			<p>
+				Of these four notations, the first (same padding for all sides) is the most commonly used and the easiest to remember. However, if you want to baffle and impress your web designer friends, you should memorize all four.
+			</p>
+			<h2>
+				Margins
+			</h2>
+			<p>
+				Margins are similar to padding. There are four margin properties: <code>margin-top</code>, <code>margin-bottom</code>, <code>margin-left</code>, and <code>margin-right</code>. There is also a shorthand property, <code>margin</code>, which uses the <a href="#padding_shorthand" title="Padding Shorthand Notation">same syntax as the <code>padding</code> property</a>.
+			</p>
+			<p>
+				The key difference between margins and padding is that padding adds extra space <em>inside</em> the border, while margins add extra space <em>outside</em> the border:
+			</p>
+			<div class="example" id="ex_margins">
+				<h4>
+					Example 3.21. Two Margin Blocks
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    div.even {
+      background: #cfc;
+      border: 1px solid;
+      padding: 5px;
+      margin: 40px;
+    }
+
+    div.uneven {
+      background: #fcf;
+      border: 1px solid;
+      padding: 5px;
+      margin-top: 20px;
+      margin-right: 10px;
+      margin-bottom: 40px;
+      margin-left: 80px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="even"&gt;
+    margin: 40px (all)&lt;br&gt;
+    padding: 5px (all)
+  &lt;/div&gt;
+  &lt;div class="uneven"&gt;
+    margin-top: 40px&lt;br&gt;
+    margin-right: 30px&lt;br&gt;
+    margin-left: 20px&lt;br&gt;
+    margin-bottom: 10px&lt;br&gt;
+    padding: 5px (all)
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				We&#8217;ve set the padding to a uniform 5px, and we&#8217;ve set the background color to provide a little contrast. The first box&#8217;s margin is set to a uniform 40px. The second box&#8217;s margin is set to four different values. (The equivalent shorthand setting is &#8220;<code>margin: 20px 10px 40px 80px</code>&#8221;.)
+			</p>
+			<h3 id="margin_collapse">
+				Collapsing Margins
+			</h3>
+			<p>
+				Without a border, it&#8217;s hard to tell the difference between the padding and the margin. One key difference is that the element&#8217;s background color applies to the padding, but not the margin. Another key difference is that vertical margins <dfn>collapse</dfn>.
+			</p>
+			<p>
+				At first glance you might guess that in <a href="#ex_margins" title="Example&nbsp;3.21.&nbsp;Two Margin Blocks">Example 3.21, &#8220;Two Margin Blocks&#8221;</a>, the vertical separation between the two inner blocks would be 60px: 40px for the bottom margin of the first block plus 20px for the top margin of the second block. However, the margins collapse to 40px.
+			</p>
+			<p>
+				To simplify things greatly, margin collapse occurs when:
+			</p>
+			<ul>
+				<li>the margins are vertical (horizontal margins never collapse)</li>
+				<li>
+					and:
+					<ul>
+						<li>the blocks are directly <em>adjacent</em> (if there is anything between the blocks, the margins do not collapse)</li>
+						<li><strong>or</strong> the blocks are <em>nested</em> and the parent block has no vertical borders or padding (if the parent block has vertical borders or padding, the margins do not collapse. For an example, refer to <a href="#blockquotes" title="Fancier Blockquotes">&#8220;Fancier Blockquotes&#8221;</a>)</li>
+					</ul>
+				</li>
+				<li>and the blocks are left in the normal &#8220;flow&#8221; of the page (something you only need to worry about when using CSS for more advanced things, such as page layout)</li>
+			</ul>
+			<p>
+				Margin collapsing sounds pretty complicated, and it is. You might be wondering why it&#8217;s there in the first place.
+			</p>
+			<p>
+				Suppose we lived in a world where there is no such thing as margin collapsing. If we had a sequence of five paragraphs, and we want even spacing of, say, 10px between each paragraph, how would we achieve this, exactly? In short, you&#8217;re not going to get nice spacing without a lot of hand-tweaking.
+			</p>
+			<ul>
+				<li>
+					<p>
+						If each paragraph has a top and bottom margin of 10px, then the margin at the top and bottom of the group of paragraphs would be 10px (good), but the spacing in between each paragraph would be 20px (bad).
+					</p>
+				</li>
+				<li>
+					<p>
+						Okay, what if we just specify <code>margin-bottom</code> as 10px, and leave <code>margin-top</code> as 0px? That&#8217;s better, but we still would have a problem at the very top, where the first paragraph butts up against the top of the page (or whatever is above the paragraph).
+					</p>
+				</li>
+				<li>
+					<p>
+						Specifying <code>margin-top</code> as 10px creates a similar problem: there would be no spacing between the bottom of the last paragraph and the top of the next element.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Back in the real world, margin collapsing is in effect, and so the aforementioned problem doesn&#8217;t exist. If you write a bunch of paragraphs in a row, the browser just &#8220;does the right thing&#8221;, collapsing margins so that even though each paragraph defines a top and bottom margin, the space between paragraphs doesn&#8217;t get doubled.
+			</p>
+			<h2>
+				Styling with the Box Model
+			</h2>
+			<p>
+				Now that we&#8217;ve covered the components of the <a href="#fig_boxbasic" title="Box Model Basics">box model</a>, you might be thinking, &#8220;Sure, it&#8217;s nice that you can surround every paragraph with a bright lavender ridged border, but is that really all that practical?&#8221; Let&#8217;s step through a couple of more real-world examples.
+			</p>
+			<h3 id="text_decoration_borders">Text Decoration with Borders</h3>
+			<p>
+				Selective borders enable you to add styling to inline text that you couldn&#8217;t ordinarily apply. As an example, one popular convention on the Web is to style <code>abbr</code> with a dotted underline. It would be nice if we could use <code>text-decoration</code> to simulate this effect. Creating a dotted underline using <code>text-decoration</code> might be possible in the future, but at the time of this writing this CSS feature is <a href="http://www.w3.org/TR/css3-text/#decoration">still in draft status</a>. However, we can use borders to work around this problem:
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.22. Dotted Underline
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    abbr {
+      border-bottom: 1px #000000 dotted;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;
+    When my
+    &lt;abbr 
+      title="Person of Opposite Sex Sharing Living Quarters"
+    &gt;POSSLQ&lt;/abbr&gt; 
+    and I went
+    &lt;abbr 
+      title="Self-Contained Underwater Breathing Apparatus"
+    &gt;SCUBA&lt;/abbr&gt; 
+    diving yesterday, we were attacked by
+    &lt;abbr 
+      title="North Atlantic Treaty Organization"&gt;NATO&lt;/abbr&gt;-controlled 
+    sharks with frickin'
+    &lt;abbr 
+      title="Light Amplification by Stimulated Emission of Radiation"
+    &gt;LASER&lt;/abbr&gt;
+    beams attached to their heads.
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				Once the latest CSS specification solidifies, the browsers will be able to follow suit and implement true dotted underlines, and the recipe above will become obsolete.
+			</p>
+			<h3 id="blockquotes">
+				Fancier Blockquotes
+			</h3>
+			<p>
+				The <code>blockquote</code> element is for quoted text that consists of one or more full paragraphs. By default, blockquote indents everything to the right. In the past, people abused <code>blockquote</code> (and <code>ul</code> and <code>ol</code>) to simply indent text. But there are much better ways to indent text, and so it&#8217;s best to use <code>blockquote</code> for its original purpose: quoting paragraphs of text.
+			</p>
+			<p>
+				Let&#8217;s say that simply indenting the text is too plain. We&#8217;d like to add some color. In <a href="#ex_blockquotes" title="Example&nbsp;3.23.&nbsp;Blockquotes">Example 3.23, &#8220;Blockquotes&#8221;</a>, we change the appearance of the <code>blockquote</code> element step-by-step until we achieve the desired effect.
+			</p>
+			<div class="example" id="ex_blockquotes">
+				<h4>
+					Example 3.23. Blockquotes
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    blockquote { background: #ccccff; }
+    blockquote.padded { padding: 3px; }
+    blockquote.bordered { padding: 3px; border-left: 3px #0000cc solid; }
+    blockquote.bordered p { margin: 10px; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;"I also have a paper afloat, with an electromagnetic theory of light,
+    which till I am convinced to the contrary, I hold to be great guns."&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;- James Clerk Maxwell&lt;/p&gt;
+
+  &lt;blockquote class="padded"&gt;
+    &lt;p&gt;"An expert is a person who has made all the mistakes that
+    can be made in a very narrow field."&lt;/p&gt;
+    &lt;p&gt;"Your theory is crazy, but it's not crazy enough to be true."
+  &lt;/blockquote&gt;
+  &lt;p&gt;- Niels Bohr&lt;/p&gt;
+
+  &lt;blockquote class="bordered"&gt;
+    &lt;p&gt;[As a student, attending a lecture by Einstein]
+    "You know, what Mr. Einstein said is not so stupid..."&lt;/p&gt;
+    &lt;p&gt;[On his wife leaving him for a chemist]
+    "Had she taken a bullfighter, I would have understood, but an
+    ordinary chemist..."&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;- Wolfgang Pauli&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<ol>
+				<li>
+					<p><code>blockquote { background: #ccccff; }</code></p>
+					<p>First, we try setting the background to pale blue. Unfortunately, since the blockquote has no <code>padding</code>, the colored space looks crowded.</p>
+				</li>
+				<li>
+					<p><code>blockquote.padded { padding: 3px; }</code></p>
+					<p>Next, we&#8217;ll try fixing this up by creating a new class, <code>padded</code>. This class inherits the background color assigned to all <code>blockquote</code>s, and includes a little extra padding so that the child paragraphs don&#8217;t look so crowded. Whoops! A whole lot of extra space appears above and below the paragraphs. This looks even worse. What happened?</p>
+					<p>Adding padding to <code>blockquote</code> has triggered an interesting side-effect of the <a href="#margin_collapse" title="Collapsing Margins">rules for collapsing margins</a>. As soon as you add padding or borders to the parent <code>blockquote</code> element, margin collapsing goes away. This causes the paragraph&#8217;s margins to suddenly push out the <code>blockquote</code> above and below.</p>
+				</li>
+				<li>
+					<p><code>blockquote.bordered { padding: 3px; border-left: 3px #0000cc solid; }</code></p>
+					<p>Let&#8217;s try one more time. We&#8217;ll create another class, <code>bordered</code>, that includes the padding and adds a decorative dark blue border to the left side of the blockquote.</p>
+				</li>
+				<li>
+					<p><code>blockquote.bordered p { margin: 10px; }</code></p>
+					<p>Finally, we&#8217;ll try to account for the problem introduced by the padding. The selector <code>blockquote.bordered p</code> directs the browser to &#8220;apply this style to all <code>p</code> elements that are inside a <code>blockquote</code> with a class of <code>bordered</code>.&#8221; As a quick fix, we&#8217;ll assign these paragraphs a uniform margin of 10px. This pushes the paragraphs out to the right, and provides a more uniform spacing around each paragraph. The spacing between each paragraph is 10px, while the spacing between the <code>blockquote</code> and the paragraphs is 13px. To make the spacing even more uniform, you could reduce the <code>blockquote</code> padding to 1px, or play a few more tricks with margins and padding, but let&#8217;s move on.
+				</li>
+			</ol>
+			<?php 
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/classes_and_ids/'] = "Classes and IDs";
+				$seealsoLink['/HTML/intermediate/div_and_span/'] = "Div and Span";
+				$seealsoLink['/HTML/intermediate/borders/'] = "Box Model: Borders";
+				$seealsoLink['/HTML/intermediate/align_and_indent/'] = "Align and Indent";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

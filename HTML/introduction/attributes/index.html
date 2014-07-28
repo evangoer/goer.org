@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attributes - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Attributes</h1>
+			<p>
+				Attributes modify the behavior of a element. Attributes allow you to change sizes, colors, specify link locations, and much more. They have two main components:
+			</p>
+<pre class="html">&lt;name attribute1="value1" attribute2="value2" ...&gt;
+  ...(text or more elements go here)...
+&lt;/name&gt;</pre>
+			<ul>
+				<li>
+					<p>
+						<code class="attribute"><var class="replaceable"><code>attribute</code></var></code>: Defines the attribute that you&#8217;re using. As with elements, case is irrelevant for the attribute name. <code>STYLE</code>, <code>style</code>, and <code>sTyLE</code> all do the same thing.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code class="css"><var class="replaceable"><code>value</code></var></code>: Selects a particular kind of behavior for the attribute. Case sometimes matters for the values inside of the attribute, so be careful here.
+					</p>
+				</li>
+			</ul>
+			<p>
+				<a href="../tinkering/#changing_bgcolor" title="Changing the Background Color">&#8220;Changing the Background Color&#8221;</a> includes an example of using the <code>style</code> attribute to control the background color of the entire webpage. Here&#8217;s a second example, the <code>href</code> attribute:
+			</p>
+			<div class="example" id="link">
+				<h4>
+					Example 1.8. A Link to The New York Times
+				</h4>
+<pre class="html">&lt;a href="http://www.nytimes.com"&gt;go to nytimes.com!&lt;/a&gt;</pre>
+			</div>
+			<p>
+				The <code>a</code> element (or, &#8220;anchor&#8221; element) creates a link to another web page. The <code>href</code> attribute specifies the location, which we set to the value <code>http://www.nytimes.com</code>. If you view the results and select the link &#8220;go to nytimes.com!&#8221;, you will indeed go to the New York Times.
+			</p>
+			<div class="note">
+				<h4>
+					Note
+				</h4>
+				<p>
+					The <code>style</code> and <code>href</code> attributes are very different beasts. The <code>style</code> attribute is optional, and may be applied to nearly any HTML element in the <code>body</code>. The <code>href</code> attribute is essential for specifying a link location, and only applies to a narrow set of elements.
+				</p>
+			</div>
+			<h2>
+				Attribute Properties
+			</h2>
+			<p>
+				Attributes follow these rules:
+			</p>
+			<ul>
+				<li>
+					<p>
+						Elements may have multiple attributes. The order of the attributes is irrelevant.
+					</p>
+				</li>
+				<li>
+					<p>
+						Each element has a list of permitted attributes. Some attributes may be assigned to most (or even all) elements. But in general, you cannot freely add any attribute to any element.
+					</p>
+				</li>
+				<li>
+					<p>
+						Whitespace between attributes is irrelevant. You may freely insert spaces, tabs, or even carriage returns between attributes, as long as you don&#8217;t forget the closing angle bracket at the end of the element (&gt;). For example:
+					</p>
+<pre class="html">&lt;a href="http://www.gutenberg.org"
+  style="background: yellow"
+  &gt;Books in the public domain&lt;/a&gt;</pre>
+					<p>
+						is perfectly acceptable. For elements with many attributes, adding whitespace can sometimes make your code more readable.
+					</p>
+				</li>
+				<li>
+					<p>
+						Although upper case and lower case is irrelevant for attribute names, the case can be important for attribute <em>values</em>. For example,
+					</p>
+<pre class="html">&lt;a href="http://www.cnn.com/index.html"&gt;Go to CNN&lt;/a&gt;</pre>
+					<p>
+						creates a link that takes you to the CNN.com home page, while
+					</p>
+<pre class="html">&lt;a href="HTTP://WWW.CNN.COM/INDEX.HTML"&gt;Go to CNN&lt;/a&gt;</pre>
+					<p>
+						is a broken link.
+					</p>
+				</li>
+				<li>
+					<p>
+						It is good practice to quote attribute values, although often this is optional. That is, <code>href=http://www.yahoo.com</code> is the same as <code>href="http://www.yahoo.com"</code>. If the attribute value contains a special character such as a space or an angle bracket (&lt; &gt;), you <em>must</em> use quotes, or the browser will interpret the special character as the end of the attribute or element.
+					</p>
+					<div class="caution">
+						<h4>
+							Caution
+						</h4>
+						<p>
+							Take care to close any open quotes you start. Otherwise, your attribute value will &#8220;continue&#8221; until the next quote mark, which will badly garble your page.
+						</p>
+					</div>
+				</li>
+				<li>
+					<p>
+						As with elements, browsers attempt to ignore incorrect attributes. Misspelled attributes and attribute values, such as <code>hhref</code> and <code>backgrounde: yellow</code>, have no effect. Misspelling <code>background</code> means that your background won&#8217;t turn yellow. Misspelling <code>href</code> means that your link won&#8217;t function. However, if you misspell <code>http://www.yahoo.com</code>, your link will function, but it won&#8217;t take you to the right place.
+					</p>
+				</li>
+			</ul>
+			<?php 
+				$seealsoLink['/HTML/introduction/tinkering/'] = "Tinkering";
+				$seealsoLink['/HTML/introduction/elements/'] = "Elements";
+				$seealsoLink['/HTML/basic/links/'] = "Links";
+				$seealsoLink['/HTML/basic/images/'] = "Images";
+				$seealsoLink['/HTML/intermediate/classes_and_ids/'] = "Classes and IDs";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>The Pocket HTML Tutorial</h1>
+
+			<p>Welcome to the <b>Pocket HTML Tutorial</b>. <abbr title="HyperText Markup Language">HTML</abbr> (HyperText Markup Language) is the language designed for <a href="http://www.w3.org/TR/html4/intro/intro.html#h-2.2">publishing pages on the Web</a>. Along with <abbr title="Cascading Style Sheets">CSS</abbr> (Cascading Style Sheets), HTML enables you to design web pages according to your exact specifications.</p> 
+			<p>The tutorial is available in the following formats, which you may copy and redistribute <a href="about/#copyright-usage">according to the license</a>:</p> 
+			<ul> 
+				<li><a href="http://www.goer.org/HTML/">HTML</a></li> 
+			</ul> 
+			<p>The <strong>original location</strong> for this tutorial is <a href="http://www.goer.org/HTML/">http://www.goer.org/HTML</a>. If you are reading this tutorial at some other location, you might not have the latest version.</p> 
+
+			<h2>Chapter Summaries</h2> 
+			<p>The Pocket HTML Tutorial includes:</p>
+			<h3><a href="about/" title="About This Tutorial">About This Tutorial</a> (Level: All)</h3> 
+			<p>Outlines the basic philosophy behind this tutorial, answers browser compatibility questions, and provides the usage and copyright statement.</p> 
+			<h3><a href="introduction/" title="Chapter&nbsp;1.&nbsp;Getting Started">Chapter&nbsp;1.&nbsp;Getting Started</a> (Level: Beginner)</h3> 
+			<p>Explains the nature of HTML elements, document structure, and how to use your browser to help in your web design. If you&#8217;ve never written HTML code before (or if you don&#8217;t know what a web page &#8220;is&#8221;), start with this section. Otherwise, skip ahead to <a href="basic/" title="Chapter&nbsp;2.&nbsp;Markup Basics">Chapter&nbsp;2, <i>Markup Basics</i></a> or beyond.</p> 
+			<h3><a href="basic/" title="Chapter&nbsp;2.&nbsp;Markup Basics">Chapter&nbsp;2.&nbsp;Markup Basics</a> (Level: Beginner)</h3> 
+			<p>Demonstrates how to use HTML to mark up a simple document, creating paragraphs, headings, and links. If you have a little bit of experience with HTML, you can skip ahead to <a href="intermediate/" title="Chapter&nbsp;4.&nbsp;Styling Basics">Chapter&nbsp;3, <i>Styling Basics</i></a>.</p> 
+			<h3><a href="intermediate/" title="Chapter&nbsp;3.&nbsp;Styling Basics">Chapter&nbsp;3.&nbsp;Styling Basics</a>  (Level: Intermediate)</h3>
+			<p>Formally introduces Cascading Style Sheets (CSS), which can change the presentation of a web page (the fonts, colors, and visual layout.) The previous sections refer to CSS in passing, but here we begin using CSS much more heavily. If you already have some experience with CSS, feel free to skip ahead to <a href="tables/" title="Chapter&nbsp;4.&nbsp;Tables">Chapter&nbsp;4, <i>Tables</i></a>.</p> 
+			<h3><a href="tables/" title="Chapter&nbsp;4.&nbsp;Tables">Chapter&nbsp;4.&nbsp;Tables</a> (Level: Intermediate)</h3> 
+			<p>Discusses HTML tables and how to format them using table attributes or CSS.</p> 
+
+			<h2>Browser Requirements</h2> 
+			<p>If you use <span class="application">Internet Explorer 6+</span>, <span class="application">Firefox</span>, <span class="application">Mozilla</span>, <span class="application">Opera 5+,</span>, <span class="application">Safari</span>, or <span class="application">Chrome</span> you should be able to view the tutorial and follow the examples with little trouble.</p> 
+			<p>If you use an older browser, please download a modern version of <a href="http://getfirefox.com">Firefox</a>, <a href="http://www.microsoft.com/windows/internet-explorer/">Internet Explorer</a>, <a href="http://www.apple.com/safari/">Safari</a>, <a href="http://www.google.com/chrome/">Chrome</a>, or <a href="http://www.opera.com/download/">Opera</a> before continuing.</p>
+			<p>This tutorial uses JavaScript to:</p> 
+			<ul>
+				<li>highlight HTML code examples</li>
+				<li>enable you to view the results of each example with one click</li>
+			</ul>
+			<p>You can use this tutorial with JavaScript turned off, but the code examples will be harder to read and use.</p> 
+			<?php 
+				$ads = false;
+				$seealsoLink['/HTML/about/'] = "About This Tutorial";
+				$seealsoLink['/HTML/introduction/'] = "Chapter 1: Getting Started";
+				$seealsoLink['/HTML/basic/'] = "Chapter 2: Markup Basics";
+				$seealsoLink['/HTML/intermediate/'] = "Chapter 3: Styling Basics";
+				$seealsoLink['/HTML/tables/'] = "Chapter 4: Tables";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

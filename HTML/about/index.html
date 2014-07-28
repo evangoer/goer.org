@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About This Tutorial - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>About This Tutorial</h1>
+			<p>Today, using clean, semantic markup with CSS is utterly uncontroversial. And yet many of the popular tutorials on the web have never really caught up. The result is that if you start learning HTML from scratch today, you&#8217;ll probably go through the same learning process as someone who started in the mid-1990s:</p> 
+			<ol>
+				<li><p>Learn old-school HTML 3.2-style markup.</p> </li> 
+				<li><p>Learn about CSS.</p> </li> 
+				<li><p>Unlearn about half of your previous markup knowledge.</p></li> 
+				<li><p>Learn how to do things the &#8220;right&#8221; way.</p></li> 
+			</ol> 
+			<p>The original &#8220;HTML 4.01 Tutorial&#8221; was my attempt to cover HTML in an integrated, modern way, incorporating CSS from the start. Even though the tutorial was unfinished for years, it still drew visitors searching for help with font styles, alignment, padding, and more.</p> 
+			<p>Finally, I couldn&#8217;t take it anymore.</p> 
+			<blockquote> 
+			<p>&#8220;Gentlemen, we can rebuild it&#8230; we have the technology. We have the capability to make the world&#8217;s first modern HTML tutorial. The Pocket HTML Tutorial will be that tutorial. Better than it was before. Better&#8230; stronger&#8230; faster&#8230;&#8221;</p> 
+			</blockquote> 
+			<p>Yes, the time has come to dust off the old tutorial and set it on the path to modernity. Here are some of the improvements:</p> 
+			<ul> 
+				<li><p><b>Completeness.</b> Yes, this version is actually finished, imagine that! Actually, &#8220;finished&#8221; is maybe too strong a word, but at least it doesn&#8217;t sort of trail off awkwardly like the old one did.</p></li> 
+				<li><p><b>Less cruft.</b> The previous version of the tutorial wasted a lot of verbiage on older browsers such as the infamous <span class="application">Netscape Navigator 4</span>. Now that the lowest-common denominator is <span class="application">Internet Explorer 6</span>, I&#8217;ve been able to clean that up.</p></li> 
+				<li><p><b>More right stuff, less wrong stuff.</b> Like many of today&#8217;s popular HTML guides, the old tutorial labored under an unfortunate confusion over the difference between a &#8220;tag&#8221; and an &#8220;element&#8221;. How embarrassing. This and other cringe-inducing errors are now fixed.</p></li> 
+				<li> 
+					<p><b>Relaxed license.</b> The tutorial is available under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported</a> license. You are free to redistribute or create derivative works from this book, even for commercial purposes, as long as you attribute me properly. The previous version of the tutorial was also under a Creative Commons license, but a much stricter version.</p> 
+				</li> 
+			</ul> 
+			<p>Okay, that&#8217;s all well and good. But what does this tutorial <em>not</em> cover?</p> 
+			<ul>
+				<li><p><b>Javascript.</b> Javascript is <em>much</em> more popular these days than it was back in 2002, but client-side scripting is well beyond the scope of this tutorial.</p></li> 
+				<li><p><b>Server-side programming.</b> Languages such as PHP, Perl, and Java are also out of scope. This is too bad, because it&#8217;s kind of hard to teach forms without them &mdash; you can design a form using HTML, but it doesn&#8217;t really <em>do</em> anything.</p></li> 
+				<li><p><b>Advanced CSS Positioning.</b> CSS Positioning is large and complicated enough to deserve a book all its own. This tutorial probably <em>should</em> cover some positioning concepts, but it&#8217;s such a thorny topic that for now, I&#8217;d rather point you to others.</p></li> 
+			</ul> 
+			<p>With one or two <a href="http://htmldog.com">notable exceptions</a>, there is a sizable gap between the popular tutorials and modern resources like the <a href="http://csszengarden.com">CSS Zen Garden</a>, <a href="http://glish.com/css/">glish.com</a>, and <a href="http://developer.yahoo.com/yui/grids/">YUI Grids</a>. That&#8217;s just crazy. This tutorial attempts to bridge that gap. I hope you find it useful.</p>
+			<h2 id="copyright-usage">Copyright and Usage</h2>
+			<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons License: Attribution 3.0 Unported</a>.</p> 
+			<p><strong>You are free:</strong></p> 
+			<ul> 
+				<li><p><strong>to Share</strong> &mdash; to copy, distribute, and transmit the work</p></li> 
+				<li><p><strong>to Remix</strong> &mdash; to adapt the work</p> </li> 
+			</ul> 
+			<p><strong>Under the following conditions:</strong></p> 
+			<ul> 
+				<li><strong>Attribution.</strong> You must attribute the work in the manner specified by the author or licensor. For attribution purposes, the URL to be associated with the work is <a href="http://www.goer.org/HTML/">http://www.goer.org/HTML</a>, and the Title and Author of this work are as follows: &#8220;<a href="http://www.goer.org/HTML/">The Pocket HTML Tutorial</a>&#8221; Copyright <?php echo date("Y"); ?> by Evan Goer.</li> 
+			</ul> 
+			<p>For any reuse or distribution, you must make clear to others the license terms of this work. Any of these conditions can be waived if you get permission from the copyright holder.</p> 
+			<p><strong>Your fair use and other rights are in no way affected by the above.</strong></p> 
+			<p>This is a human-readable summary of the <a href="http://creativecommons.org/licenses/by/3.0/legalcode">Legal Code (the full license)</a>.</p> 
+			<?php 
+				$ads = false;
+				$seealsoLink['/HTML/'] = "The Pocket HTML Tutorial";
+				$seealsoLink['/HTML/introduction/'] = "Chapter 1: Getting Started";
+				$seealsoLink['/HTML/basic/'] = "Chapter 2: Markup Basics";
+				$seealsoLink['/HTML/intermediate/'] = "Chapter 3: Styling Basics";
+				$seealsoLink['/HTML/tables/'] = "Chapter 4: Tables";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

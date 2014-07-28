@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Div and Span - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Div and Span</h1> 
+			<p>
+				As we&#8217;ve seen in previous sections, using CSS is straightforward. Provide a selector (&#8221;select all <code>p</code> elements&#8221;), provide a rule (&#8221;make their text red&#8221;), and we&#8217;re done. Both the selectors and the rules can be much more complicated, but this is the core of it.
+			</p>
+			<p>
+				Let&#8217;s take a look at another component of our style sheet toolbox: the &#8220;generic&#8221; elements, <code>div</code> and <code>span</code>. These elements are designed to help you mark off arbitrary chunks of HTML for styling.
+			</p>
+			<h2>
+				The <code>span</code> Element
+			</h2>
+			<p>
+				The <code>span</code> element is the generic inline element. Let&#8217;s see this element in action:
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.11. Empty <code>span</code>
+				</h4>
+<pre class="html">&lt;p&gt;
+  Towards thee I roll, thou all-destroying but
+  unconquering whale; &lt;span&gt;to the
+  last I grapple with thee; from hell's heart I stab
+  at thee; for hate's sake I spit my last breath at
+  thee.&lt;/span&gt; Sink all coffins and all
+  hearses to one common pool! and since neither can
+  be mine, let me then tow to pieces, while still
+  chasing thee, though tied to thee, thou damned
+  whale! Thus, I give up the spear!
+&lt;/p&gt;</pre>
+			</div>
+			<p>
+				If you view the results, it looks like&#8230; the <code>span</code> didn&#8217;t do anything. And that&#8217;s the point: by default, the <code>span</code> element isn&#8217;t supposed to do anything. It serves as a placeholder or marking point for beginning and ending a style.
+			</p>
+			<p>
+				Let&#8217;s make a minor change. We&#8217;ll create a class for our <code>span</code> element and apply that class to our selection from Moby-Dick.
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.12. Red <code>span</code>
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Moby-Dick&lt;/title&gt;
+  &lt;style type="text/css"&gt;
+    span.khan {color: #ff0000}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;
+    Towards thee I roll, thou all-destroying but
+    unconquering whale;
+    &lt;span class="khan"&gt;to the last I
+    grapple with thee; from hell's heart I stab at
+    thee; for hate's sake I spit my last breath at thee.
+    &lt;/span&gt; Sink all coffins and all
+    hearses to one common pool! and since neither
+    can be mine, let me then tow to pieces, while
+    still chasing thee, though tied to thee, thou
+    damned whale! Thus, I give up the spear!
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				Now we have an inline element, <code>&lt;span class="khan"&gt;</code>, that can make any inline selection of HTML red.
+			</p>
+			<div class="tip">
+				<h4>
+					Tip
+				</h4>
+				<p>
+					Before using the generic <code>span</code> element, try using an <code>em</code>, <code>strong</code>, <code>code</code>, or other <a href="../../basic/font_styles/#logical_styles" title="Logical Styles">logical style</a>. If possible, it's better to start with an element that has some intrinsic meaning.
+				</p>
+			</div>
+			<h2>
+				The <code>div</code> Element
+			</h2>
+			<p>
+				The <code>div</code> element is the generic block element. You can use <code>div</code> to apply styles to large sections of HTML, such as multiple paragraphs. Like all block elements, the <code>div</code> element defines a &#8220;box&#8221; of HTML.
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.13. Red <code>div</code>
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Product Brochure&lt;/title&gt;
+  &lt;style type="text/css"&gt;
+    div.important {color: #ff0000}
+  &lt;/style&gt;
+  &lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;
+    Congratulations on the purchase of your sword!
+    Using a sword is fun and easy. Just be
+    sure to follow these important safety tips.
+  &lt;/p&gt;
+  &lt;div class="important"&gt;
+    &lt;p&gt;
+      &lt;em&gt;Never&lt;/em&gt; hold your sword by the pointy end.
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;em&gt;Always&lt;/em&gt; be sure to stick the pointy end
+      into the other guy before he does the same to you.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;p&gt;
+    And remember, if you or your surviving kinsfolk are
+    not fully satisfied, we have a money-back guarantee!
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				The <code>div</code> element applies the style to the second and third paragraphs. Note that even though the <code>div</code> element is a &#8220;block&#8221; element, it does not create extra line breaks between paragraphs 1 and 2 or paragraphs 3 and 4. However, if we had tried to insert the <code>div</code> inside one of the paragraphs, we would have created a new text block. (Try it.)
+			</p>
+			<?php 
+				$seealsoLink['/HTML/basic/elements/'] = "Elements";
+				$seealsoLink['/HTML/basic/font_styles/'] = "Font Styles";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/classes_and_ids/'] = "Classes and IDs";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

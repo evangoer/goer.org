@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /stats/
+Disallow: /Journal/2007/06/how_to_po_a_tw.html

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Align and Indent - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Align and Indent</h1> 
+			<p>
+				You&#8217;ve probably noticed that most of your HTML paragraphs don&#8217;t have an initial indentation. You can use <code>margin</code> or <code>padding</code> to push paragraphs to the right, but that affects the entire paragraph, not just the first line. Furthermore, text is always left-aligned. How do we make centered text, or right-aligned text?
+			</p>
+			<p>
+				As we saw in the <a href="../borders/" title="Box Model Basics">&#8220;Borders&#8221; section</a>, the box model controls the area around the text. This section shows how to move the text around inside the box itself.
+			</p>
+			<h2>
+				Indenting Text
+			</h2>
+			<p>
+				To indent text, use the handily-named <code>text-indent</code> property. The following CSS snippet adds a 2.0 em indent to all paragraphs:
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.24. Indented Paragraphs
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    p {
+      text-indent: 2.0em;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;
+    "On the contrary," said Holmes, quietly, "I have every reason
+    to believe that I will succeed in discovering Mr. Hosmer Angel."
+  &lt;/p&gt;
+  &lt;p&gt;
+    Mr. Windibank gave a violent start, and dropped his gloves.
+    "I am delighted to hear it," he said.
+  &lt;/p&gt;
+  &lt;p&gt;
+    "It is a curious thing," remarked Holmes, "that a typewriter
+    has really quite as much individuality as a man's handwriting.
+    Unless they are quite new no two of them write exactly alike.
+    Some letters get more worn than others, and some wear only on
+    one side. Now, you remark in this note of yours, Mr. Windibank,
+    that in every case there is some little slurring over the e, and
+    a slight defect in the tail of the r. There are fourteen other
+    characteristics, but those are the more obvious."
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				If you enter a negative value for <code>text-indent</code>, the first line of the text will shift to the left. This is useful for creating &#8220;hanging indents&#8221; for headings and the like. The only trick is that you must set the padding of containing block accordingly.
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.25. Hanging Indent
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    div {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 5px;
+      padding-left: 30px;
+      border: 3px solid;
+    }
+    h2 {
+      text-indent: -25px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;h2&gt;The Red-Headed League&lt;/h2&gt;
+    &lt;p&gt;
+      I had called upon my friend, Mr. Sherlock Holmes, one
+      day in the autumn of last year, and found him in deep
+      conversation with a very stout, florid-faced elderly
+      gentleman, with fiery red hair. With an apology for my
+      intrusion, I was about to withdraw, when Holmes pulled
+      me abruptly into the room and closed the door behind me.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				The &#8220;container&#8221; <code>div</code> has a uniform padding of 5px all around, except for the left padding, which is 30px. The <code>h2</code> element has its text-indent set to negative 25px. The result is that the <code>h2</code> shifts 30px to the right due to the padding, and then shifts 25px back to the left due to the negative <code>text-indent</code>. All other elements are 30px from the left edge. The result is a 25px hanging indent.
+			</p>
+			<h2>
+				Horizontal Alignment
+			</h2>
+			<p>
+				The <code>text-align</code> property allows you to align text to the right, left, or center within its containing block. The four options are:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>left</code>: Aligns the text along the left edge of the box, leaving a ragged edge to the right. This is the default.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>center</code>: Centers the text within the box.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>right</code>: Aligns the text along the right edge of the box, leaving a ragged edge to the left.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>justify</code>: Aligns the text along both the right and left edges of the box. This can cause the word spacing in the line to become uneven. The <code>justify</code> option isn&#8217;t as well-supported in some older browsers.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Let&#8217;s take a look at all four options:
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.26. Left, Center, Right, and Justified
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    div { border: 3px solid; padding: 5px; }
+    div.left { text-align: left; background: #ffcccc; }
+    div.center { text-align: center; background: #ccffcc; }
+    div.right { text-align: right; background: #ccccff; }
+    div.justify { text-align: justify; background: #ffffcc; }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class="left"&gt;&lt;em&gt;Left-aligned text.&lt;/em&gt;&lt;/div&gt;
+
+  &lt;div class="center"&gt;&lt;em&gt;Centered text.&lt;/em&gt;&lt;/div&gt;
+
+  &lt;div class="right"&gt;&lt;em&gt;Right-aligned text.&lt;/em&gt;&lt;/div&gt;
+
+  &lt;div class="justify"&gt;&lt;em&gt;Justified text.&lt;/em&gt; Upon this a question
+  arises: whether it be better to be loved than feared or feared than
+  loved? It may be answered that one should wish to be both, but, because
+  it is difficult to unite them in one person, it is much safer to be
+  feared than loved, when, of the two, either must be dispensed with.
+  Because this is to be asserted in general of men, that they are
+  ungrateful, fickle, false, cowardly, covetous, and as long as you
+  succeed they are yours entirely; they will offer you their blood,
+  property, life, and children, as is said above, when the need is far
+  distant; but when it approaches they turn against you.&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				Keep in mind that <code>text-align</code> aligns text and other inline content <em>within</em> boxes. It does not affect blocks themselves. For example, you can&#8217;t use <code>text-align: center</code> to center a smaller box within a larger box. This sort of thing is part of a more advanced concept called CSS positioning.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/basic/paragraph_breaks/'] = "Paragraph Breaks";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/classes_and_ids/'] = "Classes and IDs";
+				$seealsoLink['/HTML/intermediate/div_and_span/'] = "Div and Span";
+				$seealsoLink['/HTML/intermediate/margins_and_padding/'] = "Box Model: Margins and Padding";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

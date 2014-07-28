@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Links - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Links</h1> 
+			<p>
+				Without hyperlinks, the Web wouldn&#8217;t be &#8220;the Web&#8221;. This section explains how to create links to other websites (external links) and links within your own website (internal links).
+			</p>
+			<h2>
+				The <code>a</code> Element
+			</h2>
+			<p>
+				The anchor element, <code>a</code>, creates links. Here&#8217;s an example:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.12. External Links
+				</h4>
+<pre class="html">&lt;p&gt;
+A link to &lt;a href="http://www.google.com/"&gt;Google's
+home page&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+A link to
+&lt;a href="http://www.google.com/help/basics.html"&gt;a
+page within Google&lt;/a&gt;.
+&lt;/p&gt;</pre>
+			</div>
+			<p>
+				The syntax is straightforward: the <code>href</code> attribute indicates where the link should go, and the text between the <code class="sgmltag-starttag">&lt;a&gt;</code> and <code class="sgmltag-endtag">&lt;/a&gt;</code> tags becomes the highlighted link text.
+			</p>
+			<h3>
+				Anchor Titles
+			</h3>
+			<p>
+				The optional <code>title</code> attribute allows you to provide a little extra information about the link. Some older browsers ignore this attribute, but most modern browsers produce a little floating &#8220;tooltip&#8221; if you hover your mouse over the link.
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.13. The title Attribute
+				</h4>
+<pre class="html">Can physics be
+&lt;a href="http://www.dctech.com/physics/humor.php"
+title="The most hilarious collection of physics
+humor anywhere!"&gt;funny&lt;/a&gt;?
+Is that a rhetorical question?</pre>
+			</div>
+			<p>
+				You can use the <code class="attribute">title</code> attribute to indicate where the link is going or provide some other useful information. It&#8217;s nifty, but it doesn&#8217;t hurt to leave it out, either.
+			</p>
+			<h2>
+				Components of the URL
+			</h2>
+			<p>
+				To construct links to other websites, we need to understand the structure of the URL. Let&#8217;s take a closer look at the URL &#8220;<code class="uri">http://www.google.com/help/basics.html</code>&#8221;:
+			</p>
+			<ul>
+				<li>
+					<p>
+						The <strong>protocol</strong> (&#8220;<code>http://</code>&#8221;): Specifies that we would like to use the HTTP (HyperText Transport) protocol. This is the standard protocol for retrieving web pages, although there are others, such as FTP (File Transfer Protocol) and HTTPS (Secure HyperText Transport Protocol). Most of the time, though, you&#8217;ll be using &#8220;http://&#8221; to retrieve pages from external sites.
+					</p>
+					<p>
+						You may specify the protocol in upper case, lower case, or anything in between, but most people use all lower case.
+					</p>
+				</li>
+				<li>
+					<p>
+						The <strong>website</strong> (&#8220;<code>www.google.com</code>&#8221;): This specifies that we would like to access a page from google.com. More technically, it means:
+					</p>
+					<ol>
+						<li>
+							<p>
+								Go to the <dfn>top-level domain</dfn> &#8220;com&#8221; (a collection of many millions of websites).
+							</p>
+						</li>
+						<li>
+							<p>
+								Within &#8220;com&#8221;, find the the <dfn>domain name</dfn> &#8220;google&#8221;.
+							</p>
+						</li>
+						<li>
+							<p>
+								Within &#8220;google&#8221;, find the the <dfn>sub-domain</dfn> named &#8220;www&#8221;.
+							</p>
+						</li>
+					</ol>
+					<p>
+						Finding the website is similar to finding a mailing address. The address &#8220;1600 Pennsylvania Avenue NW, Washington, DC 20500&#8221; means: go to the zip code &#8220;20500&#8221;; within &#8220;20500&#8221;, find the city &#8220;Washington D.C.&#8221;; within &#8220;Washington, DC&#8221;, find the building &#8220;1600 Pennsylvania Avenue NW&#8221;.
+					</p>
+					<p>
+						As with the protocol above, you may use any case you like for specifying the website, although most people use all lower case.
+					</p>
+				</li>
+				<li>
+					<p>
+						The <strong>file</strong> path (&#8220;<code>/help/basics.html</code>&#8221;): This specifies that we would like to access the file <code class="filename">basics.html</code>, which is inside the directory <code class="filename">help/</code>.
+					</p>
+					<p>
+						Unlike the other components, the filepath can be case-sensitive. Depending on the website you&#8217;re visiting, the file <code class="filename">Basics.html</code> might be different from the file <code class="filename">basics.html</code>.
+					</p>
+				</li>
+			</ul>
+			<h3>
+				Wait, Which File Was That Again?
+			</h3>
+			<p>
+				This is a little odd &mdash; in our first example, &#8220;http://www.google.com/&#8221;, we didn&#8217;t specify a file or a directory. So what did we ask for, exactly?
+			</p>
+			<p>
+				First, it turns out the directory is specified. The single forward slash (&#8220;/&#8221;) represents the &#8220;root&#8221; or &#8220;top-level&#8221; directory of the website. We&#8217;re asking Google to give us a file from the top directory of its website.
+			</p>
+			<p>
+				Okay, but which file are we asking for? We didn&#8217;t specify the name of the file explicitly, we just asked for a directory. This means means we&#8217;re asking Google, &#8220;Give us the default file for that directory, if you have one.&#8221; As it turns out, Google is going to give us a file named &#8220;index.html&#8221;, but the exact name could be anything. It&#8217;s up to Google.
+			</p>
+			<h2>
+				Internal links
+			</h2>
+			<p>
+				Internal links are similar to external links except that you can leave off the protocol and website name. You only need to specify the file path.
+			</p>
+			<p>
+				File paths for internal links can be <dfn>absolute</dfn> or <dfn>relative</dfn>. Absolute links always begin with a forward slash. They specify a path that starts at the root directory of your web server. Relative links never begin with a forward slash. They specify a path that is relative to the page that the link is on.
+			</p>
+			<p>
+				Examples of absolute links:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>href="/"</code>: Go to the web root directory and get the default file. (The home page of goer.org.)
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>href="/HTML/</code>: Go to the web root directory, then the <code class="filename">HTML</code> directory, and get the default file. (The first page of this tutorial.)
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>href="/HTML/basic/links/index.html"</code>: Go to the web root directory, then the <code class="filename">HTML</code> directory, then the <code class="filename">basic</code> directory, then the <code class="filename">links</code> directory, and get the file <code class="filename">index.html</code> (This page.)
+					</p>
+				</li>
+			</ul>
+			<p>
+				Examples of relative links (relative to this page, <a href="http://www.goer.org/HTML/basic/links/">http://www.goer.org/HTML/basic/links/index.html</a>):
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>href="index.html"</code>: Get the <code class="filename">index.html</code> file that is in the current directory. (This page.)
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>href="../"</code>: Go up one directory from the current directory and get the default file. (The first page of Chapter 2.)
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>href="../../introduction/"</code>: Go up two directories from the current directory, enter the <code>introduction</code> directory, and get the default file. (The first page of Chapter 1.)
+					</p>
+				</li>
+			</ul>
+			<p>
+				As the examples demonstrate, URLs can vary in complexity while still pointing to the same location.
+			</p>
+			<p>
+				For pages that are &#8220;near&#8221; the current page, relative links are often simpler. Relative links also work better if you are working with files on your desktop, as opposed to a real websever.
+			</p>
+			<p>
+				Because absolute links are the same no matter where you are on the website, they&#8217;re good for standard navigation links, header and footer links. However, absolute links don&#8217;t work as well if you are just messing around with files on your desktop. On a webserver, an absolute link such as <code class="uri">/HTML/index.html</code> starts with the webserver&#8217;s root directory. But on your local desktop, there is no &#8220;webserver root directory&#8221;, and so your computer attempts to follow the filepath <code class="uri">/HTML/index.html</code> from the root directory of your hard drive. In general, this will fail.
+			</p>
+			<h2 id="linking_within">
+				Linking Within Pages
+			</h2>
+			<p>
+				We can link to web pages in external websites and internal websites. What about linking to a particular location in a page?
+			</p>
+			<p>
+				All elements provide this capability through the <code>id</code> attribute. Once you&#8217;ve assigned an <code>id</code> to the element, you can link directly to the location on the page where the element appears:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.14. Linking to an ID
+				</h4>
+<pre class="html">&lt;h2 id="fruitbat_migratory"&gt;
+Migratory Patterns of the Fruit Bat
+&lt;/h2&gt;
+...
+...
+...
+&lt;p&gt;
+&lt;a href="#fruitbat_migratory"&gt;link to 'Migratory Patterns of the Fruit Bat'&lt;/a&gt;.
+&lt;/p&gt;
+...</pre>
+			</div>
+			<p>
+				The <code>id</code>&#8217;s value is <code>fruitbat_migratory</code>. Further down the page, we have a link to this ID, specified by <code>href="#fruitbat_migratory"</code>.
+			</p>
+			<p>
+				You can combine named anchors with longer URLs: for example, <code class="uri">http://www.goer.org/HTML/basic/links/#parts</code>.
+			</p>
+			<p>
+				The pound sign in the URL makes the link point to the named anchor. If we had accidentally written <code>href="parts"</code>, that would have been a relative link to the directory named &#8220;parts&#8221;.
+			</p>
+			<div class="caution">
+				<h4>
+					Caution
+				</h4>
+				<p>
+					Never give two elements the same ID on the same page.
+				</p>
+			</div>
+			<?php 
+				$seealsoLink['/HTML/introduction/elements/'] = "Elements";
+				$seealsoLink['/HTML/introduction/attributes/'] = "Attributes";
+				$seealsoLink['/HTML/intermediate/classes_and_ids/'] = "Classes and IDs";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

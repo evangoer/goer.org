@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://www.goer.org/Byron/">
+<title>Byron's Big Adventure</title>
+<link>http://www.goer.org/Byron/</link>
+<description></description>
+<language>en-us</language>
+<webMaster></webMaster>
+<lastBuildDate>2003-01-03T17:13:50-01:00</lastBuildDate>
+<pubDate>2006-05-24T13:53:31-01:00</pubDate>
+<admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=2.661" />
+
+<items>
+<rdf:Seq><rdf:li rdf:resource="http://www.goer.org/Byron/archives/000243.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000244.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000236.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000233.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000232.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000224.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000220.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000219.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000210.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000211.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000199.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000196.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000193.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000190.html" />
+<rdf:li rdf:resource="http://www.goer.org/Byron/archives/000189.html" />
+</rdf:Seq>
+</items>
+
+</channel>
+
+<item rdf:about="http://www.goer.org/Byron/archives/000243.html">
+<title>New Years in Oslo</title>
+<description>Explosions everywhere. Drunk young'ns. Roman candle fired into a house. Good times. One of the great things about Oslo during...</description>
+<link>http://www.goer.org/Byron/archives/000243.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2003-01-03T17:13:50-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000244.html">
+<title>Sledding. For Real this Time</title>
+<description>You've seen those crazy Olympic Bobsledders on TV, right? Remember the smaller, my-gawd-he-must-be-nuts event called Luge? It's the one where...</description>
+<link>http://www.goer.org/Byron/archives/000244.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2003-01-02T17:14:14-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000236.html">
+<title>More Pictures</title>
+<description>A few pictures of the boat, private beaches, the woodshop, and some crazy looking hooligan. Typically, on our sailing excursions,...</description>
+<link>http://www.goer.org/Byron/archives/000236.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-12-25T19:55:19-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000233.html">
+<title>Hurtigrute 2 Day Cruise</title>
+<description> Christmas vacation has arrived, and I'm on my way north, to Harstad. My chosen method of travel is by...</description>
+<link>http://www.goer.org/Byron/archives/000233.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-12-22T11:05:46-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000232.html">
+<title>Capsized into 4 degree water</title>
+<description>The only thing different during today&#146;s sunless breakfast is the extra wool. Nearly half the school is a bit more...</description>
+<link>http://www.goer.org/Byron/archives/000232.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-12-17T09:25:04-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000224.html">
+<title>Ice Skating</title>
+<description>The outside temperature manages to hover around freezing, sometimes above, mostly a bit below, which has an interesting effect. The...</description>
+<link>http://www.goer.org/Byron/archives/000224.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-12-09T16:07:16-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000220.html">
+<title>Our day in the City</title>
+<description>Trondheim. Folkeh&oslash;gskole day, or something. Apparently there were 'all' the Folkeh&oslash;gskoles from the area attending this 'event'. I may have...</description>
+<link>http://www.goer.org/Byron/archives/000220.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-12-07T08:36:36-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000219.html">
+<title>Night driving!</title>
+<description>Another harrowing adventure on the high seas. This time we were not sailing, we had a motor. That was good....</description>
+<link>http://www.goer.org/Byron/archives/000219.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-12-07T08:33:36-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000210.html">
+<title>Long Bows and Massage Class</title>
+<description>Yes, that's right, Massage Class. But first, we spend a week 'researching' something 'that interested us', and I got stuck...</description>
+<link>http://www.goer.org/Byron/archives/000210.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-11-30T15:51:45-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000211.html">
+<title>Karin Leaves!</title>
+<description>Karin has decided to apply to Law School. This has several implications beyond me marrying well, such as her leaving...</description>
+<link>http://www.goer.org/Byron/archives/000211.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-11-24T16:11:01-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000199.html">
+<title>Sledding!</title>
+<description>So, perhaps, just maybe, this winter thing isn't so bad. Last night is snowed, putting down 2 or 3 inches...</description>
+<link>http://www.goer.org/Byron/archives/000199.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-11-17T17:40:32-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000196.html">
+<title>Tar </title>
+<description>This week we tarred the boat. This was not fun. We also did some wood shop, some rope making and...</description>
+<link>http://www.goer.org/Byron/archives/000196.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-11-15T16:20:48-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000193.html">
+<title>Boat Pictures</title>
+<description>These are from the schools web site, so they aren't anything new or special and you won't see me in...</description>
+<link>http://www.goer.org/Byron/archives/000193.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-11-11T18:16:16-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000190.html">
+<title>Norway #8</title>
+<description>Knife making for the week! Yes, that's right. We took a week to make knives, not a bad deal at...</description>
+<link>http://www.goer.org/Byron/archives/000190.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-11-09T11:56:14-01:00</dc:date>
+</item>
+<item rdf:about="http://www.goer.org/Byron/archives/000189.html">
+<title>Norway #7</title>
+<description>These two weeks are about as typical and boring as things get around here. The week after we good back...</description>
+<link>http://www.goer.org/Byron/archives/000189.html</link>
+<dc:subject></dc:subject>
+<dc:creator>byron</dc:creator>
+<dc:date>2002-11-08T11:54:17-01:00</dc:date>
+</item>
+
+
+</rdf:RDF>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classes and IDs - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Classes and IDs</h1> 
+			<p>
+				The last section demonstrated how a style sheet can apply a style to all elements in a web page. If we want all our paragraphs to be red, we just need to specify <code>p {color: red}</code> in the style sheet. Easy, we&#8217;re done.
+			</p>
+			<p>
+				But what if we want only some paragraphs to be red? We could override our &#8220;red-text&#8221; rule by making copious use of the style attribute: <code>&lt;p style="color: black"&gt;</code>. However, as <a href="../style_attribute" title="The style Attribute">&#8220;The <code>style</code> Attribute&#8221;</a> points out, this is not a good solution in the long term.
+			</p>
+			<p>
+				Fortunately, there is a way to &#8220;name&#8221; a style and re-use it over and over. This method is called a style sheet <dfn>class</dfn>.
+			</p>
+			<h2>
+				Style Sheet Classes
+			</h2>
+			<p>
+				In <a href="#ex_two_classes" title="Example&nbsp;3.10.&nbsp;Two CSS Classes">Example 3.10, &#8220;Two CSS Classes&#8221;</a>, we have an exchange of dialogue between two characters. We&#8217;ll differentiate each character&#8217;s lines by applying a unique style. It would be tedious and counterproductive to write out the full style in each <code>p</code> element, so instead we&#8217;ll define each style once in the style sheet and use a class to call it multiple times.
+			</p>
+			<div class="example" id="ex_two_classes">
+				<h4>
+					Example 3.10. Two CSS Classes
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;An Ideal Husband&lt;/title&gt;
+  &lt;style type="text/css"&gt;
+    p {color: #000000}
+    p.goring {color: #ff0000}
+    p.phipps {color: #008000}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p class="goring"&gt;
+    LORD GORING. [Taking out old buttonhole.] You see, Phipps, Fashion
+    is what one wears oneself. What is unfashionable is what other
+    people wear.
+  &lt;/p&gt;
+  &lt;p class="phipps"&gt;
+    PHIPPS. Yes, my lord.
+  &lt;/p&gt;
+  &lt;p class="goring"&gt;
+    LORD GORING. Just as vulgarity is simply the conduct of other
+    people.
+  &lt;/p&gt;
+  &lt;p class="phipps"&gt;
+    PHIPPS. Yes, my lord.
+  &lt;/p&gt;
+  &lt;p class="goring"&gt;
+    LORD GORING. [Putting in a new buttonhole.] And falsehoods the
+    truths of other people.
+  &lt;p class="phipps"&gt;
+    PHIPPS. Yes, my lord.
+  &lt;/p&gt;
+  &lt;p class="goring"&gt;
+    LORD GORING. Other people are quite dreadful. The only possible
+    society is oneself.
+  &lt;/p&gt;
+  &lt;p class="phipps"&gt;
+    PHIPPS. Yes, my lord.
+  &lt;/p&gt;
+  &lt;p class="goring"&gt;
+    LORD GORING. To love oneself is the beginning of a lifelong romance,
+    Phipps.
+  &lt;/p&gt;
+  &lt;p class="phipps"&gt;
+    PHIPPS. Yes, my lord.
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				For each character, we&#8217;ve defined a class, <code>goring</code> and <code>phipps</code>. Note that we&#8217;ve introduced a brand-new CSS selector: instead of
+			</p>
+<pre><var class="replaceable"><code>element</code></var> { <var class="replaceable"><code>declarations</code></var> }</pre>
+			<p>
+				We have
+			</p>
+<pre><var class="replaceable"><code>element</code></var>.<var class="replaceable"><code>class</code></var> { <var class="replaceable"><code>declarations</code></var> }</pre>
+			<p>
+				Once we define the selectors <code>p.goring</code> and <code>p.phipps</code>, we can apply them to any paragraph through the <code>class</code> attribute. You may add the <code>class</code> attribute to any element that can take the <code>style</code> element (in other words, most of them). The <code>class</code> attribute is usually much better to use than the <code>style</code> attribute, because it&#8217;s much easier to change what a class means later on.
+			</p>
+			<p>
+				In <a href="#ex_two_classes" title="Example&nbsp;3.10.&nbsp;Two CSS Classes">Example 3.10, &#8220;Two CSS Classes&#8221;</a>, the classes only work with the <code>p</code> element. Applying them to some other element, as in, <code>&lt;em class="goring"&gt;</code>, would fail. To make the selector &#8220;generic&#8221; so that it works with any element, just leave off the element name:
+			</p>
+<pre>.goring {color: #ff0000}</pre>
+			<h2>
+				Unique IDs
+			</h2>
+			<p>
+				Another method for assigning styles is to use an ID. An ID is a unique identifier for a element on a page. IDs are different from classes in a couple of key ways:
+			</p>
+			<ul>
+				<li>
+					<p>
+						IDs are unique. You may only use a particular ID once on a page.
+					</p>
+				</li>
+				<li>
+					<p>
+						You can use IDs to create a link to a specific location within a page, as discussed in <a href="../../basic/links/#linking_within" title="Linking Within Pages">&#8220;Linking Within Pages&#8221;</a>.
+					</p>
+				</li>
+			</ul>
+			<p>
+				To apply a style to an ID, the syntax should look familiar. Instead of using a period, use a hash mark (#):
+			</p>
+<pre>p#goring {color: #ff0000}</pre>
+			<p>
+				That&#8217;s it. In order to apply the style, you would just write <code>&lt;p id="goring"&gt;</code>, as opposed to <code>&lt;p class="goring"&gt;</code>.
+			</p>
+			<p>
+				The only problem here is that you may only apply <code>id="goring"</code> once on the entire web page. In other words, we are presuming that Lord Goring is speaking only once. Given what we know of Lord Goring, this is probably a bad assumption.
+			</p>
+			<p>
+				If you use IDs in your style sheets, make sure that they are for unique elements. IDs are ideal for navigation bars, headers, footers, and other elements that appear only once on the page.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/basic/links/'] = "Links";
+				$seealsoLink['/HTML/intermediate/style_attribute/'] = "The style Attribute";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/div_and_span/'] = "Div and Span";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

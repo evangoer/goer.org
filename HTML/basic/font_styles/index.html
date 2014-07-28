@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Styles - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Font Styles</h1> 
+			<p>
+				The style elements provide a straightforward way to control the font. These elements fall into two categories: <dfn>physical styles</dfn> and <dfn>logical styles</dfn>. The style elements provide only crude control over the appearance of your text. For more sophisticated techniques, refer to <a href="../../intermediate/font_control/" title="Font Control">&#8220;Font Control&#8221;</a>.
+			</p>
+			<h2 id="logical_styles">
+				Logical Styles
+			</h2>
+			<p>
+				A logical style indicates that the enclosed text has some sort of special meaning. We&#8217;ve <a href="../../introduction/tinkering/#em" title="Emphasizing Text">already seen the <code>em</code> element</a>, which indicates that the enclosed text should be emphasized (stressed when spoken). The list of <a href="http://www.w3.org/TR/html4/struct/text.html#h-9.2">available logical style elements</a> includes:
+			</p>
+			<ul>
+				<li>
+					<p><code>em</code> &mdash; Emphasizes text. Usually rendered as italic.</p>
+<pre class="html">Please do &lt;em&gt;not&lt;/em&gt; feed the monkeys.</pre>
+				</li>
+				<li>
+					<p><code>strong</code> &mdash; Strongly emphasizes text. Usually rendered as bold.</p>
+<pre class="html">&lt;strong&gt;WARNING:&lt;/strong&gt; Never feed the monkeys
+under any circumstances.</pre>
+				</li>
+				<li>
+					<p><code>cite</code> &mdash; Indicates a citation or reference. Usually rendered as italic.</p>
+<pre class="html">For more information, please refer to
+&lt;cite&gt;The Dangers of Monkey Feeding, Vol 2&lt;/cite&gt;.</pre>
+				</li>
+				<li>
+					<p><code>dfn</code> &mdash; Indicates the defining instance of a term; usually applied when the term first appears. Usually rendered as italic.</p>
+<pre class="html">Monkeys have sharp &lt;dfn&gt;canines&lt;/dfn&gt;, sharp pointy
+teeth to bite you with.</pre>
+				</li>
+				<li>
+					<p><code>abbr</code> &mdash; indicates an abbreviation or acronym, such as <abbr class="acronym">RADAR</abbr> (RAdio Detection And Ranging); also provides a <code class="attribute">title</code> attribute that may contain the fully-spelled out version. Hovering your mouse over the <code>abbr></code>> causes many browsers to display a &#8220;tooltip&#8221; with the contents of the <code class="attribute">title</code> attribute. Rendering is inconsistent; some browsers display a dotted underline, while others do nothing special.
+					</p>
+<pre class="html">In particular, beware of
+&lt;acronym title="Monkeys Of Unusual Size"&gt;MOUS&lt;/acronym&gt;es.</pre>
+				</li>
+				<li>
+					<p><code>code</code> &mdash; Indicates computer code fragments and commands. Usually rendered in a monospaced font.</p>
+<pre class="html">&lt;code&gt;10 PRINT "I LOVE MONKEY CHOW"&lt;br&gt;
+20 GOTO 10&lt;/code&gt;</pre>
+				</li>
+			</ul>
+			<p>
+				Wait &mdash; &#8220;<em>Usually</em> rendered as italic?&#8221; What does that mean? Shouldn&#8217;t <code>em</code>, <code>cite</code>, and <code>dfn</code> <em>always</em> render as italic?
+			</p>
+			<p>
+				Well, not necessarily.
+			</p>
+			<ul>
+				<li>
+					<p>
+						By default, most browsers render <code>em</code> as italic. However, this is only a convention. Nothing requires browsers to use italic, and in fact, some browsers (such as an text-to-speech synthesis browser) might be completely unable to use italic.
+					</p>
+				</li>
+				<li>
+					<p>
+						Although the default is italic, you can <a href="../../intermediate/font_control/" title="Font Control">override this using CSS</a>. For example, you could specify that on your website, all <code>em</code> elements render as red and bold.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Okay&#8230; but why do <code>em</code>, <code>dfn</code>, and <code>cite</code> all render the same by default? If I want italic, why wouldn&#8217;t you just use <code>em</code> and forget about the rest?
+			</p>
+			<p>
+				Well, sure, you could do that. However, using a richer set of elements gives you finer control. For example, you could declare that emphasized text is red and bold, but all citations are green and italic. You can also use logical style elements to extract more meaning out of a website. For example, if you knew that a website uses the <code>cite</code> element consistently, you could easily write a program to extract a list of citations. (But don&#8217;t obsess over that point; there are better ways to store and consume this sort of information.)
+			</p>
+			<p>
+				The key point to remember is that a <code>cite</code> element is a <em>citation</em>, not a chunk of italic text. The italics are just a useful side effect.
+			</p>
+			<h3>
+				Inline vs. Block Elements
+			</h3>
+			<p>
+				Unlike the paragraph and header elements, the style elements listed above don&#8217;t mark off a &#8220;block&#8221; of text. The physical style elements are <dfn>inline elements</dfn> that perform their work without adding extra line breaks:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.9. Inline vs. Block Elements
+				</h4>
+<pre class="html">&lt;p&gt;
+1. This is a paragraph with a section of
+&lt;em&gt;emphasized text&lt;/em&gt; inside of it.
+&lt;/p&gt;
+
+&lt;em&gt;
+2. This is a section of emphasized text with
+&lt;p&gt;a paragraph&lt;/p&gt; inside of it.
+&lt;/em&gt;</pre>
+			</div>
+			<p>
+				The first sentence results in one &#8220;block&#8221; with a couple of emphasized words inside. In the second sentence, the <code>p</code> element breaks the text up into multiple blocks.
+			</p>
+			<h2>
+				Physical Styles
+			</h2>
+			<p>
+				Physical style elements specify a particular font change. For example, to make text bold, you can mark it off with the <code>b</code> element: <code class="sgmltag-starttag">&lt;b&gt;</code><code>bold text</code><code class="sgmltag-endtag">&lt;/b&gt;</code>. The list of available physical style elements includes:
+			</p>
+			<ul>
+				<li>
+					<p><code>b</code> &mdash; Makes text bold. Appropriate for product names, &#8230;</p>
+<pre class="html">Today, UniStellarDefenseCorp is proud to announce
+&lt;b&gt;Neutrinozon&lt;/b&gt;, the only neutrino-based death ray
+on the market.</pre>
+				</li>
+				<li>
+					<p><code>i</code> &mdash; Makes text italic. Appropriate for ship names, internal monologues and thoughts, &#8230;</p>
+<pre class="html">This exciting new product has already been installed on many
+advanced warships, including the &lt;i&gt;I.S.S. Hood&lt;/i&gt;.</pre>
+				</li>
+				<li>
+					<p><code>sub</code> &mdash; Makes text a subscript. Appropriate for scientific and mathematical notation, &#8230;</p>
+<pre class="html">Although the standard electron neutrino (&#956;&lt;sub&gt;e&lt;/sub&gt;)
+configuration packs plenty of punch, muon neutrino
+(&#956;&lt;sub&gt;&#957;&lt;/sub&gt;) upgrades are available on request.</pre>
+				</li>
+				<li>
+					<p><code>sup</code> &mdash; Makes text a superscript. Appropriate for footnotes, scientific and mathematical notation, &#8230;</p>
+<pre class="html">With an intensity of 1.76x10&lt;sup&gt;6&lt;/sup&gt;
+cm&lt;sup&gt;-2&lt;/sup&gt;s&lt;sup&gt;-1&lt;/sup&gt;, nothing can repel firepower
+of this magnitude!</pre>
+				</li>
+			</ul>
+			<p>
+				The physical styles are subtly different from the logical styles. The logical style element <code>strong</code> means &#8220;something strongly emphasized,&#8221; while the physical style element <code>b</code> just means, &#8220;something that is bold.&#8221;
+			</p>
+			<h3>
+				A Digression: Physical Styles and Semantic Markup
+			</h3>
+			<p>
+				These days, you&#8217;ll sometimes hear people claim that the physical styles are yucky and bad and should never be used. This is because logical styles contain small quantities of a rare earth named &#8220;<a href="http://en.wikipedia.org/wiki/Semantic_Web">Semanticism</a>&#8221;. Semanticism can be mined and processed into the power source for farms of spinning Academic Paper Turbines, which serve to feed and clothe members of our society who would otherwise starve to death.
+			</p>
+			<p>
+				Although it is true that certain physical styles are obsolete, the <code>i</code>, <code>b</code>, <code>sub</code>, and <code>sup</code> elements <em>are</em> appropriate to use in certain situations. For example, compare these code samples:
+			</p>
+			<ul>
+				<li>
+<pre class="html">My grandfather served on the &lt;i&gt;U.S.S. Maine&lt;/i&gt;.</pre>
+				</li>
+				<li>
+<pre class="html">My grandfather served on the &lt;em&gt;U.S.S. Maine&lt;/em&gt;.</pre>
+				</li>
+			</ul>
+			<p>
+				In this case, <code>i</code> is more appropriate than <code>em</code>, unless you think it&#8217;s appropriate to always be shouting the &#8220;U.S.S. Maine&#8221; part. Not that <code>i</code> is all that wonderful, but <code>em</code> is just flatly wrong. Maybe it would be nice if we had a <code>vessel</code> element, but HTML is a small language, and the <code>i</code> element is the best we can do.
+			</p>
+			<p>
+				For a more extreme example, consider the quantity &#8220;2 to the x power,&#8221; represented in HTML as <code>2&lt;sup&gt;x&lt;/sup&gt;</code>. If we take away the superscript, this leaves us with <code>2x</code>, which is most emphatically not equal to &#8220;2 to the x power.&#8221; Even though the <code>sup</code> element literally means, &#8220;move the 2 above the line&#8221;, this physical change to the text has actual mathematical meaning! (Thanks to <a href="http://golem.ph.utexas.edu/~distler/blog/">Jacques Distler</a> for pointing this one out.)
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/tinkering/'] = "Tinkering";
+				$seealsoLink['/HTML/introduction/elements/'] = "Elements";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/font_control/'] = "Font Control";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

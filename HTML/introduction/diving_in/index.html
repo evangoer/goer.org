@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diving In - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Diving In</h1> 
+			<p> 
+				The first thing we&#8217;re going to do is dive in and create a simple webpage. We&#8217;ll explore what&#8217;s going on soon, but for now, just follow the directions as best you can.
+			</p> 
+			<p> 
+				To create your web page, you need:
+			</p> 
+			<ul> 
+				<li>A browser (you&#8217;re using one right now)</li> 
+				<li>A plain text editor (you already have one on your machine)</li> 
+			</ul> 
+			<h2>Step 1: Open a Text Editor</h2> 
+			<p> 
+				A text editor is a program that edits plain text files. When authoring HTML, do not use <span class="application">Word</span>, <span class="application">Wordpad</span>, <span class="application">Pages</span>, or any other program that does not save files as plain text.
+			</p> 
+			<ul> 
+				<li>Windows users: open <span class="application">Notepad</span> ( <span class="guimenu">Start</span> | <span class="guisubmenu">Programs</span> | <span class="guisubmenu">Accessories</span> | <span class="guimenuitem">Notepad</span> )</li> 
+				<li>Mac OS X users: open <span class="application"><span><strong class="command">vi</strong></span></span> or <span class="application">TextEdit</span> ( <span class="guimenu">Applications</span> | <span class="guimenuitem">TextEdit</span> )</li> 
+				<li>Linux and other UNIX users: open <span class="application"><span><strong class="command">vi</strong></span></span> or <span class="application"><span><strong class="command">emacs</strong></span></span></li> 
+			</ul> 
+			<p> 
+				Unfortunately, <span class="application">Notepad</span> and <span class="application">TextEdit</span> are not very good text editors. By default, <span class="application">Notepad</span> always tries to save and open files with a <code class="filename">.txt</code> extension. You must constantly fight with it to make it save and open webpages (files with a <code class="filename">.htm</code> or <code class="filename">.html</code> extension). Be strong, and ye shall overcome.
+			</p> 
+			<p> 
+				Likewise, <span class="application">TextEdit</span> does not use plain text by default. Before using <span class="application">TextEdit</span> to edit HTML, go into <span class="guimenu">Preferences</span> and set the <span class="guilabel">Format</span> for new documents to be <span class="guimenuitem">Plain Text</span>. For good measure, you might have to convert your existing document to plain text ( <span class="guimenu">Format</span> | <span class="guimenuitem">Make Plain Text</span> ).
+			</p> 
+			<p> 
+				Using <span class="application">Notepad</span> to write HTML is kind of like using a butter knife to cut a birthday cake &mdash; it&#8217;s the wrong tool for the job. A better choice would be a more advanced text editor, such as:
+			</p> 
+			<ul> 
+				<li> 
+					<p> 
+						<a href="http://notepad-plus-plus.org/">Notepad++</a> (Windows, free)
+					</p> 
+				</li> 
+				<li> 
+					<p> 
+						<a href="http://www.barebones.com/products/textwrangler/">TextWrangler</a> (OS X, free)
+					</p> 
+				</li> 
+				<li> 
+					<p> 
+						<a href="http://www.jedit.org/">jEdit</a> (Windows/OS X/Linux, free)
+					</p> 
+				</li> 
+				<li> 
+					<p> 
+						<a href="http://www.sublimetext.com/">Sublime Text</a> (Windows/OS X/Linux, not free, but well worth the money)
+					</p> 
+				</li> 
+			</ul> 
+			<p> 
+				All of these editors avoid the problems with file extensions and plain text described above, and have numerous extra features for advanced users. You don&#8217;t have to download one of these editors right now, but if you continue with web development, you&#8217;ll need to upgrade your tools.
+			</p> 
+			<h2>Step 2: Create and Save the Web Page</h2> 
+			<p> 
+				Copy-and-paste the text in <a href="#ex_simple" title="Example&nbsp;1.1.&nbsp;A Simple Webpage">Example&nbsp;1.1, &#8220;A Simple Webpage&#8221;</a> into your text editor, starting with the text, <code>"&lt;html&gt;"</code>.
+			</p> 
+			<div class="example" id="ex_simple"> 
+				<h4> 
+					Example&nbsp;1.1.&nbsp;A Simple Webpage<br /> 
+				</h4> 
+				<pre class="html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;A Simple Webpage&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    This is a simple webpage.
+  &lt;/body&gt;
+&lt;/html&gt;</pre> 
+			</div> 
+			<p> 
+				To see what this HTML code sample looks like as a web page, click the <span class="guilabel">view html</span> link above the code sample.
+			</p> 
+			<p> 
+				The words that are surrounded with angle brackets (<code>&lt; &gt;</code>) are called <dfn>elements</dfn>. We will talk about what a element is soon, but first let&#8217;s finish creating and displaying your webpage.
+			</p> 
+			<p> 
+				Once you have copied the text over to your text editor, save the file in your home directory or Desktop as the file <code class="filename">simple.html</code>.
+			</p> 
+			<div class="note"> 
+				<h4>Note</h4> 
+				<p> 
+					<span class="application">Notepad</span> will try to append a <code class="filename">.txt</code> extension to your file name. Don&#8217;t let this happen. In the <span class="guilabel">Save As</span> dialog box, set <span class="guilabel">File name</span> to <code class="filename">simple.html</code> and change <span class="guilabel">Save as type</span> from <span class="guimenuitem">Text Documents</span> to <span class="guimenuitem">All Files (*.*)</span>.
+				</p> 
+			</div> 
+			<h2>Step 3: Display the Webpage in Your Browser</h2> 
+			<p> 
+				Open the file <code class="filename">simple.html</code> by typing <strong class="keycap">Ctrl-O</strong> (<strong class="keycap">Cmd-O</strong> for Mac users) and selecting the file. <span class="application">Internet Explorer</span> users should select <span class="guibutton">Browse</span> to find the file.
+			</p> 
+			<p> 
+				After selecting <code class="filename">simple.html</code>, click <span class="guibutton">Open</span>. Your webpage should appear in the browser window. Compare it to <a href="#ex_simple">Example 1.1</a>. Does it match? (To compare results, click the <span class="guilabel">view html</span> link above Example 1.1.)
+			</p> 
+			<p> 
+				If it does, congratulations! Let&#8217;s move on to the next section, where we&#8217;ll try to answer the question, what the heck is going on?
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/structure/'] = "Structure";
+				$seealsoLink['/HTML/introduction/tinkering/'] = "Tinkering";
+				$seealsoLink['/HTML/introduction/browser_tools/'] = "Browser Tools";
+				$seealsoLink['/HTML/basic/paragraph_breaks/'] = "Paragraph Breaks";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+		</div>
+    </div>
+</body>
+</html>

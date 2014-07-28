@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colors - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Colors</h1> 
+			<p>
+				<a href="../../introduction/tinkering/#changing_bgcolor" title="Changing the Background Color">&#8220;Changing the Background Color&#8221;</a> briefly introduced how to change the background color to yellow. That&#8217;s kind of neat, but this just raises more questions. If yellow is available, what are the other colors I can use? Can I change the foreground color? Can I apply colors to just a small selection of text?
+			</p>
+			<h2 id="fgcolor">
+				Text (Foreground) Color
+			</h2>
+			<p>
+				Here&#8217;s how to change the text color:
+			</p>
+			<ol>
+				<li>
+					<p>
+						Add an attribute called <code>style</code> to the element. (<code>&lt;<var class="replaceable"><code>element</code></var> style=""&gt;</code>)
+					</p>
+				</li>
+				<li>
+					<p>
+						Inside the <code>style</code> attribute, specify the color you want by typing <code>color:</code> followed by the color you want. (<code>&lt;<var class="replaceable"><code>element</code></var> style="color: red"&gt;</code>)
+					</p>
+					<div class="note">
+						<h4>
+							Note
+						</h4>
+						<p>
+							As with all attributes, do not include the <code>style</code> attribute in the closing tag, <code class="sgmltag-endtag">&lt;/p&gt;</code>.
+						</p>
+					</div>
+				</li>
+			</ol>
+			<p>
+				For example:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.10. Red Paragraph
+				</h4>
+<pre class="html">&lt;p&gt;
+  The grandmother lived out in the wood, half a league from the village,
+  and just as Little Red-Cap entered the wood, a wolf met her. Red-Cap
+  did not know what a wicked creature he was, and was not at all afraid
+  of him.
+&lt;/p&gt;
+&lt;p style="color: red"&gt;
+  'Good day, Little Red-Cap,' said he.
+&lt;/p&gt;
+&lt;p&gt;
+  'Thank you kindly, wolf.'
+&lt;/p&gt;</pre>
+			</div>
+			<p>
+				In the earlier example, <a href="../../introduction/tinkering/#ex_background" title="Example&nbsp;1.6.&nbsp;Background Color">Example 1.6, &#8220;Background Color&#8221;</a>, the background of the entire page turned yellow. But in our example above, the text turns red. A <code>style</code> attribute value of <code class="css">background:</code> sets the background color, while <code class="css">color:</code> sets the foreground color.
+			</p>
+			<div class="note">
+				<h4>
+					Note
+				</h4>
+				<p>
+					The keywords <code class="css">color</code> and <code class="css">background</code> are called <dfn>CSS properties</dfn>. CSS (Cascading Style Sheets) is a technique for applying <dfn>style</dfn> to elements. Changing the element&#8217;s color is just one small example of what CSS can do. We&#8217;ll learn a lot more about CSS in <a href="../../intermediate/" title="Chapter&nbsp;3.&nbsp;Styling Basics">Chapter 3, <i>Styling Basics</i></a>, but for now let&#8217;s focus on color specifically.
+				</p>
+			</div>
+			<h2 id="bgcolor">
+				Background Color
+			</h2>
+			<p>
+				To change the background color of a element, you just need to use a different property in the <code>style</code> attribute: the <code>background</code> property. If you apply the background to the <code>body</code> element, this changes the background color of the entire web page. (We saw an example of this in <a href="../../introduction/tinkering/" title="Tinkering">&#8220;Tinkering&#8221;</a>.) Not only can you change an element&#8217;s background color, you can change the text color at the same time:
+			</p>
+			<div class="example" id="ex_bgcolor">
+				<h4>
+					Example 2.11. Text and Background Color
+				</h4>
+<pre class="html">&lt;p style="background: yellow; color: purple"&gt;
+  There's a yellow rose in Texas, That I am going to see,&lt;br&gt;
+  Nobody else could miss her, Not half as much as me.&lt;br&gt;
+  She cried so when I left her, It like to broke my heart,&lt;br&gt;
+  And if I ever find her, We nevermore will part. &lt;br&gt;
+&lt;/p&gt;</pre>
+			</div>
+			<p>
+				The paragraph has two properties, <code class="css">background</code> and <code class="css">color</code>. When you apply multiple properties, you can add them in any order, but you must separate them with a semicolon. If you forget the semicolon:
+			</p>
+<pre class="html">&lt;p style="background: yellow color: purple"&gt;
+  There's a yellow rose in Texas, That I am going to see,&lt;br&gt;
+  Nobody else could miss her, Not half as much as me.&lt;br&gt;
+  She cried so when I left her, It like to broke my heart,&lt;br&gt;
+  And if I ever find her, We nevermore will part. &lt;br&gt;
+&lt;/p&gt;</pre>
+			<p>
+				then the browser interprets this as setting the background color to the value <code>yellow color: purple</code>. Since <code>yellow color: purple</code> is not a valid color, the browser does nothing (and you might be left puzzling over why your styles aren&#8217;t appearing).
+			</p>
+			<p>
+				The results, <a href="#ex_bgcolor" title="Example&nbsp;2.11.&nbsp;Text and Background Color">Example 2.11, &#8220;Text and Background Color&#8221;</a> are particularly garish and difficult to read. This brings up an important point: it is very easy to go wrong when choosing text and background colors. Use the color and background properties with caution.
+			</p>
+			<h2>
+				Inline Color Styles
+			</h2>
+			<p>
+				Although so far we&#8217;ve only applied the color properties to block elements such as <code>body</code> and <code>p</code>, you may apply the color properties to inline elements as well, including the elements from <a href="../font_styles/" title="Font Styles">&#8220;Font Styles&#8221;</a>. For example,
+			</p>
+<pre class="html">&lt;p&gt;
+  &lt;strong style="color: red"&gt;DANGER:&lt;/strong&gt; Flying monkeys.
+&lt;/p&gt;</pre>
+			<p>
+				The red color applies to the <code>strong</code> element, but not to the rest of the paragraph.
+			</p>
+			<p>
+				If you just want to change the color of a selection of text without also making it bold or italic, there is a special inline element called the <code>span</code> element. The <code>span</code> element &#8220;does nothing&#8221; by default, and so it is safe for applying styles without affecting anything else. We&#8217;ll discuss this element further in the section <a href="../../intermediate/div_and_span/" title="Div and Span">&#8220;Div and Span&#8221;</a>.
+			</p>
+			<div class="note">
+				<h4>
+					Note
+				</h4>
+				<p>
+					Although you may apply the <code>style</code> attribute to a wide array of elements, there are some exceptions. For example, you might think you can change the color of the title in your browser&#8217;s titlebar by adding a <code>style</code> attribute to the <code>title</code> element. However, this is invalid HTML, and the browser ignores it.
+				</p>
+				<p>
+					In general, you may apply style to nearly any element that falls under <code>body</code>, including <code>body</code> itself.
+				</p>
+			</div>
+			<h2>
+				Specifying Colors
+			</h2>
+			<p>
+				In the previous examples, we were using color keywords such as <code>red</code>, <code>green</code>, and so on. What other words are available? The answer it, it depends on your browser.
+			</p>
+			<p>
+				Here are sixteen color keywords that are nearly universal across all browsers that support color:
+			</p>
+			<div class="figure">
+				<h4>Figure 2.1. Standard Color Keywords</h4>
+				<p><img src="/images/html/stdcolors.png" alt="Standard Color Keywords"></p>
+			</div>
+			<p>
+				The numbers after the pound sign (#) are called <dfn>hex codes</dfn>. Hex codes are another way to represent colors in HTML. It gets a little technical after this, so hang on&#8230;
+			</p>
+			<div class="note">
+				<h4>
+					Note
+				</h4>
+				<p>
+					Those of you who grew up in the 1960s and <a href="http://en.wikipedia.org/wiki/New_Math">experienced the &#8220;New Math&#8221;</a> might have a small advantage here. See, I bet you thought you&#8217;d never use that stuff again!
+				</p>
+			</div>
+			<h4>
+				Hex Codes
+			</h4>
+			<p>
+				Each of the six numbers in a hex code is a <dfn>hexadecimal</dfn>, or base-16 number.
+			</p>
+			<ul>
+				<li>
+					<p>
+						In the ordinary decimal system, each numeral (0-9) represents a power of ten. You need ten symbols to represent decimal numbers: 0, 1, 2, 3, 4, 5, 6, 7, 8, and last but not least, 9.
+					</p>
+					<p>
+						With two decimal numerals, the highest number you can make is &#8220;99&#8221;. &#8220;9&#8221; in the tens place + &#8220;9&#8221; in the ones place = (nine x ten) + (nine x one) = 90 + 9 = 99.
+					</p>
+				</li>
+				<li>
+					<p>
+						In a hexadecimal system, each numeral represents a power of sixteen, and so you need sixteen symbols (0-9 and a, b, c, d, e, f). Here, a = 10 (decimal), b = 11 (decimal), and so on up to f = 15 (decimal).
+					</p>
+					<p>
+						With two hexadecimal numerals, the highest number you can make is &#8220;ff&#8221;, which is 255 in decimal notation. &#8220;f&#8221; in the sixteens place + &#8220;f&#8221; in the ones place = (fifteen x sixteen) + (fifteen x one) = 240 + 15 = 255.
+					</p>
+				</li>
+			</ul>
+			<p>
+				A color hex code consists of three two-digit hexadecimal numbers. Each number indicates how much red, green, and blue the browser should display. The first hex number indicates how much red to use, the second indicates the amount of green, and the third specifies the blue: RRGGBB. <code>00</code> means &#8220;use none of this color&#8221;, while <code>ff</code> means &#8220;use as much of this color as possible.&#8221;
+			</p>
+			<p>
+				<a href="#fig_hexcode" title="Figure&nbsp;2.2.&nbsp;Hex Code #ff9933">Figure 2.2, &#8220;Hex Code #ff9933&#8221;</a> demonstrates how this works. The hex code #ff9933 provides the maximum amount of red, a middling amount of green, and a small amount of blue. Mixing the three together results in an orange-ish color.
+			</p>
+			<div class="figure" id="fig_hexcode">
+				<h4>Figure 2.2. Hex Code #ff9933</h4>
+				<p><img src="/images/html/hexcode.png" alt="Hex Code #ff9933"></p>
+			</div>
+			<p>
+				Here are some more examples:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>color: #ff0000</code> = All red, no green, no blue. Result: bright red.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>color: #00ffff</code> = No red, all green, all blue. Result: bright teal (or &#8220;aqua&#8221;).
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>color: #000000</code> = No red, no green, no blue. Result: black.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>color: #ffffff</code> = All red, all green, all blue. Result: white.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>color: #cc99ff</code> = A lot of red, some green, all blue. Result: lavender.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Hex codes can be uppercase or lowercase. Just don&#8217;t forget the pound sign at the beginning. There are actually several more ways to specify colors, but color names and hex codes are the most common.
+			</p>
+			<h4>
+				Hex Codes vs. Color Names: Which is Better?
+			</h4>
+			<p>
+				Hex codes are a bit harder to understand than color names, particularly if you&#8217;re not used to hexadecimal notation. However, it&#8217;s probably better to use hex codes anyway.
+			</p>
+			<p>
+				First, hex codes provide much more flexibility &mdash; you can specify about 16 million different combinations with hex codes. (Many computers can&#8217;t display that many colors, but that&#8217;s another matter.)
+			</p>
+			<p>
+				Second, hex codes are more stable and universal. Simple color names such as &#8220;red&#8221; and &#8220;black&#8221; will work in just about any browser, but support for fancy color names (&#8220;papayawhip&#8221;? &#8220;eggshell&#8221;?) is a bit dodgier. It&#8217;s best to stick with hex codes, which work universally.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/tinkering/'] = "Tinkering";
+				$seealsoLink['/HTML/introduction/attributes/'] = "Attributes";
+				$seealsoLink['/HTML/basic/font_styles/'] = "Font Styles";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/div_and_span/'] = "Div and Span";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

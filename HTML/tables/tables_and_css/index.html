@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tables and CSS - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Tables and CSS</h1>
+			<p>
+				For more sophisticated control over borders, spacing, and padding, you can and should use CSS rather than the <code>border</code>, <code>cellspacing</code>, and <code>cellpadding</code> attributes. The CSS properties are as follows:
+			</p>
+			<ul>
+				<li>
+					<p>
+						The <code>padding</code> CSS property corresponds to the <code class="attribute">cellpadding</code> table attribute.
+					</p>
+				</li>
+				<li>
+					<p>
+						The <code>border-spacing</code> CSS property corresponds to the <code class="attribute">cellspacing</code> table attribute.
+					</p>
+				</li>
+				<li>
+					<p>
+						The <code>border</code> CSS property corresponds to the <code class="attribute">border</code> table attribute.
+					</p>
+				</li>
+			</ul>
+			<p>
+				The CSS properties allow us to use any valid CSS length: <code>px</code> are okay, as are <code>em</code>, <code>pt</code>, and so on. We&#8217;ll stick with pixels for our example below.
+			</p>
+			<div class="example">
+				<h4>
+					Example 4.9. Table: CSS Borders
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    table {
+      background: #009900;
+      border: 4px #ff00ff ridge;
+      border-spacing: 5px;
+    }
+    td {
+      background: #ffff00;
+      padding: 10px;
+      border: 2px #0000ff dotted;
+    }
+    td.middle {
+      border: 2px #ff0000 solid;
+      padding-right: 25px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table
+    border="0" cellpadding="0" cellspacing="0"
+    summary="Table with CSS borders"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Left Cell&lt;/td&gt;
+      &lt;td class="middle"&gt;Middle Cell&lt;/td&gt;
+      &lt;td&gt;Right Cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				The overall table has a green background and a ridged, lavender border. The result is garish to say the least&#8230; presumably your tables will be far more subdued and tasteful.
+			</p>
+			<p>
+				Ordinary table cells have a yellow background, ten pixels of padding, five pixels of border-spacing (i.e. cellspacing), and a blue, dotted border.
+			</p>
+			<p>
+				Table cells with <code>class="middle"</code> have an extra fifteen pixels of padding to the right and a red, solid border.
+			</p>
+			<p>
+				Note that some modern browsers still don&#8217;t support the <code>border-spacing</code> attribute. If you&#8217;re using one of these browsers, all three cells will be adjacent to each other, and you will not see the green background of the table itself. One workaround is to use CSS to do your primary styling, and the <code>border</code> table attribute for backup.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/attributes/'] = "Attributes";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/margins_and_padding/'] = "Box Model: Margins and Padding";
+				$seealsoLink['/HTML/intermediate/borders/'] = "Box Model: Borders";
+				$seealsoLink['/HTML/tables/table_structure/'] = "Table Structure";
+				$seealsoLink['/HTML/tables/cellpadding_and_cellspacing/'] = "Cellpadding and Cellspacing";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

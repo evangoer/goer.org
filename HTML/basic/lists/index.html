@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lists - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Lists</h1> 
+			<p>
+				HTML provides several ways to display lists of information:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<dfn>unordered lists</dfn>: bulleted lists (like this one)
+					</p>
+				</li>
+				<li>
+					<p>
+						<dfn>ordered lists</dfn>: numbered lists, procedures, formal outlines
+					</p>
+				</li>
+				<li>
+					<p>
+						<dfn>definition lists</dfn>: lists of terms and definitions
+					</p>
+				</li>
+			</ul>
+			<p>
+				Lists are different from anything we&#8217;ve covered so far, because generating a list requires at least two elements working together.
+			</p>
+			<h2>
+				Ordered Lists
+			</h2>
+			<p>
+				Ordered lists are contained by an <code>ol</code> element. Within the <code class="sgmltag-starttag">&lt;ol&gt;</code> and <code class="sgmltag-endtag">&lt;/ol&gt;</code> tags, each list item is defined by an <code>li</code> element:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.17. Ordered Lists
+				</h4>
+<pre class="html">&lt;h3&gt;My Dot-com Business Plan&lt;/h3&gt;
+	
+&lt;ol&gt;
+  &lt;li&gt;Buy domain name&lt;/li&gt;
+  &lt;li&gt;Put up website&lt;/li&gt;
+  &lt;li&gt;???&lt;/li&gt;
+  &lt;li&gt;Profit!&lt;/li&gt;
+&lt;/ol&gt;</pre>
+			</div>
+			<p>
+				The default ordered list uses arabic numerals (1, 2, 3, &#8230;), but you can easily alter this behavior.
+			</p>
+			<p>
+				Directly within the <code>ol</code> element, you can only include <code>li</code> elements. However, within the <code>li</code> elements you may place nearly any HTML content that you want: text, paragraphs, images, even another list.
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.18. Nested Ordered List
+				</h4>
+<pre class="html">&lt;h3&gt;Schedule for Monday&lt;/h3&gt;
+	
+&lt;ol style="list-style-type: upper-roman"&gt;
+  &lt;li&gt;Suppress Gaul
+    &lt;ol style="list-style-type: upper-alpha"&gt;
+      &lt;li&gt;Two more legions or three?&lt;/li&gt;
+      &lt;li&gt;Where to put victory arch? Forum's looking crowded...&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Have Cicero killed&lt;/li&gt;
+  &lt;li&gt;Lunch&lt;/li&gt;
+  &lt;li&gt;Head-and-hands-on-pike viewing at the Forum (casual dress ok?)&lt;/li&gt;
+&lt;/ol&gt;</pre>
+			</div>
+			<p>
+				Placing one list within another is a nested list. The outer list will use upper-case Roman numerals, and the inner list will start counting independently, using upper-case letters. There are a large number of available list-style-types for ordered lists. The most common and well-supported values are <code>upper-roman</code>, <code>lower-roman</code>, <code>upper-alpha</code>, <code>lower-alpha</code>, and the default, <code>decimal</code>. If for some reason the browser doesn&#8217;t understand the value you specify, it just falls back to the default (decimal numbers).
+			</p>
+			<p>
+				You can use <code>ol</code> for any list of items where the order is important. This includes outlines, procedures, TODO lists, lists of ranked items.
+			</p>
+			<h2>
+				Unordered List
+			</h2>
+			<p>
+				Unordered lists are similar to ordered lists, except that they do not have a particular order. Unordered lists even recycle the <code>li</code> element, which makes it easy to turn an ordered list into an unordered list and vice-versa. All you need do is turn your <code>ol</code>s into <code>ul</code>s:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.19. Unordered List
+				</h4>
+<pre class="html">&lt;h3&gt;My Dot-com Business Plan&lt;/h3&gt;
+	
+&lt;ul style="list-style-type: square; color: #009900"&gt;
+  &lt;li&gt;Buy domain name&lt;/li&gt;
+  &lt;li&gt;Put up website&lt;/li&gt;
+  &lt;li style="list-style-type: disc; color: #ff0000"&gt;???&lt;/li&gt;
+  &lt;li&gt;Profit!&lt;/li&gt;
+&lt;/ul&gt;</pre>
+			</div>
+			<p>
+				In the parent element <code>ul</code>, we&#8217;ve specified that the list should be green and that the bullets should be squares. We overrode this behavior in the third bullet point, specifying a red, circular bullet. Notice how the style cascades from the parent element to the child elements &mdash; each bullet takes on the characteristics of its parent, unless we specify otherwise.
+			</p>
+			<p>
+				Ordered and unordered lists indent everything enclosed by the <code>ul</code> or <code>ol</code> block. You might be tempted to use <code>ul</code> to indent any old HTML:
+			</p>
+<pre>&lt;ul&gt;
+  &lt;p&gt;This is an indented paragraph.&lt;/p&gt;
+&lt;/ul&gt;</pre>
+			<p>
+				Don&#8217;t do this. This is incorrect HTML, and there are better ways to achieve the same effect, as we&#8217;ll see in <a href="../../intermediate/align_and_indent/" title="Align and Indent">&#8220;Align and Indent&#8221;</a>. While we&#8217;re on the subject, <code>li</code> elements must always be enclosed by a <code>ul</code> or <code>ol</code> element. Don&#8217;t put <code>li</code> elements directly in the <code>body</code> of the document; this is also bad practice.
+			</p>
+			<h2>
+				Definition Lists
+			</h2>
+			<p>
+				A definition list provides a list of terms and definitions. Definition lists require <em>three</em> elements to construct:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>dl</code>: Denotes the definition list itself. Within the <code>dl</code> you may only include <code>dt</code> and <code>dd</code> elements.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>dt</code>: Denotes a term within the definition list. Within the <code>dt</code> you may only include inline content, such as plain text and inline style elements.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>dd</code>: Denotes a definition for a term. Within the <code>dd</code> you may include any block or inline content: paragraphs, other lists, whatever you like.
+					</p>
+				</li>
+			</ul>
+			<p>
+				A definition list consists of terms (<code>dt</code>) immediately followed by definitions (<code>dd</code>).
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.20. Definition List
+				</h4>
+<pre class="html">&lt;h1&gt;The Devil's Dictionary&lt;/h1&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;ABSURDITY, n.&lt;/dt&gt;
+  &lt;dd&gt;A statement or belief manifestly inconsistent with
+  one's own opinion.&lt;/dd&gt;
+
+  &lt;dt&gt;ACADEME, n.&lt;/dt&gt;
+  &lt;dd&gt;An ancient school where morality and philosophy were
+  taught.&lt;/dd&gt;
+
+  &lt;dt&gt;ACADEMY, n.&lt;/dt&gt;
+  &lt;dd&gt;[from ACADEME] A modern school where football is
+  taught.&lt;/dd&gt;
+
+  &lt;dt&gt;ACCIDENT, n.&lt;/dt&gt;
+  &lt;dd&gt;An inevitable occurrence due to the action of immutable
+  natural laws.&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+			</div>
+			<p>
+				You may provide multiple definitions for a term, or even multiple definitions <em>and</em> multiple terms, although this is less common. Some people also use definition lists to mark up screenplays and other exchanges of dialogue: the speaker is a <code>dt</code> and their dialogue is a <code>dd</code>. If you&#8217;re writing technical manuals, you can use definition lists to document variables, interface components, and more. Definition lists are good for any &#8220;listed information that comes in pairs.&#8221;
+			</p>
+			<p>
+				Congratulations, you&#8217;ve finished the basic section! In the next section we learn about advanced font styling, alignment, margins, and borders. Read on for more&#8230;
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/structure/'] = "Structure";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/align_and_indent/'] = "Align and Indent";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

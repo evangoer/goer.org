@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The style Attribute - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>The style Attribute</h1> 
+			<p>
+				So far we&#8217;ve dealt with two major components to our web pages: the elements, which define the basic structure of the page, and the styling, which further refines how the page should look. We saw the effects of styling in <a href="../../basic/colors/" title="Colors">&#8220;Colors&#8221;</a>:
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.1. Red Paragraph (Redux)
+				</h4>
+<pre class="html">&lt;p&gt;
+  The grandmother lived out in the wood, half a league from the village,
+  and just as Little Red-Cap entered the wood, a wolf met her. Red-Cap
+  did not know what a wicked creature he was, and was not at all afraid
+  of him.
+&lt;/p&gt;
+&lt;p style="color: red"&gt;
+  'Good day, Little Red-Cap,' said he.
+&lt;/p&gt;
+&lt;p&gt;
+  'Thank you kindly, wolf.'
+&lt;/p&gt;</pre>
+			</div>
+			<p>
+				Now, it&#8217;s nice that we can make a single paragraph red, but what if we wanted <em>all</em> paragraphs to be red? Or what if we wanted to do something more than just changing the paragraph&#8217;s color?
+			</p>
+			<p>
+				In the early 1990s, the only way to do control the color, size, and font of your text was the <code>font</code> element. So people wrote a lot of HTML that looked like this:
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.2. The font Element
+				</h4>
+<pre class="html">&lt;B&gt;&lt;I&gt;&lt;FONT Size="+2"&gt;
+&lt;FONT FACE="Palatino, Arial, Helvetica"&gt;
+&lt;FONT color="#ff0000"&gt;
+Kneel Before the Power of the Font Element!
+&lt;/FONT&gt;
+&lt;/font&gt;&lt;/Font&gt;&lt;/i&gt;&lt;/B&gt;
+
+&lt;p&gt;&lt;FONT Size="-1"&gt;
+&lt;FONT FACE="Arial, Helvetica, sans-serif"&gt;
+&lt;FONT color="#123456"&gt;
+Ow! The bad HTML code! It burns us, burns us, precious!
+&lt;/font&gt;&lt;/font&gt;&lt;/FoNt&gt;&lt;/p&gt;</pre>
+			</div>
+			<p>
+				This was a tremendous pain for many reasons. You had to keep typing this kind of markup all over the page, and if your boss told you later on to change the font size, you had to redo all this code again.
+			</p>
+			<p>
+				The <code>style</code> attribute is an improvement over the <code>font</code> element, but it still suffers from the same basic problem: it isn&#8217;t reusable. You don&#8217;t want to have to add a <code>style</code> element to every element on the page. Fortunately, there is a much better way to do all of this. These days, you should never use the <code>font</code> element, and the <code>style</code> attribute only sparingly if at all. In the next section, we&#8217;ll look at a <em>much better</em> way to do this.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/attributes/'] = "Attributes";
+				$seealsoLink['/HTML/basic/font_styles/'] = "Font Styles";
+				$seealsoLink['/HTML/basic/colors/'] = "Colors";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/font_control/'] = "Font Control";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

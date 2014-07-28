@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Structure - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Table Structure</h1> 
+			<p>
+				Even a simple table involves several levels of nested elements. A table&#8217;s basic structure is:
+			</p>
+			<ul>
+				<li>
+					<p>
+						The <code>table</code> element defines the table itself.
+					</p>
+				</li>
+				<li>
+					<p>
+						Within the <code>table</code> are one or more <code>tr</code> elements that define table rows.
+					</p>
+				</li>
+				<li>
+					<p>
+						Within the <code>tr</code> elements are one or more <code>th</code> or <code>td</code> elements. These elements define table header cells and table data cells, respectively.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Here&#8217;s a simple example of a table with one row and two columns. To better illustrate the structure of the table, we&#8217;ve added a snippet of CSS to provide each table cell with a border.
+			</p>
+			<div class="example" id="ex_table1x2">
+				<h4>
+					Example 4.1. 1&#215;2 Table
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;1x2 Table&lt;/title&gt;
+  &lt;style&gt;
+    td { border: 1px solid #000000; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td&gt;California&lt;/td&gt;
+      &lt;td&gt;Michigan&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<h2>
+				Adding Rows and Columns
+			</h2>
+			<p>
+				A <code>tr</code> element represents a row. To add another row, just add another <code>tr</code> element with the same number of <code>td</code>s (columns) as the rest of the table:
+			</p>
+			<div class="example" id="ex_table2x2">
+				<h4>
+					Example 4.2. 2&#215;2 Table
+				</h4>
+				<pre class="html">
+					&lt;table&gt;
+					&lt;tr&gt;
+					&lt;td&gt;California&lt;/td&gt;
+					&lt;td&gt;Michigan&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+					&lt;td&gt;Nevada&lt;/td&gt;
+					&lt;td&gt;Ohio&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;/table&gt;
+				</pre>
+			</div>
+			<p>
+				A <code>td</code> represents a table data cell. To add another column, add another <code>td</code> element to each <code>tr</code> in the table:
+			</p>
+			<div class="example"  id="ex_table2x3">
+				<h4>
+					Example 4.3. 2&#215;3 Table
+				</h4>
+<pre class="html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;California&lt;/td&gt;
+    &lt;td&gt;Michigan&lt;/td&gt;
+    &lt;td&gt;Mississippi
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Nevada&lt;/td&gt;
+    &lt;td&gt;Ohio&lt;/td&gt;
+    &lt;td&gt;Alabama&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+			</div>
+			<h2>
+				Adding Headers
+			</h2>
+			<p>
+				So far, we&#8217;ve seen table rows containing <code>td</code> (table data) elements. However, rows can also contain <code>th</code> (table header) elements. Table headers label a row or column. By default, most browsers render table headers as bold.
+			</p>
+			<div class="example">
+				<h4>
+					Example 4.4. Table with Headers
+				</h4>
+<pre class="html">&lt;table&gt;
+&lt;tr&gt;
+    &lt;th&gt;West&lt;/th&gt;
+    &lt;th&gt;Midwest&lt;/th&gt;
+    &lt;th&gt;South&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;California&lt;/td&gt;
+    &lt;td&gt;Michigan&lt;/td&gt;
+    &lt;td&gt;Mississippi
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Nevada&lt;/td&gt;
+    &lt;td&gt;Ohio&lt;/td&gt;
+    &lt;td&gt;Alabama&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+			</div>
+			<div class="tip">
+				<h4>
+					Tip
+				</h4>
+				<p>
+					If you leave any table data or table header empty (<code>&lt;td&gt;&lt;/td&gt;</code>), the cell will collapse and look unattractive. To prevent this from happening, you can place a special &#8220;non-breaking space&#8221; entity, <code class="sgmltag-genentity">&amp;nbsp;</code>, in the cell. This inserts an invisible character that forces the browser to draw the borders of the cell.
+				</p>
+			</div>
+			<h2>
+				Adding Captions and Summaries
+			</h2>
+			<p>
+				You can provide additional information about a table by giving it a caption or a summary.
+			</p>
+			<p>
+				The <code>table</code> element&#8217;s <code class="attribute">summary</code> attribute provides a short text summary of the table. Most browsers do not display the summary directly, but screen readers and text-only browsers can provide this text to their users. If you hover your mouse over the table, some browsers will display the summary text as a tooltip.
+			</p>
+			<p>
+				The <code>caption</code> element, which must immediately follow the <code class="sgmltag-starttag">&lt;table&gt;</code> open tag, provides the table&#8217;s title. By default, the caption appears directly above the table. Some browsers display the caption centered above the table, others display it left-aligned. You may use CSS to align and style the caption accordingly.
+			</p>
+			<h2>
+				Table Rows, Cells, and Headers
+			</h2>
+			<p>
+				Once you have placed the (optional) <code>&lt;caption&gt;</code>, it&#8217;s time to start constructing the actual table. Tables are composed of table rows (<code>&lt;tr&gt;</code>). Each pairing <code>&lt;tr&gt;...&lt;/tr&gt;</code> defines a row.
+			</p>
+			<p>
+				Within each table row are one or more cells, which are either table data (<code>&lt;td&gt;</code>) or table headers (<code>&lt;th&gt;</code>). Table header cells are supposed to contain &#8220;header&#8221; information, such as the title of a row or colum. Table data cells are supposed to contain the data. Note that if you leave any table cell completely empty (&#8221;<code>&lt;td&gt;&lt;/td&gt;</code>&#8220;), the cell will collapse and look unattractive. It&#8217;s best to put something in a blank cell, even if it&#8217;s just a <code>&lt;br&gt;</code> element.
+			</p>
+			<p>
+				Let&#8217;s take a look at an example that incorporates all of these elements. The previous table had one row and two columns. The following table has four rows and four columns.
+			</p>
+			<div class="example">
+				<h4>
+					Example 4.5. 4&#215;4 Table
+				</h4>
+<pre class="html">&lt;table cellpadding="5" border="2"
+summary="All 12 months, organized by season"&gt;
+  &lt;caption&gt;The Four Seasons&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Spring&lt;/th&gt;
+    &lt;th&gt;Summer&lt;/th&gt;
+    &lt;th&gt;Fall&lt;/th&gt;
+    &lt;th&gt;Winter&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;March&lt;/td&gt;
+    &lt;td&gt;June&lt;/td&gt;
+    &lt;td&gt;September&lt;/td&gt;
+    &lt;td&gt;December&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;April&lt;/td&gt;
+    &lt;td&gt;July&lt;/td&gt;
+    &lt;td&gt;October&lt;/td&gt;
+    &lt;td&gt;January&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;May&lt;/td&gt;
+    &lt;td&gt;August&lt;/td&gt;
+    &lt;td&gt;November&lt;/td&gt;
+    &lt;td&gt;February&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+			</div>
+			<p>
+				As you can see, even a simple 4&#215;4 table takes a fair amount of coding.
+			</p>
+			<p>
+				A few things to consider:
+			</p>
+			<ul>
+				<li>
+					<p>
+						Look carefully back and forth between the code and the results, and make sure that you understand how each month ends up in the proper row and column. Do you understand why there is one row of seasons and three rows of months? Do you understand why each column of months lines up the way it does?
+					</p>
+				</li>
+				<li>
+					<p>
+						The <code>&lt;th&gt;</code> text is bold, while the <code>&lt;td&gt;</code> is plain. This is the default font weight for these elements, although of course you can change this with style sheets.
+					</p>
+				</li>
+				<li>
+					<p>
+						The summary attribute does not appear anywhere on the screen. It&#8217;s really meant for non-graphical browsers, but we&#8217;ll keep being a good citizen and continue to put it in.
+					</p>
+				</li>
+			</ul>
+			<?php 
+				$seealsoLink['/HTML/introduction/attributes/'] = "Attributes";
+				$seealsoLink['/HTML/basic/lists/'] = "Lists";
+				$seealsoLink['/HTML/tables/cellpadding_and_cellspacing/'] = "Cellpadding and Cellspacing";
+				$seealsoLink['/HTML/tables/tables_and_css/'] = "Tables and CSS";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

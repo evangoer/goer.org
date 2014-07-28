@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Images - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Images</h1> 
+			<p>
+				Once you understand <a href="../links/" title="Links">links</a>, adding images is straightforward.
+			</p>
+			<p>
+				Images are a little different than the HTML headings and paragraphs that we&#8217;ve seen so far. An image is actually a separate file that you embed in your web page using the <code>img</code> element. Let&#8217;s see how this works:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.15. Example Image
+				</h4>
+<pre class="html">&lt;p&gt;
+  Yet more evidence that I did not go to Art School:
+&lt;/p&gt;
+&lt;img src="/images/html/oscope.gif" alt="a cartoon of an oscilloscope"&gt;</pre>
+			</div>
+			<p>
+				To try this example on your own, you not only need to copy the HTML, but you also need to download the image &#8220;oscope.gif&#8221; to your system. If you don&#8217;t know how to do this, refer to <a href="../../introduction/browser_tools/#save_images" title="Save Images">&#8220;Save Images&#8221;</a>. Save the file in the same directory as your test page, and try it out.
+			</p>
+			<p>
+				The <code>img</code> element has two required attributes:
+			</p>
+			<ul>
+				<li>
+					<p>
+						The <code>src</code> attribute provides a URL that points to the image file. If the URL is missing or incorrect, the image won&#8217;t appear. The <code>src</code> attribute is very similar to the <code>href</code> attribute of the <code>a</code> element. It&#8217;s too bad that they couldn&#8217;t both be called &#8220;href&#8221;, because then this would all be easier to remember.
+					</p>
+				</li>
+				<li>
+					<p>
+						The <code>alt</code> attribute provides &#8220;alternative text&#8221; for the image, should the image not be displayable. This could happen if the user turns off images in their browser, or uses a browser that doesn&#8217;t support images (such as a text-only browser or a screen reader). The alternative text could also appear while the user is waiting for the image to download, or if the link to the image is broken.
+					</p>
+					<p>
+						Some browsers display the <code>alt</code> text as a &#8220;tooltip&#8221; that pops up if you hover your mouse over the image. Strictly speaking, this is incorrect behavior, because the <code>alt</code> attribute is for when the image cannot be displayed. To provide &#8220;extra information&#8221; about an image, use the optional <code class="attribute">title</code> attribute instead.
+					</p>
+				</li>
+			</ul>
+			<p>
+				An image file is not coded in the HTML language. Images have their own formats, such as GIF, JPEG, or PNG. There are several ways to acquire or create digital images:
+			</p>
+			<ul>
+				<li>
+					<p>
+						take a photo with a digital camera
+					</p>
+				</li>
+				<li>
+					<p>
+						use drawing software to create a digital image
+					</p>
+				</li>
+				<li>
+					<p>
+						download an image off the web using your browser&#8217;s <a href="../../introduction/browser_tools/#save_images" title="Save Images"><span class="guilabel">Save Image</span> function</a>
+					</p>
+					<div class="note">
+						<h4>
+							Note
+						</h4>
+						<p>
+							It&#8217;s fine to mess around with images for learning purposes, but please don&#8217;t publish someone else&#8217;s images on a website unless you know you have the owner&#8217;s permission.
+						</p>
+					</div>
+				</li>
+			</ul>
+			<h2>
+				Floating Images
+			</h2>
+			<p>
+				Positioning elements in HTML can be tricky, and we&#8217;ll be talking about how to do this in the more advanced sections of this tutorial. That said, let&#8217;s take a sneak preview at one of the basic concepts of positioning: the <code>float</code> property.
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.16. Floating Images
+				</h4>
+<pre class="html">&lt;h1&gt;Not Your Father's Oscilloscope...&lt;/h1&gt;
+
+&lt;img src="/images/html/oscope.gif" height="64" width="90"
+alt="Right-floating oscilloscope"
+style="float: right"&gt;
+
+&lt;p&gt;
+The &lt;b&gt;Model XJ-2000&lt;/b&gt;:
+Quality, quality, quality. That's what our bosses
+asked for when we designed the XJ-2000, and that's
+what we delivered. Our competitors claim to deliver
+"quality"... but do they? Sure, they prattle on about
+about sample rates, picosecond/div sweep rates,
+Fast Fourier Transforms, and other technical
+mumbo-jumbo. But the fact is that the XJ-2000 is
+light-years ahead of the competition. From the
+scratch-resistant chrome case to the innovative
+green phosophorescent screen, only one word should
+spring to mind when you look at the XJ-2000: quality.
+&lt;/p&gt;</pre>
+			</div>
+			<p>
+				The <code>float: right</code> directive does something peculiar: it removes the image from the regular flow of the page and &#8220;floats&#8221; it to the right. The paragraph flows around the image. If we had specified <code>float: left</code>, the image would float to the left of the paragraph. (Try it!)
+			</p>
+			<p>
+				Just like the <code>color</code> and <code>background</code> properties, you can actually apply the <code>float</code> property to nearly any element. We&#8217;ll return to this concept later.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/browser_tools/'] = "Browser Tools";
+				$seealsoLink['/HTML/introduction/attributes/'] = "Attributes";
+				$seealsoLink['/HTML/basic/links/'] = "Links";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

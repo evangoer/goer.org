@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Structure - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Structure</h1>
+			<p>
+				The <a href="../diving_in/" title="Diving In">previous section</a> demonstrates how to create a simple web page. If you haven&#8217;t saved this example on your computer as the file <code class="filename">simple.html</code>, do so now.
+			</p>
+			<div class="example">
+				<h4>
+					Example 1.2. A Simple Webpage
+				</h4>
+				<pre class="html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;A Simple Webpage&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    This is a simple webpage.
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				If you view <code class="filename">simple.html</code> in your browser, you will see the words &#8220;This is a simple webpage&#8221; on a white or grey background. Where did everything else go? And what are those words with the angle brackets, anyway?
+			</p>
+			<h2>A Brief Introduction to Elements</h2>
+			<p>
+				The web page <code class="filename">simple.html</code> uses these elements: <code>html</code>, <code>head</code>, <code>title</code>, and <code>body</code>.
+			</p>
+			<ul>
+				<li>
+					<p>
+						Elements are delineated by angle brackets (<code>&lt;</code> <code>&gt;</code>).
+					</p>
+				</li>
+				<li>
+					<p>
+						Elements are &#8220;invisible&#8221;; they don&#8217;t directly appear in the web page. Instead, they serve as instructions to your browser. They can change your text&#8217;s appearance, create a link, insert an image, and much more.
+					</p>
+				</li>
+				<li>
+					<p>
+						An element starts with an <dfn>opening tag</dfn> (<code class="sgmltag-starttag">&lt;element&gt;</code>) and ends with a <dfn>closing tag</dfn> (<code class="sgmltag-endtag">&lt;/element&gt;</code>). Some elements do not require closing tags.
+					</p>
+				</li>
+			</ul>
+			<p>
+				We&#8217;ll discuss the general properties of elements in some detail in <a href="../elements/" title="Elements">Elements</a>. For now, let&#8217;s focus on the particular elements in the &#8220;Simple Webpage&#8221; example.
+			</p>
+			<h2>
+				Structure of the Simple Webpage
+			</h2>
+			<p>
+				Although the &#8220;Simple Webpage&#8221; doesn&#8217;t look like much, its elements (<code>html</code>, <code>head</code>, <code>title</code>, and <code>body</code>) are fundamental to the structure of all HTML documents. Here&#8217;s what these elements mean:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code class="sgmltag-starttag">&lt;html&gt;</code>: &#8220;Here begins an HTML document.&#8221;
+					</p>
+					<p>
+						The <code>html</code> element helps identify a file as an HTML document.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code class="sgmltag-starttag">&lt;head&gt;</code>: &#8220;Here begins the header.&#8221;
+					</p>
+					<p>
+						The header contains elements that apply to the overall document. For example, it might contain elements that are designed for search engines to process or elements that change the overall appearance of the webpage. However, elements in the header do not display directly as normal webpage content.
+					</p>
+					<p>
+						The reasons you would be concerned about the header are a bit abstract at this stage, so we won&#8217;t worry about it much until <a href="../../intermediate/style_sheets/">later</a>.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code class="sgmltag-starttag">&lt;title&gt;</code>: &#8220;Here begins the document title.&#8221; (Must be in the header)
+					</p>
+					<p>
+						If you view the file <code class="filename">simple.html</code> in your browser, along the top of your browser window you should see the words, &#8220;A Simple Webpage&#8221;. These words appear because of the <code>title</code> element.
+					</p>
+					<p>
+						As an exercise, change the title of the <code class="filename">simple.htm</code>l webpage to, &#8220;My First Webpage&#8221;. Save your changes and view them by clicking the browser&#8217;s <b class="guibutton">Refresh</b> or <b class="guibutton">Reload</b> button.
+					</p>
+					<p>
+						Titles might not seem important at first glance, but they&#8217;re actually quite useful. For example, if a search engine displays your page in a list of search results, it will probably display the <code>title</code> as your page&#8217;s title. If you omit the <code>title</code> element, the search engine will make up one for you. This is Not a Good Thing.
+					</p>
+					<div class="note">
+						<h4>
+							Note
+						</h4>
+						<p>
+							You might have noticed that the <code>title</code> element is contained within the <code>head</code> element. Is this kosher? Absolutely! In fact, many elements are designed to contain other elements, and you will be nesting elements within other elements quite frequently as you continue.
+						</p>
+					</div>
+				</li>
+				<li>
+					<p>
+						<code class="sgmltag-starttag">&lt;body&gt;</code>: &#8220;Here begins the body.&#8221;
+					</p>
+					<p>
+						The body is where you put text and elements to be displayed in the main browser window. The reason that the words &#8220;This is a simple webpage&#8221; appear when you display <code class="filename">simple.html</code> is becaused you placed them in the <code>body</code>.
+					</p>
+				</li>
+			</ul>
+			<p>
+				So why do we only see &#8220;This is a simple webpage&#8221; when we display <code class="filename">simple.html</code> in a browser? The answer is, after you remove all the elements that are not designed to display in the browser window, the sentence &#8220;This is a simple webpage&#8221; is the only thing left.
+			</p>
+			<p>
+				In the <a href="../tinkering/">next section</a>, we&#8217;ll tinker with our example webpage, just to see what happens. After that, we&#8217;ll provide a more formal definition of elements and element properties.
+			</p>			
+			<?php 
+				$seealsoLink['/HTML/introduction/diving_in/'] = "Diving In";
+				$seealsoLink['/HTML/introduction/tinkering/'] = "Tinkering";
+				$seealsoLink['/HTML/introduction/elements/'] = "Elements";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Headings - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Headings</h1> 
+			<p>
+				So far we&#8217;ve covered paragraphs and line breaks&#8230; but in a long document, we probably want more structure than that. How do we create section headings?
+			</p>
+			<h2>The <code>h</code> Elements</h2>
+			<p>
+				There are six levels of heading elements: <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, and <code>h6</code>. These block elements tell the browser to set off the heading from the rest of the text. The <code>h1</code> heading level is the most important heading, while the <code>h6</code> level is the least important.
+			</p>
+			<p>
+				Most browsers display headings in bold, with <code>h1</code> the largest and <code>h6</code> the smallest.
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.6. Headings
+				</h4>
+<pre class="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+
+&lt;h6&gt;Heading 6&lt;/h6&gt;</pre>
+			</div>
+			<p>
+				Like the paragraph element <code>p</code>, the heading elements are block elements. Each matched set of heading elements creates a new block, automatically separated from other blocks with line breaks.
+			</p>
+			<h2>Mangled Headings</h2>
+			<p>
+				In <a href="../paragraph_breaks">&#8220;Paragraph Breaks&#8221;</a>, we discussed the consequences of failing to close your open <code class="sgmltag-starttag">&lt;p&gt;</code> tags. This is even more important for heading elements.
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.7. Mangled Heading and Text
+				</h4>
+<pre class="html">&lt;h1&gt;STAVE I: MARLEY'S GHOST
+
+MARLEY was dead: to begin with. There is no doubt
+whatever about that. The register of his burial was
+signed by the clergyman, the clerk, the undertaker,
+and the chief mourner. Scrooge signed it: and
+Scrooge's name was good upon 'Change, for anything he
+chose to put his hand to. Old Marley was as dead as a
+door-nail.</pre>
+			</div>
+			<p>
+				Whoops! If you view the resulting web page, you'll see that the <code>h1</code> element&#8217;s oversized, bold font has spilled over onto the rest of the text. The browser has no indication where the <code>h1</code> element is supposed to end, and so it interprets the <code>h1</code> element as enclosing everything else on the page.
+			</p>
+			<p>
+				Let&#8217;s fix this by closing the open <code class="sgmltag-starttag">&lt;h1&gt;</code> tag. We&#8217;ll put the text in its own HTML paragraph for good measure:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.8. Proper Heading and Text
+				</h4>
+<pre class="html">&lt;h1&gt;STAVE I: MARLEY'S GHOST&lt;/h1&gt;
+&lt;p&gt;
+  MARLEY was dead: to begin with. There is no doubt
+  whatever about that. The register of his burial was
+  signed by the clergyman, the clerk, the undertaker,
+  and the chief mourner. Scrooge signed it: and
+  Scrooge's name was good upon 'Change, for anything he
+  chose to put his hand to. Old Marley was as dead as a
+  door-nail.
+&lt;/p&gt;</pre>
+			</div>
+			<p>
+				The heading and paragraph are now properly separated.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/tinkering/'] = "Tinkering";
+				$seealsoLink['/HTML/introduction/elements/'] = "Elements";
+				$seealsoLink['/HTML/introduction/paragraph_breaks/'] = "Paragraph Breaks";
+				$seealsoLink['/HTML/intermediate/font_control/'] = "Font Control";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

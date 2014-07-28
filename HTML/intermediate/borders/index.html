@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Model: Borders - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Box Model: Borders</h1> 
+			<p>
+				The CSS <dfn>box model</dfn> is a collection of CSS properties that apply to all visual HTML elements. As <a href="#fig_boxbasic" title="Figure&nbsp;3.1.&nbsp;The Box Model">Figure 3.1, &#8220;The Box Model&#8221;</a> indicates, any HTML element, such as:
+			</p>
+<pre>&lt;p&gt;The quick brown fox jumped over the lazy dog.&lt;/p&gt;</pre>
+			<p>
+				is nested inside three boxes:
+			</p>
+			<div class="figure" id="fig_boxbasic">
+				<h4>Figure 3.1. The Box Model</h4>
+				<p><img src="/images/html/boxbasic.png" alt="The Box Model"></p>
+			</div>
+			<p>
+				The margin encloses the border, which encloses the padding, which encloses the content. You can use CSS to style all three of these independently.
+			</p>
+			<h2>Border Widths, Styles, and Colors</h2>
+			<p>
+				The easiest component of the box model to understand is the border, because it can be so visually striking. Most elements do not have borders by default, but they&#8217;re easy enough to add with these CSS properties:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>border-width</code>: A length, such as <code>3px</code> or <code>0.2em</code>. Most web designers specify their borders in pixels.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>border-color</code>: A color, such as <code>green</code> or <code>#ff0000</code>. The default color is usually black.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>border-style</code>: A keyword that indicates how to draw the border&#8217;s lines. The basic style is <code>solid</code>, but there are fancier options available, such as <code>dashed</code>, <code>dotted</code>, <code>double</code>, <code>groove</code>, <code>inset</code>, <code>outset</code>, and <code>ridge</code>. There is also a <code>none</code> option that suppresses borders. If a browsers does not support a particular &#8220;fancy&#8221; border style, it usually replaces that style with <code>solid</code>.
+					</p>
+				</li>
+			</ul>
+			<p>
+				You can apply borders to any visible element you like: divs, lists, and so on. In the following example, we create generic classes, and apply them to <code>p</code> elements.
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.16. Four Border Examples
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    .thickline {
+      border-width: 10px;
+      border-style: solid;
+    }
+
+    .thinblueline {
+      border-width: 1px;
+      border-color: #0000ff;
+      border-style: solid;
+    }
+
+    .greenridge {
+      border-width: 5px;
+      border-color: green;
+      border-style: ridge;
+    }
+
+    .empurpledash {
+      border-width: 0.5em;
+      border-color: #800080;
+      border-style: dashed;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p class="thickline"&gt;
+    "1st, The man-mountain shall not depart from our
+    dominions, without our license under our great seal.
+  &lt;/p&gt;
+  &lt;p class="thinblueline"&gt;
+    2d, He shall not presume to come into our metropolis,
+    without our express order; at which time, the inhabitants
+    shall have two hours warning to keep within doors.
+  &lt;/p&gt;
+  &lt;p class="greenridge"&gt;
+    3d, The said man-mountain shall confine his walks
+    to our principal high roads, and not offer to walk, or
+    lie down, in a meadow or field of corn.
+  &lt;/p&gt;
+  &lt;p class="empurpledash"&gt;
+    4th, As he walks the said roads, he shall take the
+    utmost care not to trample upon the bodies of any
+    of our loving subjects, their horses, or carriages, nor
+    take any of our subjects into his hands without their
+    own consent.
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				The first three borders are specifed in pixels. The last is in <code>em</code>, which means that if we change the <code>p</code>&#8217;s font size, the border thickness should scale with it.
+			</p>
+			<h2>Four Different Sides</h2>
+			<p>
+				To apply a different border to each side, you must break down <code>border-width</code>, <code>border-color</code>, and <code>border-style</code> into their constituent components:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>border-width</code> becomes: <code>border-top-width</code>, <code>border-bottom-width</code>, <code>border-right-width</code>, and <code>border-left-width</code>.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>border-color</code> becomes: <code>border-top-color</code>, <code>border-bottom-color</code>, <code>border-right-color</code>, and <code>border-left-color</code>.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>border-style</code> becomes: <code>border-top-style</code>, <code>border-bottom-style</code>, <code>border-right-style</code>, and <code>border-left-style</code>.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Here&#8217;s an admittedly silly example with four different borders:
+			</p>
+			<div class="example">
+				<h4>
+					Example 3.17. Four Different Sides
+				</h4>
+				<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    p.fourborders {
+      border-top-width: 5px;
+      border-top-color: #ff0000;
+      border-top-style: dashed;
+
+      border-bottom-width: 10px;
+      border-bottom-color: #336600;
+      border-bottom-style: groove;
+
+      border-right-width: 20px;
+      border-right-color: #000080;
+      border-right-style: solid;
+
+      border-left-width: 10px;
+      border-left-color: #CC9900;
+      border-left-style: solid;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;p class="fourborders"&gt;
+    "But I thought all witches were wicked," said the girl, who
+    was half frightened at facing a real witch. "Oh, no, that is a
+    great mistake. There were only four witches in all the Land of
+    Oz, and two of them, those who live in the North and the South,
+    are good witches. I know this is true, for I am one of them
+    myself, and cannot be mistaken. Those who dwelt in the East and
+    the West were, indeed, wicked witches; but now that you have
+    killed one of them, there is but one Wicked Witch in all the Land
+    of Oz--the one who lives in the West."
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<h2>Border Shorthand Notation</h2>
+			<p>
+				As with the <code>font-</code> properties, there is a shorthand notation named <code>border</code>. Unlike <code>font</code>, you may specify the <code>border</code> properties in any order.
+			</p>
+			<p>
+				Below is a version of <a href="#ex_borders2" title="Example&nbsp;3.18.&nbsp;Four Border Examples">Example 3.18, &#8220;Four Border Examples&#8221;</a>, reformulated to use the shorter notation. The properties appear in essentially random order, but the results are the same as before.
+			</p>
+			<div class="example" id="ex_borders2">
+				<h4>
+					Example 3.18. Four More Border Examples
+				</h4>
+<pre class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    .thickline {
+      border: 10px solid;
+    }
+
+    .thinblueline {
+	  border: 1px #0000ff solid;
+    }
+
+    .greenridge {
+      border: ridge 5px green;
+    }
+
+    .empurpledash {
+      border: #800080 0.5em dashed;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p class="thickline"&gt;
+    "1st, The man-mountain shall not depart from our
+    dominions, without our license under our great seal.
+  &lt;/p&gt;
+  &lt;p class="thinblueline"&gt;
+    2d, He shall not presume to come into our metropolis,
+    without our express order; at which time, the inhabitants
+    shall have two hours warning to keep within doors.
+  &lt;/p&gt;
+  &lt;p class="greenridge"&gt;
+    3d, The said man-mountain shall confine his walks
+    to our principal high roads, and not offer to walk, or
+    lie down, in a meadow or field of corn.
+  &lt;/p&gt;
+  &lt;p class="empurpledash"&gt;
+    4th, As he walks the said roads, he shall take the
+    utmost care not to trample upon the bodies of any
+    of our loving subjects, their horses, or carriages, nor
+    take any of our subjects into his hands without their
+    own consent.
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;html&gt;</pre>
+			</div>
+			<p>
+				This shorthand is convenient, but keep in mind that the <code>border</code> property can only set the same border on all four sides. Fortunately, there are yet four <em>more</em> shorthand properties that apply the border&#8217;s width, color, and style to just one side at a time: <code>border-top</code>, <code>border-right</code>, <code>border-bottom</code>, and <code>border-left</code>. For example, if you wanted to apply the green ridge border to just the left side of an element, the code:
+			</p>
+<pre class="html">.greenridge {
+  border-left: ridge 5px green;
+}</pre>
+			<p>
+				would do the trick.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/classes_and_ids/'] = "Classes and IDs";
+				$seealsoLink['/HTML/intermediate/div_and_span/'] = "Div and Span";
+				$seealsoLink['/HTML/intermediate/margins_and_padding/'] = "Box Model: Margins and Padding";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

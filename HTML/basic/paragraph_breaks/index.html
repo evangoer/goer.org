@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paragraph Breaks - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Paragraph Breaks</h1> 
+			<p>
+				In <a href="../../introduction/" title="Chapter&nbsp;1.&nbsp;Getting Started">Chapter 1, <i>Getting Started</i></a>, we covered some basic HTML concepts, including the fact that <a href="../../introduction/tinkering/#whitespace" title="HTML and Whitespace">HTML ignores whitespace</a>. This seems a little crazy, doesn&#8217;t it? How can we do we compose a readable webpage without everything collapsing into a single giant glob of text?
+			</p>
+			<p>
+				Let&#8217;s say we want our website to display some lines from an obscure playwright:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.1. Unformatted Text
+				</h4>
+<pre class="html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Macbeth: 1, Reckless Youngsters: 0&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    MACBETH: My name's Macbeth.
+
+    YOUNG SIWARD: The devil himself could not pronounce a title
+    More hateful to mine ear.
+
+    MACBETH: No, nor more fearful.
+
+    YOUNG SIWARD: Thou liest, abhorred tyrant; with my sword
+    I'll prove the lie thou speak'st.
+
+    [They fight, and young Seward is slain.]
+
+    MACBETH: Thou wast born of woman.--
+    But swords I smile at, weapons laugh to scorn,
+    Brandish'd by man that's of a woman born.
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+			</div>
+			<p>
+				Now, this is a perfectly acceptable web page. The <code>html</code>, <code>head</code>, <code>title</code>, and <code>body</code> elements are all in the right places. In fact, this example is just like the &#8220;Simple Web Page&#8221; from <a href="../../introduction/diving_in/" title="Diving In">Diving In</a>, except that the text is a little different.
+			</p>
+			<p>
+				There is one small problem, however. HTML collapses whitespace, which means that all our text will collapse into a single paragraph and look something like this:
+			</p>
+			<blockquote>
+				<p>
+					MACBETH: My name&#8217;s Macbeth. YOUNG SIWARD: The devil himself could not pronounce a title More hateful to mine ear. MACBETH: No, nor more fearful. YOUNG SIWARD: Thou liest, abhorred tyrant; with my sword I&#8217;ll prove the lie thou speak&#8217;st. [They fight, and young Seward is slain.] MACBETH: Thou wast born of woman.&#8211; But swords I smile at, weapons laugh to scorn, Brandish&#8217;d by man that&#8217;s of a woman born.
+				</p>
+			</blockquote>
+			<p>
+				This is terrible! Let&#8217;s try to make this page more readable.
+			</p>
+			<h2>
+				The <code>p</code> Element
+			</h2>
+			<p>
+				The <code>p</code> element breaks text into paragraphs. Any text that you surround with a <code class="sgmltag-starttag">&lt;p&gt;</code> and a closing <code class="sgmltag-endtag">&lt;/p&gt;</code> becomes a separate block. Let&#8217;s see how this works. For brevity, we will start to leave off the structural elements: <code>html</code>, <code>head</code>, and <code>body</code>.
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.2. Paragraphs
+				</h4>
+<pre class="html">&lt;p&gt;
+  MACBETH: My name's Macbeth.
+&lt;/p&gt;
+&lt;p&gt;
+  YOUNG SIWARD: The devil himself could not pronounce a title
+  More hateful to mine ear.
+&lt;/p&gt;
+&lt;p&gt;
+  MACBETH: No, nor more fearful.
+&lt;/p&gt;
+&lt;p&gt;
+  YOUNG SIWARD: Thou liest, abhorred tyrant; with my sword
+  I'll prove the lie thou speak'st.
+&lt;/p&gt;
+&lt;p&gt;
+  [They fight, and young Seward is slain.]
+&lt;/p&gt;
+&lt;p&gt;
+  MACBETH: Thou wast born of woman.--
+  But swords I smile at, weapons laugh to scorn,
+  Brandish'd by man that's of a woman born.
+&lt;/p&gt;</pre>
+			</div>
+			<p>
+				Each block is followed by two line breaks. This is a good start!
+			</p>
+			<p>
+				Each paragraph is surrounded by an opening tag, <code class="sgmltag-starttag">&lt;p&gt;</code>, and a closing tag, <code class="sgmltag-endtag">&lt;/p&gt;</code>. The <code>p</code> element is a <dfn>block element</dfn>; it &#8220;does something&#8221; to a block of text. The browser must identify where the block ends, so the <code class="sgmltag-starttag">&lt;p&gt;</code> open tag needs a closing tag, <code class="sgmltag-endtag">&lt;/p&gt;</code>.
+			</p>
+			<p>
+				Unfortunately, many people take the <code>p</code> element to mean &#8220;make a new paragraph here&#8221; or &#8220;put two line breaks here,&#8221; rather than &#8220;enclose this text and make it a paragraph.&#8221; And thus, you see a lot of code that looks like this:
+			</p>
+			<div class="example" id="ex_incorrect_p">
+				<h4>
+					Example 2.3. Incorrect <code>p</code> Usage
+				</h4>
+<pre class="html">Text Block 1: Blah blah blah... &lt;p&gt;
+
+Text Block 2: Blah blah blah... &lt;p&gt;
+
+Text Block 3: Blah blah blah...</pre>
+			</div>
+			<p>
+				What happens? (Try it.) Text Block 2 and 3 are paragraphs (the browser &#8220;inserts&#8221; a closing &lt;/p&gt; element right before each &lt;p&gt; element). Text Block 1 is not actually a HTML paragraph. However, the page displays with two line breaks between each text block, which appears to result in the same thing as doing it the proper way.
+			</p>
+			<p>
+				So what&#8217;s the big deal? Why not do it the &#8220;improper&#8221; way, and avoid typing all those <code class="sgmltag-endtag">&lt;/p&gt;</code> closing tags? Well, later we&#8217;ll talk about how to use a technique called <a href="../../intermediate/" title="Chapter&nbsp;3.&nbsp;Styling Basics">Cascading Style Sheets</a> (CSS) to control the appearance of all elements of a particular type. For example, you can use CSS to set all your paragraphs to be red 12pt Times New Roman. But if you&#8217;re using <code>p</code> incorrectly, you&#8217;ll be in for an unpleasant surprise, as many of your paragraphs (or rather, what you <em>thought</em> were paragraphs) won&#8217;t get the proper style applied.
+			</p>
+			<h2>
+				The <code>br</code> element
+			</h2>
+			<p>
+				We still need to break up the dialogue into lines, as they appear in the original play. Now, we could do this with the <code>p</code> element, but then all lines would be equally spaced. and so it wouldn&#8217;t be clear which line belongs with which speaker. How do we get finer control&#8230; say, one line break?
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.4. Line Breaks
+				</h4>
+<pre class="html">&lt;p&gt;
+  MACBETH: My name's Macbeth.
+&lt;/p&gt;
+&lt;p&gt;
+  YOUNG SIWARD: The devil himself could not pronounce a title&lt;br&gt;
+  More hateful to mine ear.
+&lt;/p&gt;
+&lt;p&gt;
+  MACBETH: No, nor more fearful.
+&lt;/p&gt;
+&lt;p&gt;
+  YOUNG SIWARD: Thou liest, abhorred tyrant; with my sword&lt;br&gt;
+  I'll prove the lie thou speak'st.
+&lt;/p&gt;
+&lt;p&gt;
+  [They fight, and young Seward is slain.]
+&lt;/p&gt;
+&lt;p&gt;
+  MACBETH: Thou wast born of woman.-- &lt;br&gt;
+  But swords I smile at, weapons laugh to scorn,&lt;br&gt;
+  Brandish'd by man that's of a woman born.
+&lt;/p&gt;</pre>
+			</div>
+			<p>
+				Unlike the <code>p</code> element, the <code>br</code> element does not enclose any other HTML. There is no such thing as a closing <code class="sgmltag-endtag">&lt;/br&gt;</code> element. Also note that we don&#8217;t have to put a final <code>br</code> element on the last line of each dialogue exchange. The &lt;p&gt; element will take care of the last line break for us. So now we&#8217;ve separated each speaker with a new line.
+			</p>
+			<p>
+				How does this look? (Try it.) Now each line of dialogue is on its own line on the page. The lines are considerably easier to read.
+			</p>
+			<p>
+				As with the <code>p</code> element, many web designers use <code>br</code> incorrectly. You&#8217;ll often see code that looks like this:
+			</p>
+			<div class="example">
+				<h4>
+					Example 2.5. Incorrect <code>br</code> Usage
+				</h4>
+<pre class="html">Text Block 1: Blah blah blah...
+&lt;br&gt;&lt;br&gt;
+Text Block 2: Blah blah blah...
+&lt;br&gt;&lt;br&gt;
+Text Block 3: Blah blah blah...</pre>
+			</div>
+			<p>
+				This code is even worse than the code in <a href="#ex_incorrect_p" title="Example&nbsp;2.3.&nbsp;Incorrect p Usage">Example 2.3, &#8220;Incorrect <code>p</code> Usage&#8221;</a>. <em>None</em> of the text blocks are HTML paragraphs, which makes them difficult to style. If you want paragraphs, use <code>p</code>, not <code>br</code>.
+			</p>
+			<p>
+				In fact, there aren&#8217;t that many places where you want to force a line break with <code>br</code>. The most common cases are:
+			</p>
+			<ul>
+				<li>Song lyrics</li>
+				<li>Lines of poetry</li>
+				<li>Lines of dialogue</li>
+			</ul>
+			<p>
+				Aside from that, there are more elegant ways to control line spacing, such as using a <code>p</code> element and <a href="../../intermediate/margins_and_padding/" title="Margins">adjusting the spacing using CSS</a>. But that&#8217;s a later lesson.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/diving_in/'] = "Diving In";
+				$seealsoLink['/HTML/introduction/tinkering/'] = "Tinkering";
+				$seealsoLink['/HTML/introduction/elements/'] = "Elements";
+				$seealsoLink['/HTML/intermediate/style_sheets/'] = "Style Sheets";
+				$seealsoLink['/HTML/intermediate/margins_and_padding/'] = "Margins and Padding";
+				$seealsoLink['/HTML/intermediate/align_and_indent/'] = "Align and Indent";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+		</div>
+    </div>
+</body>
+</html>

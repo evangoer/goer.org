@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elements - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Elements</h1>
+			<p>
+				After all this experimenting with our example webpage, it&#8217;s time to define elements more formally. Elements have three main components:
+			</p>
+<pre class="html">&lt;name attribute1="value1" attribute2="value2"...&gt;
+  ...(text or more elements go here)...
+&lt;/name&gt;</pre>
+			<ul>
+				<li>
+					<p>
+						<code><var class="replaceable"><code>name</code></var></code>: Identifies the type of the element, such as <code>body</code> or <code>em</code> element. The name of an element can be upper case, lower case, or anything in between. Upper case makes it easier to differentiate elements and text when examining HTML source, while lower case is a more modern style and is easier to type. Either way, it&#8217;s a matter of taste: <code class="sgmltag-starttag">&lt;BODY&gt;</code>, <code class="sgmltag-starttag">&lt;body&gt;</code>, and even <code class="sgmltag-starttag">&lt;bODy&gt;</code> are all the same element.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code class="attribute"><var class="replaceable"><code>attribute</code></var></code>: Changes the behavior of an element. For example, the <code>style</code> attribute enables you to change the appearance of an element and its content.
+					</p>
+				</li>
+				<li>
+					<p>
+						<code class="css"><var class="replaceable"><code>value</code></var></code>: Enables particular attributes to vary. For example, <code>background: yellow</code>, when present in an element&#8217;s <code>style</code> attribute, changes the background of the element to yellow.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Some elements do not require a closing element to work properly. For example, the <code>br</code> element creates a line break, and should not enclose anything. We&#8217;ll discuss <code>br</code> further in <a href="../../basic/paragraph_breaks/" title="Paragraph Breaks">&#8220;Paragraph Breaks&#8221;</a>.
+			</p>
+			<p>
+				Some elements do not require any attributes. In <a href="../tinkering/#ex_background" title="Example&nbsp;1.6.&nbsp;Background Color">&#8220;Example 1.6, Background Color&#8221;</a>, the <code>body</code> element had a <code>style</code> attribute, but the <code>body</code> element works just fine without without it. By contrast, the <a href="../attributes/#link" title="The a Element"><code>a</code> element</a>, which creates a hyperlink, has an <code>href</code> attribute that defines the link&#8217;s destination. If you don&#8217;t include the <code>href</code> attribute, the link won&#8217;t point anywhere.
+			</p>
+			<h2>
+				Misspellings and Misunderstandings
+			</h2>
+			<p>
+				Vastly simplified, a browser processes an HTML page something like this:
+			</p>
+			<ol>
+				<li>
+					<p>
+						Identify anything that is between angle brackets (<code>&lt;</code> <code>&gt;</code>) as a &#8220;element&#8221;
+					</p>
+				</li>
+				<li>
+					<p>
+						Determine whether the browser has any instructions for using the element:
+					</p>
+					<ul>
+						<li>
+							<p>
+								If yes, the element is real &mdash; follow the instructions
+							</p>
+						</li>
+						<li>
+							<p>
+								If no, the element is garbage &mdash; ignore it
+							</p>
+						</li>
+					</ul>
+				</li>
+			</ol>
+			<p>
+				When a browser ignores a element, that means one of two things:
+			</p>
+			<ul>
+				<li>
+					<p>
+						The element is misspelled or does not exist. For example, <code>mxyzptlk</code>, for example, is not an HTML element.
+					</p>
+				</li>
+				<li>
+					<p>
+						The element means something, but that particular browser does not support it. For example, the <code>blink</code> element works in <span class="application">Firefox</span>, but not in <span class="application">Internet Explorer</span> or <span class="application">Safari</span>.
+					</p>
+				</li>
+			</ul>
+			<div class="example">
+				<h4>
+					Example 1.7. Blinking Text
+				</h4>
+				<pre class="html">
+					Warning: &lt;blink&gt;For external use only&lt;/blink&gt;.
+					Avoid contact with eyes.
+				</pre>
+			</div>
+			<p>
+				If you are using <span class="application">Firefox</span>, the text in the &#8220;view html&#8221; box should be blinking. If you are using <span class="application">Internet Explorer</span> or <span class="application">Safari</span>, the text will not be blinking. This is actually a common situation when composing web pages &mdash; one browser won&#8217;t support a particular feature, or supports it incorrectly.
+			</p>
+			<div class="caution">
+				<h4>
+					Caution
+				</h4>
+				<p>
+					Most people find the <code>blink</code> element distracting and irritating, and in fact <code>blink</code> is not part of the official HTML standard. In fact, I am aware of only <a href="http://www.art.net/~hopkins/Don/unix-haters/login.html">one good use</a> of <code>blink</code> on the entire Web.</a>.
+				</p>
+			</div>
+			<h2>
+				A Digression: What&#8217;s a &#8220;Tag&#8221;?
+			</h2>
+			<p>
+				You&#8217;ll often hear people refer to &#8220;tags,&#8221; <a href="http://w3schools.com/html/html_intro.asp">as in</a>, &#8220;The markup tags tell the Web browser how to display the page.&#8221; Almost always, they really meant to say &#8220;elements.&#8221; Tags are not elements, they <em>define the boundaries of an element</em>. The <code>p</code> element begins with a <code class="sgmltag-starttag">&lt;p&gt;</code> open tag and ends with a <code class="sgmltag-endtag">&lt;/p&gt;</code> closing tag, but it is not a tag itself.
+			</p>
+			<ul>
+				<li>
+					<p>
+						Incorrect: &#8220;You can make a new HTML paragraph with a <code class="sgmltag-starttag">&lt;p&gt;</code> tag!&#8221;
+					</p>
+				</li>
+				<li>
+					<p>
+						Correct: &#8220;It&#8217;s a good idea to close that open <code class="sgmltag-starttag">&lt;p&gt;</code> tag.&#8221;
+					</p>
+				</li>
+			</ul>
+			<p>
+				Sometimes you&#8217;ll hear people say &#8220;<code>alt</code> tag,&#8221; which is even worse. An &#8220;<code>alt</code> <code>tag</code>&#8221; is really an <code>alt</code> <em>attribute</em>. This important attribute provides alternative text for images, in case the user can&#8217;t see the image for some other reason. We&#8217;ll talk more about this attribute later.
+			</p>
+			<p>
+				The element vs. tag confusion is sort of understandable: it&#8217;s a common mistake even among professionals, and they both look like angle-brackety things, after all. But attributes are not tags, not even close. If you hear someone say &#8220;alt tag,&#8221; this is a key indication that the speaker does not understand HTML very well. (You probably shouldn&#8217;t invite them to your next birthday party.)
+			</p>
+			<?php 
+				$seealsoLink['/HTML/introduction/tinkering/'] = "Tinkering";
+				$seealsoLink['/HTML/introduction/attributes/'] = "Attributes";
+				$seealsoLink['/HTML/basic/paragraph_breaks/'] = "Paragraph Breaks";
+				$seealsoLink['/HTML/basic/links/'] = "Links";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

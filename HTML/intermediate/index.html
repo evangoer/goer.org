@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Styling Basics - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Chapter 3: Styling Basics</h1> 
+			<p>
+				So far we&#8217;ve learned some basic HTML constructs: paragraphs, headings, and lists. That&#8217;s all very nice, but by themselves, these elements are kind of lifeless. An <code>h1</code> is just like any other <code>h1</code> out there&#8230; right?
+			</p>
+			<p>
+				Fortunately, no. We can customize the appearance of our <code>h1</code>s (and any other element) using a language called Cascading Style Sheets (CSS). We already saw a hint of what style sheets can do when we were mucking around with the <a href="../basic/colors/#fgcolor" title="Text (Foreground) Color">foreground color</a> and <a href="../basic/colors/#bgcolor" title="Background Color">background color</a>. But CSS can do much more than this.
+			</p>
+			<p>
+				As an example of what CSS can do, take a walk through the <a href="http://csszengarden.com">CSS Zen Garden</a>. Each page in the CSS Zen Garden has exactly the same text and markup. The only difference is the CSS, but each page appears <em>radically</em> different.
+			</p>
+			<p>
+				First, we&#8217;re going to learn a new method for applying styles that is much more efficient than what we&#8217;ve been doing in the previous chapters. At first, we&#8217;ll only be changing the color, because color is simple and gets the point across. But by the end of this chapter, you&#8217;ll have expanded your style vocabulary dramatically.
+			</p>
+			<p>
+				When you&#8217;re done with this section, you should be able to:
+			</p>
+			<ul>
+				<li>
+					<p>
+						Create a style sheet for your web page or for your entire web site.
+					</p>
+				</li>
+				<li>
+					<p>
+						Create named, reusable styles using classes and IDs.
+					</p>
+				</li>
+				<li>
+					<p>
+						Apply sophisticated font changes to any HTML element.
+					</p>
+				</li>
+				<li>
+					<p>
+						Change the padding, margins, and borders.
+					</p>
+				</li>
+				<li>
+					<p>
+						Align and indent your text.
+					</p>
+				</li>
+			</ul>
+			<h2>Section Summaries</h2>
+			<p>
+				The Styling Basics chapter contains these sections:
+			</p>
+			<ol>
+				<li>
+					<p><a href="style_attribute/" title="The style Attribute">The <code>style</code> Attribute</a> &mdash; Describes the basic problem that style sheets are designed to solve.
+					</p>
+				</li>
+				<li>
+					<p><a href="style_sheets/" title="Style Sheets">Style Sheets</a> &mdash; Describes style sheets, which provide a convenient method for collecting styling rules in one place and applying them to an entire website. We&#8217;ll cover CSS rule syntax and the basics of cascading.
+					</p>
+				</li>
+				<li>
+					<p><a href="classes_and_ids/">Classes and IDs</a> &mdash; Explains how to create more specialized CSS rules by using CSS classes and IDs.
+					</p>
+				</li>
+				<li>
+					<p><a href="div_and_span/" title="Div and Span">Div and Span</a> &mdash; Describes the &#8220;generic&#8221; HTML elements <code>div</code> and <code>span</code>, which provide a way to apply styles to any given swath of HTML.
+					</p>
+				</li>
+				<li>
+					<p><a href="font_control/">Font Control</a> &mdash;Provides more sophisticated methods for controlling a document&#8217;s font. We examine how to change the font family, font size, and font styling. We&#8217;ll also take a look at a stylesheet that is a bit more complex than the ones we&#8217;ve seen in earlier sections.</p>
+				</li>
+				<li>
+					<p><a href="borders/">Borders</a> &mdash; Explains how to set border properties such as color and thickness, how to set different borders on all four sides, and how to use border shorthand notation.</p>
+				</li>
+				<li>
+					<p><a href="margins_and_padding/">Margins and Padding</a> &mdash; Describes padding (extra space inside an element&#8217;s border) and margins (extra space outside an element&#8217;s border).
+					</p>
+				</li>
+				<li>
+					<p><a href="align_and_indent/">Align and Indent</a> &mdash; Describes text indentation and alignment. We&#8217;ll learn how to create hanging indents and align text horizontally. (Aligning blocks will come later, in the sections on positioning.)</p>
+				</li>
+			</ol>
+			<?php 
+				$ads = false;
+				$seealsoLink['/HTML/'] = "The Pocket HTML Tutorial";
+				$seealsoLink['/HTML/about/'] = "About This Tutorial";
+				$seealsoLink['/HTML/introduction/'] = "Chapter 1: Getting Started";
+				$seealsoLink['/HTML/basic/'] = "Chapter 2: Markup Basics";
+				$seealsoLink['/HTML/tables/'] = "Chapter 4: Tables";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>

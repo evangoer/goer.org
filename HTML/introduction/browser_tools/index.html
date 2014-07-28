@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Tools - The Pocket HTML Tutorial</title>
+    <?php include '/big/dom/xgoer/www/assets/inc/html/head_assets.inc'; ?>
+</head>
+<body>
+    <div id="main">
+        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include '/big/dom/xgoer/www/assets/inc/html/toc.inc'; ?>
+        <div id="text">
+			<h1>Browser Tools</h1>
+			<p>
+				A browser&#8217;s primary function is to display web pages. However, for a web developer, browsers are much more useful than that. Whenever you visit a web page, your browser fetches a tremendous amount of valuable information, such as the HTML source of the page, image files that appear on the page, and other associated files. This section describes how to use your browser to retrieve that information.
+			</p>
+			<div class="note">
+				<h4>
+					Note
+				</h4>
+				<p>
+					Since browser makers love to change the names and locations of these functions from version to version, the instructions below might not apply if you&#8217;re using a different browser version than the one tested at the time this section was written.
+				</p>
+			</div>
+			<h2 id="viewsrc">
+				View Source
+			</h2>
+			<p>
+				By far the most valuable browser tool is View Source, which displays the HTML source of the page. Viewing source is one of the fastest ways to learn how to code. If you&#8217;re not sure how some feature of HTML works, you can view the source of a site that uses the feature, copy and paste sections of code, make alterations, and see what happens. To view source:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<span class="application">Internet Explorer</span>, <span class="application">Firefox</span>: Right-click on the window and select <span class="guimenuitem">View Source</span>.
+					</p>
+				</li>
+				<li>
+					<p>
+						<span class="application">Safari</span>: <strong class="keycap">Ctrl</strong>-click on the window and select <span class="guimenuitem">View Source</span>.
+					</p>
+				</li>
+				<li>
+					<p>
+						<span class="application">Opera</span>: Right-click on the window and select <span class="guimenuitem">Source</span>.
+					</p>
+				</li>
+			</ul>
+			<div class="figure">
+				<h4>Figure 1.1. View Source (Firefox)</h4>
+				<p><img src="/images/html/viewsrc.png" alt="View Source (Firefox)"></p>
+			</div>
+			<p>
+				Although viewing the source is incredibly useful, keep in mind these two caveats:
+			</p>
+			<ul>
+				<li>
+					<p>
+						It&#8217;s okay to copy and alter a site&#8217;s source for learning purposes on your home machine, but don&#8217;t post any such material on your public website. This goes for both the text on the site and the underlying code or design.
+					</p>
+				</li>
+				<li>
+					<p>
+						Most sites on the web have <em>terrible</em> underlying code. Learning how to code by randomly viewing websites is like learning how to compose verse by randomly <a href="http://www.theonion.com/articles/nation-afraid-to-admit-9yearold-disabled-poet-real,18/">reading poetry written by kids</a>. You might encounter some brilliant stuff&#8230; but the odds are pretty low. Never assume that just because <code class="uri">BigFamousWebsite.com</code> coded their home page a certain way, that this was the best way to do it.
+					</p>
+				</li>
+			</ul>
+			<h2 id="save_images">
+				Save Images
+			</h2>
+			<p>
+				Another invaluable browser function is the ability to save image files. Every time your browser visits a web page, it also downloads all the images that display on the page. You can save these files and reuse them for educational purposes. To save an image:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<span class="application">Internet Explorer</span>: Right-click on the window and select <span class="guimenuitem">Save Picture As&#8230;</span>
+					</p>
+				</li>
+				<li>
+					<p>
+						<span class="application">Firefox</span>: Right-click on the image and select <span class="guimenuitem">Save Image As&#8230;</span> to save the image as a file, <span class="guimenu">View Image</span> to view the image by itself in the browser, or <span class="guimenu">Properties</span> to view the image&#8217;s file size and other properties.
+					</p>
+				</li>
+				<li>
+					<p>
+						<span class="application">Safari</span>: <span><strong class="keycap">Ctrl</strong></span>-click on the image and select <span class="guimenuitem">Save Image to the Desktop</span> to save the image as a file or <span class="guimenu">Open Image in New Window</span> to view the image by itself in the browser.
+					</p>
+				</li>
+				<li>
+					<p>
+						<span class="application">Opera</span>: Right-click on the image and select <span class="guimenuitem">Save Image&#8230;</span> to save the image as a file, <span class="guimenu">Open Image</span> to view the image by itself in the browser, or <span class="guimenu">Image properties</span> to view the image&#8217;s file size and other properties.
+					</p>
+				</li>
+			</ul>
+			<p>
+				As with <a href="#viewsrc" title="View Source">View Source</a>, you should never take someone else&#8217;s images, altered or unaltered, and post them on a public site unless you have permission. There are numerous free image repositories all over the web, where you can get clip art, backgrounds, and photos that are either in the public domain or offered under <a href="http://creativecommons.org/image/">reasonably liberal licenses</a>.
+			</p>
+			<h2 id="viewinfo">
+				View Page Info
+			</h2>
+			<p>
+				The View Page Info function provides secondary technical information about the page, such as the page size in bytes and the text encoding. This information might not seem all that useful when you&#8217;re first starting out, but it&#8217;s invaluable for more advanced coders. To view page info:
+			</p>
+			<ul>
+				<li>
+					<p>
+						<span class="application">Internet Explorer</span>: Right-click on the window and select <span class="guimenuitem">Properties</span>.
+					</p>
+				</li>
+				<li>
+					<p>
+						<span class="application">Firefox</span>: Right-click on the window and select <span class="guimenuitem">View Page Info</span>.
+					</p>
+				</li>
+				<li>
+					<p>
+						<span class="application">Opera</span>: Select <span class="guimenu">Tools</span> | <span class="guimenuitem">Appearance</span> | <span class="guilabel">Panels</span>, check the <span class="guibutton">Info</span> checkbox, and click <span class="guibutton">OK</span>.
+					</p>
+				</li>
+			</ul>
+			<div class="figure">
+				<h4>Figure 1.2. View Page Info (Firefox)</h4>
+				<p><img src="/images/html/viewinfo.png" alt="View Page Info (Firefox)"></p>
+			</div>
+			<p>
+				The information displayed varies from browser to browser. <span class="application">Firefox</span> provides more useful information than <span class="application">Internet Explorer</span>, including a full list of all images on the page (with height, width, and size in bytes). <span class="application">Opera</span> takes an interesting approach: if you activate the <span class="guilabel">Info</span> panel, you can view this information alongside each page you browse to. <span class="application">Opera</span> also provides a shortcut (<span><strong class="keycap">Ctrl-J</strong></span>) for displaying all the links on the page.
+			</p>
+			<?php 
+				$seealsoLink['/HTML/about/'] = "About This Tutorial";
+				$seealsoLink['/HTML/introduction/diving_in/'] = "Diving In";
+				$seealsoLink['/HTML/introduction/structure/'] = "Structure";
+				$seealsoLink['/HTML/basic/images/'] = "Images";
+				include '/big/dom/xgoer/www/assets/inc/html/footer.inc'; 
+			?>
+        </div>
+    </div>
+</body>
+</html>
