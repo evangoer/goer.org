@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Page Not Found: A 404 Haiku - goer.org</title>
-    <?php include '/big/dom/xgoer/www/assets/inc/head_assets.inc'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/inc/head_assets.inc'; ?>
 	<style>
 		div.haiku {
 			margin: 1.0em;
@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="main">
-        <?php include '/big/dom/xgoer/www/assets/inc/header.inc'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/inc/header.inc'; ?>
         <div id="text">
 			<h1>Page Not Found: A 404 Haiku</h1>
 
@@ -57,7 +57,7 @@
 			$seealsoLink['/Toys/EverQuest/'] = 'EverQuest I Simulator';
 			$seealsoLink['/2006/08/literary_vs_genre_explained_using_pie.html'] = 'Literary vs. Genre, Explained Using Pie';
 			$seealsoLink['/htmlhorror/htmlhorror1.html'] = 'The Page of the Damned [BEWARE!]';
-			include '/big/dom/xgoer/www/assets/inc/footer.inc'; 
+			include $_SERVER['DOCUMENT_ROOT'].'/assets/inc/footer.inc'; 
 		?>
         </div>
     </div>
