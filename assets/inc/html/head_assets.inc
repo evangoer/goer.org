@@ -9,40 +9,41 @@ function get_page($uri) {
     return preg_replace('/\/(index\.html)*$/', '', $url_path);
 }
 
-function get_parent_page($page) {
+function get_parent($page) {
     if (substr_count($page, '/') < 2) {
         return null;
     }
     return preg_replace('/\/\w+$/', '', $page);
 }
 
+function chapter_menu($site_map, $path_to_match) {
+    $menu = array();
+    foreach ($site_map as $p) {
+        if (strpos($p['path'], $path_to_match) === 0) {
+            array_push($menu, $p);
+        }
+    }
+    return $menu;
+}
+
+function not_a_leaf($p) {
+    return substr_count($p['path'], '/') < 3;
+}
+
 function get_menu($site_map) {
     $page = get_page($_SERVER['REQUEST_URI']);
     $page_level = substr_count($page, '/');
-    $parent_page = get_parent_page($page);
-    $menu = array();
 
-    if ($page_level == 1) {
-        foreach ($site_map as $p) {
-            if (substr_count($p['path'], '/') < 3) {
-                array_push($menu, $p);
-            } 
-        }
-    } elseif ($page_level == 2) {
-        foreach ($site_map as $p) {
-            if (strpos($p['path'], $page) === 0) {
-                array_push($menu, $p);
-            } 
-        }
-    } elseif ($page_level == 3) {
-        foreach ($site_map as $p) {
-            if (strpos($p['path'], $parent_page) === 0) {
-                array_push($menu, $p);
-            } 
-        }
+    switch ($page_level) {
+    case 1:
+        return array_filter($site_map, 'not_a_leaf');
+    case 2:
+        return call_user_func('chapter_menu', $site_map, $page);
+    case 3:
+        return call_user_func('chapter_menu', $site_map, get_parent($page));
+    default:
+        return array();
     }
-
-    return $menu;
 }
 
 $site_map = array(
