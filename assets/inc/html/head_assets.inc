@@ -23,25 +23,18 @@ function get_description($site_map) {
     return '';
 }
 
-function chapter_menu($site_map, $path_to_match) {
-    $menu = array();
-    foreach ($site_map as $path => $page_info) {
-        if (strpos($path, $path_to_match) === 0) {
-            $link = array('path' => $path, 'text' => $page_info['text']);
-            array_push($menu, $link);
-        }
-    }
-    return $menu;
+function path_matches($path, $path_to_match) {
+    return strpos($path, $path_to_match) === 0;
 }
 
 function not_a_leaf($path) {
     return substr_count($path, '/') < 3;
 }
 
-function toplevel_menu($site_map) {
+function menu_items($site_map, $condition, $path_to_match) {
     $menu = array();
     foreach ($site_map as $path => $page_info) {
-        if (not_a_leaf($path)) {
+        if (call_user_func($condition, $path, $path_to_match)) {
             $link = array('path' => $path, 'text' => $page_info['text']);
             array_push($menu, $link);
         }
@@ -55,11 +48,11 @@ function get_menu($site_map) {
 
     switch ($page_level) {
     case 1:
-        return call_user_func('toplevel_menu', $site_map);
+        return menu_items($site_map, 'not_a_leaf', null);
     case 2:
-        return call_user_func('chapter_menu', $site_map, $page);
+        return menu_items($site_map, 'path_matches', $page);
     case 3:
-        return call_user_func('chapter_menu', $site_map, get_parent($page));
+        return menu_items($site_map, 'path_matches', get_parent($page));
     default:
         return array();
     }
