@@ -16,27 +16,37 @@ function get_parent($page) {
 function get_description($site_map) {
     $page = get_page($_SERVER['REQUEST_URI']);
     $desc_key = not_a_leaf($page) ? $page : get_parent($page);
-    foreach ($site_map as $p) {
-        if ($p['path'] == $desc_key && isset($p['desc'])) {
-            return $p['desc'];
-        }
+    $page_info = $site_map[$desc_key];
+    if (isset($page_info['desc'])) {
+        return $page_info['desc'];
     }
     return '';
 }
 
 function chapter_menu($site_map, $path_to_match) {
     $menu = array();
-    foreach ($site_map as $p) {
-        if (strpos($p['path'], $path_to_match) === 0) {
-            array_push($menu, $p);
+    foreach ($site_map as $path => $page_info) {
+        if (strpos($path, $path_to_match) === 0) {
+            $link = array('path' => $path, 'text' => $page_info['text']);
+            array_push($menu, $link);
         }
     }
     return $menu;
 }
 
-function not_a_leaf($p) {
-    $path = is_array($p) ? $p['path'] : $p;
+function not_a_leaf($path) {
     return substr_count($path, '/') < 3;
+}
+
+function toplevel_menu($site_map) {
+    $menu = array();
+    foreach ($site_map as $path => $page_info) {
+        if (not_a_leaf($path)) {
+            $link = array('path' => $path, 'text' => $page_info['text']);
+            array_push($menu, $link);
+        }
+    }
+    return $menu;
 }
 
 function get_menu($site_map) {
@@ -45,7 +55,7 @@ function get_menu($site_map) {
 
     switch ($page_level) {
     case 1:
-        return array_filter($site_map, 'not_a_leaf');
+        return call_user_func('toplevel_menu', $site_map);
     case 2:
         return call_user_func('chapter_menu', $site_map, $page);
     case 3:
@@ -56,35 +66,35 @@ function get_menu($site_map) {
 }
 
 $site_map = array(
-    array('path' => '/HTML', 'text' => 'Introduction', 'desc' => ''),
-    array('path' => '/HTML/about', 'text' => 'About This Tutorial', 'desc' => ''),
-    array('path' => '/HTML/introduction', 'text' => 'Getting Started', 'desc' => 'Chapter 1. Getting Started'),
-    array('path' => '/HTML/introduction/diving_in', 'text' => 'Diving In'),
-    array('path' => '/HTML/introduction/structure', 'text' => 'Structure'),
-    array('path' => '/HTML/introduction/tinkering', 'text' => 'Tinkering'),
-    array('path' => '/HTML/introduction/elements', 'text' => 'Elements'),
-    array('path' => '/HTML/introduction/attributes', 'text' => 'Attributes'),
-    array('path' => '/HTML/basic', 'text' => 'Markup Basics', 'desc' => 'Chapter 2. Markup Basics'),
-    array('path' => '/HTML/basic/paragraph_breaks', 'text' => 'Paragraph Breaks'),
-    array('path' => '/HTML/basic/headings', 'text' => 'Headings'),
-    array('path' => '/HTML/basic/font_styles', 'text' => 'Font Styles'),
-    array('path' => '/HTML/basic/colors', 'text' => 'Colors'),
-    array('path' => '/HTML/basic/links', 'text' => 'Links'),
-    array('path' => '/HTML/basic/images', 'text' => 'Images'),
-    array('path' => '/HTML/basic/lists', 'text' => 'Lists'),
-    array('path' => '/HTML/intermediate', 'text' => 'Styling Basics', 'desc' => 'Chapter 3. Styling Basics'),
-    array('path' => '/HTML/intermediate/style_attribute', 'text' => 'The style Attribute'),
-    array('path' => '/HTML/intermediate/style_sheets', 'text' => 'Style Sheets'),
-    array('path' => '/HTML/intermediate/classes_and_ids', 'text' => 'Classes and IDs'),
-    array('path' => '/HTML/intermediate/div_and_span', 'text' => 'Div and Span'),
-    array('path' => '/HTML/intermediate/font_control', 'text' => 'Font Control'),
-    array('path' => '/HTML/intermediate/borders', 'text' => 'Borders'),
-    array('path' => '/HTML/intermediate/margins_and_padding', 'text' => 'Margins and Padding'),
-    array('path' => '/HTML/intermediate/align_and_indent', 'text' => 'Align and Indent'),
-    array('path' => '/HTML/tables', 'text' => 'Tables', 'desc' => 'Chapter 4. Tables'),
-    array('path' => '/HTML/tables/table_structure', 'text' => 'Table Structure'),
-    array('path' => '/HTML/tables/cellpadding_and_cellspacing', 'text' => 'Cellpadding and Cellspacing'),
-    array('path' => '/HTML/tables/tables_and_css', 'text' => 'Tables and CSS')
+    '/HTML' => array('text' => 'Introduction', 'desc' => ''),
+    '/HTML/about' => array('text' => 'About This Tutorial', 'desc' => ''),
+    '/HTML/introduction' => array('text' => 'Getting Started', 'desc' => 'Chapter 1. Getting Started'),
+    '/HTML/introduction/diving_in' => array('text' => 'Diving In'),
+    '/HTML/introduction/structure' => array('text' => 'Structure'),
+    '/HTML/introduction/tinkering' => array('text' => 'Tinkering'),
+    '/HTML/introduction/elements' => array('text' => 'Elements'),
+    '/HTML/introduction/attributes' => array('text' => 'Attributes'),
+    '/HTML/basic' => array('text' => 'Markup Basics', 'desc' => 'Chapter 2. Markup Basics'),
+    '/HTML/basic/paragraph_breaks' => array('text' => 'Paragraph Breaks'),
+    '/HTML/basic/headings' => array('text' => 'Headings'),
+    '/HTML/basic/font_styles' => array('text' => 'Font Styles'),
+    '/HTML/basic/colors' => array('text' => 'Colors'),
+    '/HTML/basic/links' => array('text' => 'Links'),
+    '/HTML/basic/images' => array('text' => 'Images'),
+    '/HTML/basic/lists' => array('text' => 'Lists'),
+    '/HTML/intermediate' => array('text' => 'Styling Basics', 'desc' => 'Chapter 3. Styling Basics'),
+    '/HTML/intermediate/style_attribute' => array('text' => 'The style Attribute'),
+    '/HTML/intermediate/style_sheets' => array('text' => 'Style Sheets'),
+    '/HTML/intermediate/classes_and_ids' => array('text' => 'Classes and IDs'),
+    '/HTML/intermediate/div_and_span' => array('text' => 'Div and Span'),
+    '/HTML/intermediate/font_control' => array('text' => 'Font Control'),
+    '/HTML/intermediate/borders' => array('text' => 'Borders'),
+    '/HTML/intermediate/margins_and_padding' => array('text' => 'Margins and Padding'),
+    '/HTML/intermediate/align_and_indent' => array('text' => 'Align and Indent'),
+    '/HTML/tables' => array('text' => 'Tables', 'desc' => 'Chapter 4. Tables'),
+    '/HTML/tables/table_structure' => array('text' => 'Table Structure'),
+    '/HTML/tables/cellpadding_and_cellspacing' => array('text' => 'Cellpadding and Cellspacing'),
+    '/HTML/tables/tables_and_css' => array('text' => 'Tables and CSS')
 );
 
 $site_title_url = '/HTML/';
